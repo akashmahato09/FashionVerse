@@ -1,0 +1,196 @@
+{% extends 'vendor_base.html' %} 
+{% block title%}{% endblock %} 
+{% load static %}
+{%block css %}<link rel="stylesheet" href="{% static 'css/notification.css' %}"/>{% endblock css %} 
+{% block main_content %}
+
+<div class="notification-container">
+
+    <!-- Page Header -->
+    <div class="page-header">
+
+        <div>
+            <h2>Notifications</h2>
+            <p>Stay updated with your latest store activities.</p>
+        </div>
+
+        <button class="mark-btn">
+            <i class="fa-solid fa-check-double"></i>
+            Mark All Read
+        </button>
+
+    </div>
+
+    <!-- Summary -->
+
+    <div class="notification-summary">
+
+        <div class="summary-card">
+            <i class="fa-solid fa-bell"></i>
+            <h3>42</h3>
+            <p>Total Notifications</p>
+        </div>
+
+        <div class="summary-card">
+            <i class="fa-solid fa-envelope-open"></i>
+            <h3>12</h3>
+            <p>Unread</p>
+        </div>
+
+        <div class="summary-card">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <h3>18</h3>
+            <p>New Orders</p>
+        </div>
+
+        <div class="summary-card">
+            <i class="fa-solid fa-star"></i>
+            <h3>8</h3>
+            <p>New Reviews</p>
+        </div>
+
+    </div>
+
+    <!-- Search -->
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            placeholder="Search notifications...">
+
+        <select>
+
+            <option>All Notifications</option>
+            <option>Orders</option>
+            <option>Payments</option>
+            <option>Reviews</option>
+            <option>Stock Alerts</option>
+            <option>System</option>
+
+        </select>
+
+    </div>
+
+    <!-- Notification List -->
+
+    <div class="notification-list">
+
+        <!-- Notification -->
+
+        <div class="notification-card unread">
+
+            <div class="icon order">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+
+            <div class="content">
+
+                <h3>New Order Received</h3>
+
+                <p>
+                    Rahul Sharma placed an order for
+                    <strong>Oversized T-Shirt</strong>.
+                </p>
+
+                <span>10 Minutes Ago</span>
+
+            </div>
+
+        </div>
+
+        <!-- Notification -->
+
+        <div class="notification-card">
+
+            <div class="icon payment">
+                <i class="fa-solid fa-wallet"></i>
+            </div>
+
+            <div class="content">
+
+                <h3>Payment Credited</h3>
+
+                <p>
+                    ₹2,450 has been credited to your wallet.
+                </p>
+
+                <span>1 Hour Ago</span>
+
+            </div>
+
+        </div>
+
+        <!-- Notification -->
+
+        <div class="notification-card unread">
+
+            <div class="icon review">
+                <i class="fa-solid fa-star"></i>
+            </div>
+
+            <div class="content">
+
+                <h3>New Product Review</h3>
+
+                <p>
+                    Priya Singh rated your Hoodie
+                    <strong>5 Stars.</strong>
+                </p>
+
+                <span>3 Hours Ago</span>
+
+            </div>
+
+        </div>
+
+        <!-- Notification -->
+
+        <div class="notification-card">
+
+            <div class="icon stock">
+                <i class="fa-solid fa-box"></i>
+            </div>
+
+            <div class="content">
+
+                <h3>Low Stock Alert</h3>
+
+                <p>
+                    Sneakers inventory is running low.
+                    Only <strong>3 items</strong> left.
+                </p>
+
+                <span>Yesterday</span>
+
+            </div>
+
+        </div>
+
+        <!-- Notification -->
+
+        <div class="notification-card">
+
+            <div class="icon system">
+                <i class="fa-solid fa-gear"></i>
+            </div>
+
+            <div class="content">
+
+                <h3>System Update</h3>
+
+                <p>
+                    New dashboard features have been added.
+                </p>
+
+                <span>2 Days Ago</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

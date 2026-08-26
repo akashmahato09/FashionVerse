@@ -1,0 +1,173 @@
+
+
+/* body{
+background:#f1f3f6;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+padding:20px;
+} */ 
+
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+.user-login{
+    background:#f1f3f6;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:80vh;
+    padding:20px;
+}
+
+.login-container{
+width:900px;
+background:#fff;
+display:flex;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+/* Left */
+
+.left-panel{
+width:40%;
+background:#2874f0;
+color:#fff;
+padding:50px 35px;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+}
+
+.left-panel h1{
+font-size:35px;
+margin-bottom:15px;
+}
+
+.left-panel p{
+font-size:19px;
+line-height:30px;
+color:#dbe9ff;
+}
+
+.left-panel img{
+width:220px;
+margin:auto;
+}
+
+/* Right */
+
+.right-panel{
+width:60%;
+padding:50px;
+}
+
+.input-box{
+position:relative;
+margin-bottom:25px;
+}
+
+.input-box i{
+position:absolute;
+left:15px;
+top:16px;
+color:#777;
+}
+
+.input-box input{
+width:100%;
+padding:15px 15px 15px 45px;
+border:1px solid #ddd;
+border-radius:6px;
+font-size:16px;
+outline:none;
+transition:.3s;
+}
+
+.input-box input:focus{
+border-color:#2874f0;
+}
+
+.forgot{
+float:right;
+text-decoration:none;
+color:#2874f0;
+font-size:15px;
+margin-bottom:30px;
+}
+
+.loginbtn{
+width:100%;
+padding:15px;
+border:none;
+border-radius:6px;
+background:#fb641b;
+color:#fff;
+font-size:17px;
+cursor:pointer;
+margin-top:5px;
+transition:.3s;
+}
+
+.loginbtn:hover{
+background:#e85a17;
+}
+.terms{
+    text-align:center;
+    margin-top:20px;
+    color:#777;
+    font-size:12px;
+    line-height:24px;
+}
+
+.terms a{
+    color:#2874f0;
+    text-decoration:none;
+}
+
+.register{
+text-align:center;
+margin-top:35px;
+font-size:15px;
+}
+
+.register a{
+text-decoration:none;
+color:#2874f0;
+font-weight:bold;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.login-container{
+flex-direction:column;
+width:100%;
+}
+
+.left-panel{
+width:100%;
+text-align:center;
+padding:40px 25px;
+}
+
+.left-panel img{
+width:160px;
+margin-top:30px;
+}
+
+.right-panel{
+width:100%;
+padding:35px 25px;
+}
+
+}

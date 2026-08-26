@@ -1,0 +1,137 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block css %}<link rel="stylesheet" href="{% static 'css/boys.css' %}"/>{% endblock css %} 
+{% block content %}
+
+<!-- ================= Hero ================= -->
+
+<section class="boys-hero">
+
+    <div class="boys-hero-content">
+
+        <h1>Boys Fashion Collection</h1>
+
+        <p>Comfort • Style • Adventure</p>
+
+        <a href="#" class="boys-shop-btn">
+            Shop Now
+        </a>
+
+    </div>
+
+</section>
+
+<!-- ================= Categories ================= -->
+
+<section class="boys-categories">
+
+    <button>T-Shirts</button>
+    <button>Shirts</button>
+    <button>Jeans</button>
+    <button>Shorts</button>
+    <button>Hoodies</button>
+    <button>Shoes</button>
+    <button>Caps</button>
+    <button>Sportswear</button>
+
+</section>
+
+<!-- ================= Products  ================= -->
+
+<section class="products">
+
+    <div class="product-card">
+
+        <div class="image">
+
+            <img src="{% static 'images/boysbannerdown.webp' %}" width="100%">
+
+            <span class="discount">
+                40% OFF
+            </span>
+
+            <i class="fa-regular fa-heart"></i>
+
+        </div>
+
+        <div class="details">
+
+            <h3>FashionVerse Kids</h3>
+
+            <p>Printed Cotton T-Shirt</p>
+
+            <div class="rating">
+                ⭐⭐⭐⭐⭐
+            </div>
+
+            <div class="price">
+
+                ₹799
+
+                <span>₹1299</span>
+
+            </div>
+
+            <button>
+                <i class="fa-solid fa-cart-shopping"></i>
+                Add To Cart
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- Repeat more cards -->
+
+</section>
+<section class="index-products">
+  <h2>Featured Products</h2>
+
+  <div class="index-product-grid">
+    {% for p in products %}
+    <a href="{% url 'core:products_details' p.id  %}" style="text-decoration:none;" >
+      <div class="index-product-card">
+        <!-- Discount Badge -->
+        <span class="discount-badge">{{p.discount_percentage}}% OFF</span>
+
+        <!-- Wishlist -->
+        <button class="wishlist-btn">
+          <i class="fa-regular fa-heart"></i>
+        </button>
+
+        <!-- Product Image -->
+        <div class="index-img">
+          <img src="{{ p.product_image.url }}" alt="Women Kurti" />
+        </div>
+
+        <!-- Product Details -->
+        <div class="product-info">
+          <h3>{{p.product_name}}</h3>
+
+          <div class="rating">
+            <i class="fa-solid fa-star"></i>
+            4.8
+            <span>(245 Reviews)</span>
+          </div>
+
+          <div class="price-box">
+            <span class="current-price">₹{{p.selling_price}}</span>
+
+            <span class="old-price">₹{{p.original_price}}</span>
+          </div>
+
+          <button class="cart-btn">
+            <i class="fa-solid fa-cart-shopping"></i>
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+
+
+
+
+{% endblock %}

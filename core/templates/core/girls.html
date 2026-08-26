@@ -1,0 +1,138 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block css %}<link rel="stylesheet" href="{% static 'css/girls.css' %}"/>{% endblock css %} 
+{% block content %}
+
+<!-- Hero -->
+
+<section class="girls-hero">
+
+    <div class="girls-hero-content">
+
+        <h1>Girls Fashion Collection</h1>
+
+        <p>Cute • Stylish • Trendy</p>
+
+        <a href="#" class="girls-shop-btn">Shop Collection</a>
+
+    </div>
+
+</section>
+
+<!-- Categories -->
+
+<section class="girls-categories">
+
+    <button>Frocks</button>
+
+    <button>Dresses</button>
+
+    <button>Tops</button>
+
+    <button>Jeans</button>
+
+    <button>Skirts</button>
+
+    <button>Footwear</button>
+
+    <button>Bags</button>
+
+    <button>Accessories</button>
+
+</section>
+
+<!-- Products -->
+
+<section class="products">
+
+<div class="product-card">
+
+<div class="image">
+
+<img src="{% static 'images/girlsbannerdown.webp' %}">
+
+<span class="discount">50% OFF</span>
+
+<i class="fa-regular fa-heart"></i>
+
+</div>
+
+<div class="details">
+
+<h3>FashionVerse Kids</h3>
+
+<p>Girls Floral Party Dress</p>
+
+<div class="rating">
+
+⭐⭐⭐⭐⭐
+
+</div>
+
+<div class="price">
+
+₹999
+
+<span>₹1999</span>
+
+</div>
+
+<button>Add To Cart</button>
+
+</div>
+
+</div>
+
+<!-- Repeat More Cards -->
+
+</section>
+
+<section class="index-products">
+  <h2>Featured Products</h2>
+
+  <div class="index-product-grid">
+    {% for p in products %}
+    <a href="{% url 'core:products_details' p.id  %}" style="text-decoration:none;" >
+      <div class="index-product-card">
+        <!-- Discount Badge -->
+        <span class="discount-badge">{{p.discount_percentage}}% OFF</span>
+
+        <!-- Wishlist -->
+        <button class="wishlist-btn">
+          <i class="fa-regular fa-heart"></i>
+        </button>
+
+        <!-- Product Image -->
+        <div class="index-img">
+          <img src="{{ p.product_image.url }}" alt="Women Kurti" />
+        </div>
+
+        <!-- Product Details -->
+        <div class="product-info">
+          <h3>{{p.product_name}}</h3>
+
+          <div class="rating">
+            <i class="fa-solid fa-star"></i>
+            4.8
+            <span>(245 Reviews)</span>
+          </div>
+
+          <div class="price-box">
+            <span class="current-price">₹{{p.selling_price}}</span>
+
+            <span class="old-price">₹{{p.original_price}}</span>
+          </div>
+
+          <button class="cart-btn">
+            <i class="fa-solid fa-cart-shopping"></i>
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+
+
+{% endblock %}

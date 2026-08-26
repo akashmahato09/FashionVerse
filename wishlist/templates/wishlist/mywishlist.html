@@ -1,0 +1,93 @@
+{% extends 'dashboard_base.html' %}
+{% load static %}
+
+{% block title %}{% endblock %}
+
+{% block css %}<link rel="stylesheet" href="{% static 'css/mywishlist.css' %}">{% endblock css %}
+
+{% block main_content %}
+
+<div class="mywishlist-container">
+
+    <div class="wishlist-header">
+        <h2>❤️ My Wishlist</h2>
+
+        <div class="count">
+            {{ wishlist_items.count }} Items
+        </div>
+    </div>
+
+    {% for item in wishlist_items %}
+
+    <div class="wishlist-card">
+
+        <!-- Product Image -->
+        <div class="product-image">
+            <img src="{{ item.product.product_image.url }}" alt="{{ item.product.product_name }}">
+        </div>
+
+        <!-- Product Details -->
+        <div class="product-info">
+
+            <h2>{{ item.product.product_name }}</h2>
+
+            <p class="brand">
+                {{ item.product.brand }}
+            </p>
+
+            <div class="price">
+
+                <span class="new-price">
+                    ₹{{ item.product.selling_price }}
+                </span>
+
+                <span class="old-price">
+                    ₹{{ item.product.original_price }}
+                </span>
+
+                <span class="discount">
+                    {{ item.product.discount_percentage }}% OFF
+                </span>
+
+            </div>
+
+        </div>
+
+        <!-- Buttons -->
+        <div class="actions">
+
+            <a href="#" class="cart-btn">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Move to Cart
+            </a>
+
+            <a href="{% url 'wishlist:remove_wishlist' item.product.id %}" class="remove">
+                <i class="fa-solid fa-trash"></i>
+                Delete
+            </a>
+
+        </div>
+
+    </div>
+
+    {% empty %}
+
+    <div class="empty-wishlist">
+
+        <img src="{% static 'images/emptywishlist.png' %}" width="220">
+
+        <h2>Your Wishlist is Empty</h2>
+
+        <p>Save your favourite products here.</p>
+
+        <a href="{% url 'wishlist:mywishlist' %}" class="shop-btn">
+            Continue Shopping
+        </a>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,151 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block css %}<link rel="stylesheet" href="{% static 'css/index.css' %}"/>{% endblock css %} 
+{% block content %}
+
+<!-- ================= HERO SECTION ================= -->
+
+<section class="index">
+  <div class="index-content">
+    <h1>Upgrade Your Fashion</h1>
+
+    <p>
+      Discover thousands of stylish products for Men, Women, Boys, Girls & Kids.
+    </p>
+
+    <button>Shop Now</button>
+  </div>
+</section>
+
+<!-- ================= CATEGORY SECTION ================= -->
+
+<section class="index-category">
+  <h2>Shop By Category</h2>
+
+  <div class="index-category-grid">
+    <a href="{% url 'core:men' %}">
+      <div class="index-card">
+        <i class="fa-solid fa-person"></i>
+        <h3>Men</h3>
+      </div>
+    </a>
+
+    <a href="{% url 'core:women' %}">
+      <div class="index-card">
+        <i class="fa-solid fa-person-dress"></i>
+        <h3>Women</h3>
+      </div>
+    </a>
+
+    <a href="{% url 'core:girls' %}">
+      <div class="index-card">
+        <i class="fa-solid fa-child-dress"></i>
+        <h3>Girls</h3>
+      </div>
+    </a>
+
+    <a href="{% url 'core:boys' %}">
+      <div class="index-card">
+        <i class="fa-solid fa-child"></i>
+        <h3>Boys</h3>
+      </div>
+    </a>
+
+    <a href="{% url 'core:kids' %}">
+      <div class="index-card">
+        <i class="fa-solid fa-baby"></i>
+        <h3>Kids</h3>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ================= FEATURED PRODUCTS ================= -->
+
+<section class="index-products">
+  <h2>Featured Products</h2>
+
+  <div class="index-product-grid">
+    {% for p in product %}
+    <a
+      href="{% url 'core:products_details' p.id  %}"
+      style="text-decoration: none"
+    >
+      <div class="index-product-card">
+        <!-- Discount Badge -->
+        <span class="discount-badge">{{p.discount_percentage}}% OFF</span>
+
+        <button class="wishlist-btn">
+          <i class="fa-regular fa-heart"></i>
+        </button>
+
+        <!-- Product Image -->
+        <div class="index-img">
+          <img src="{{ p.product_image.url }}" alt="Women Kurti" />
+        </div>
+
+        <!-- Product Details -->
+        <div class="product-info">
+          <h3>{{p.product_name}}</h3>
+
+          <div class="rating">
+            <i class="fa-solid fa-star"></i>
+            4.8
+            <span>(245 Reviews)</span>
+          </div>
+
+          <div class="price-box">
+            <span class="current-price">₹{{p.selling_price}}</span>
+
+            <span class="old-price">₹{{p.original_price}}</span>
+          </div>
+
+          <button class="cart-btn">
+            <i class="fa-solid fa-cart-shopping"></i>
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- ================= BRANDS ================= -->
+<section class="index-brands">
+    <h2>Top Brands</h2>
+
+    <div class="index-brand-grid">
+
+        <div class="brand-card">
+            <span>Nike</span>
+        </div>
+
+        <div class="brand-card">
+            <span>Adidas</span>
+        </div>
+
+        <div class="brand-card">
+            <span>Puma</span>
+        </div>
+
+        <div class="brand-card">
+            <span>Levi's</span>
+        </div>
+
+        <div class="brand-card">
+            <span>H&M</span>
+        </div>
+
+        <div class="brand-card">
+            <span>Zara</span>
+        </div>
+
+    </div>
+</section>
+
+<!-- =================  ================= -->
+
+<section class=""></section>
+
+{% endblock %}

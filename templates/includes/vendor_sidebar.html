@@ -1,0 +1,71 @@
+
+{% load static %}
+<!-- Sidebar -->
+<aside class="sidebar">
+  <nav class="menu">
+     <a href="{% url 'vendors:dashboard_page' %}" >
+     <i class="fa-solid fa-house"></i>
+      <span>Dashboard</span>
+    </a>
+
+    <a href="{% url 'vendors:profile' %}" >
+      <i class="fa-solid fa-user"></i>
+      <span>My Profile</span>
+    </a>
+
+    <a href="{% url 'vendors:products' %}" >
+      <i class="fa-solid fa-box"></i>
+      <span>Products</span>
+    </a>
+
+    <a href="{% url 'vendors:product_category' %}" >
+     <i class="fa-solid fa-plus"></i>
+      <span>Add products</span>
+    </a>
+
+    <a href="{% url 'vendors:orders' %}" >
+      <i class="fa-solid fa-cart-shopping"></i>
+      <span>orders</span>
+    </a>
+
+    <a href="{% url 'vendors:customers' %}" >
+      <i class="fa-solid fa-users"></i>
+      <span>Customers</span>
+    </a>
+
+    <a href="{% url 'vendors:reviews' %}" >
+      <i class="fa-solid fa-star"></i>
+      <span>Reviews</span>
+    </a>
+
+    <a href="{% url 'vendors:coupons' %}" >
+      <i class="fa-solid fa-ticket"></i>
+      <span>Coupons</span>
+    </a>
+
+    <a href="{% url 'vendors:notification' %}" >
+      <i class="fa-solid fa-bell"></i>
+      <span>Notifications</span>
+    </a>
+
+    <a href="{% url 'vendors:earnings' %}" >
+     <i class="fa-solid fa-sack-dollar"></i>
+      <span>Earnings</span>
+    </a>
+
+    <a href="{% url 'vendors:reports'%}" >
+      <i class="fa-solid fa-chart-bar"></i>
+      <span>Reports</span>
+    </a>
+
+    <a href="{% url 'vendors:settings'%}" >
+      <i class="fa-solid fa-gear"></i>
+      <span>Settings</span>
+    </a>
+
+    <a href="{% url 'vendors:login' %}" class="logout">
+      <i class="fa-solid fa-right-from-bracket"></i>
+      <span>Logout</span>
+    </a>
+  </nav>
+</aside>

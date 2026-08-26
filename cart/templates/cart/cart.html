@@ -1,0 +1,79 @@
+{% extends 'dashboard_base.html' %}
+{% load static %}
+
+{% block css %}<link rel="stylesheet" href="{% static 'css/mycart.css' %}">{% endblock %}
+
+{% block main_content %}
+
+<div class="mycart-container">
+
+    <h2 class="cart-heading">
+        <i class="fa-solid fa-cart-shopping"></i>
+        My Cart
+    </h2>
+
+    {% for item in cart_items %}
+
+    <div class="cart-card">
+
+        <div class="cart-image">
+
+            <img src="{{ item.product.product_image.url }}" alt="">
+
+        </div>
+
+        <div class="cart-details">
+
+            <h3>{{ item.product.product_name }}</h3>
+
+            <p class="price">
+                ₹{{ item.product.selling_price }}
+            </p>
+
+            <p>
+                <strong>Quantity :</strong>
+                {{ item.quantity }}
+            </p>
+
+            <p class="total">
+                Total : ₹{{ item.total_price }}
+            </p>
+
+            <a href="{% url 'cart:remove_cart' item.id %}" class="remove-btn">
+                <i class="fa-solid fa-trash"></i>
+                Remove
+            </a>
+
+        </div>
+
+    </div>
+
+    {% empty %}
+
+    <div class="empty-cart">
+
+        <i class="fa-solid fa-cart-shopping"></i>
+
+        <h2>Your Cart is Empty</h2>
+
+    </div>
+
+    {% endfor %}
+
+    {% if cart_items %}
+
+    <div class="cart-footer">
+
+        <h2>Grand Total : ₹{{ total }}</h2>
+
+        <a href="#" class="checkout-btn">
+            Proceed to Checkout
+        </a>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+{% endblock %}

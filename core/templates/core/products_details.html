@@ -1,0 +1,93 @@
+{% extends 'base.html' %} {% load static %} {% block css %}<link
+  rel="stylesheet"
+  href="{% static 'css/products_details.css' %}"
+/>{% endblock css %} {% block content %}
+
+<div class="product-detail-container">
+  <!-- Left -->
+  <div class="product-image-section">
+    <div class="main-image">
+      {% if product.product_image %}
+      <img
+        src="{{ product.product_image.url }}"
+        alt="{{ product.product_name }}"
+      />
+      {% else %}
+      <img src="{% static 'images/default_product.jpg' %}" />
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- Right -->
+
+  <div class="product-info">
+    <h1>{{ product.product_name }}</h1>
+
+    <h4>{{ product.brand }}</h4>
+
+    <div class="rating">
+      ★★★★★
+
+      <span>4.8 (245 Reviews)</span>
+    </div>
+
+    <div class="price">
+      <span class="selling"> ₹{{ product.selling_price }} </span>
+
+      <span class="original"> ₹{{ product.original_price }} </span>
+
+      <span class="discount"> {{ product.discount_percentage }}% OFF </span>
+    </div>
+
+    <div class="stock">
+      <strong>Status :</strong>
+
+      {{ product.stock_status }}
+    </div>
+
+    <div class="color">
+      <strong>Color :</strong>
+
+      {{ product.color }}
+    </div>
+
+    <div class="size">
+      <strong>Size :</strong>
+
+      {{ product.size }}
+    </div>
+
+    <div class="quantity">
+      <label>Quantity</label>
+
+      <input type="number" value="1" min="1" />
+    </div>
+
+    <div class="buttons">
+      <
+      <form action="{% url 'cart:add_to_cart' product.id %}" method="post">
+        {% csrf_token %}
+        <button type="submit" class="cart-btn">
+          <i class="fa-solid fa-cart-shopping"></i>
+          Add to Cart
+        </button>
+      </form>
+      <a href="{% url 'orders:shipping' product.id %}">
+        <button class="buy-btn">Buy Now</button>
+      </a>
+      <form action="{% url 'wishlist:add_wishlist' product.id %}" method="POST">
+        {% csrf_token %}
+         <button type="submit" class="wish-btn">❤</button>
+      </form>
+     
+    </div>
+
+    <hr />
+
+    <h3>Description</h3>
+
+    <p>{{ product.description }}</p>
+  </div>
+</div>
+
+{% endblock %}

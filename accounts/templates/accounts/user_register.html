@@ -1,0 +1,71 @@
+{% extends 'base.html' %} 
+{% block title%}{% endblock %} 
+{% load static %}
+{%block css %}<link rel="stylesheet" href="{% static 'css/user_register.css' %}"/>{% endblock css %} 
+{% block content %}
+
+<section class="user-register">
+ <div class="register-container">
+
+        <!-- Left Panel -->
+
+        <div class="left-panel">
+
+            <h1>Create Account</h1>
+
+            <p>
+                Join FashionVerse and enjoy shopping with thousands of products from trusted vendors.
+            </p>
+
+            <img src="https://cdn-icons-png.flaticon.com/512/3081/3081559.png">
+
+        </div>
+
+        <!-- Right Panel -->
+
+        <div class="right-panel">
+
+            <form action="{% url 'accounts:user_register' %}" method="POST">
+                {% csrf_token %} 
+                <h5>Register Your Self</h5>
+                <div class="input-box">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" name="username" placeholder="User Name..">
+                </div>
+                <div class="input-box">
+                   <i class="fa-solid fa-at"></i>
+                    <input type="Email" name="email" placeholder="Email">
+                </div>
+                <div class="input-box">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" name="password" placeholder="password..">
+                </div>
+                <div class="input-box">
+                  <i class="fa-solid fa-lock"></i>
+                    <input type="password" name="password1" placeholder="confirm password">
+                </div>
+
+                 <p class="terms">
+                    By continuing, you agree to FashionVerse's
+                    <a href="#">Terms of Use</a> &
+                    <a href="#">Privacy Policy</a>
+                </p>
+
+                <button type="submit" class="createbtn">
+                    CONTINUE
+                </button>
+                <p class="login-link">
+                    Already have an account?
+                    <a href="{% url 'accounts:user_login' %}">
+                        Login
+                    </a>
+                </p>
+
+            </form>
+
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,167 @@
+{% extends 'vendor_base.html' %} 
+{% block title%}{% endblock %} 
+{% load static %}
+{%block css %}<link rel="stylesheet" href="{% static 'css/reports.css' %}"/>{% endblock css %} 
+{% block main_content %}
+
+<div class="reports-container">
+
+    <!-- Page Header -->
+    <div class="page-header">
+
+        <div>
+            <h2>Sales Reports</h2>
+            <p>Analyze your store performance and sales reports.</p>
+        </div>
+
+        <button class="download-btn">
+            <i class="fa-solid fa-download"></i>
+            Download Report
+        </button>
+
+    </div>
+
+    <!-- Statistics -->
+
+    <div class="report-cards">
+
+        <div class="report-card">
+            <i class="fa-solid fa-indian-rupee-sign"></i>
+            <h3>₹2,45,600</h3>
+            <p>Total Sales</p>
+        </div>
+
+        <div class="report-card">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <h3>356</h3>
+            <p>Total Orders</p>
+        </div>
+
+        <div class="report-card">
+            <i class="fa-solid fa-users"></i>
+            <h3>215</h3>
+            <p>Total Customers</p>
+        </div>
+
+        <div class="report-card">
+            <i class="fa-solid fa-box-open"></i>
+            <h3>145</h3>
+            <p>Products Sold</p>
+        </div>
+
+    </div>
+
+    <!-- Filter -->
+
+    <div class="filter-box">
+
+        <input type="date">
+
+        <input type="date">
+
+        <select>
+
+            <option>All Categories</option>
+            <option>Men</option>
+            <option>Women</option>
+            <option>Boys</option>
+            <option>Girls</option>
+            <option>Kids</option>
+
+        </select>
+
+        <button class="filter-btn">
+            Generate Report
+        </button>
+
+    </div>
+
+    <!-- Chart -->
+
+    <div class="chart-section">
+
+        <h3>Monthly Sales Report</h3>
+
+        <div class="chart-placeholder">
+
+            Sales Chart
+
+        </div>
+
+    </div>
+
+    <!-- Top Selling Products -->
+
+    <div class="table-section">
+
+        <h3>Top Selling Products</h3>
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Product</th>
+                    <th>Category</th>
+                    <th>Units Sold</th>
+                    <th>Revenue</th>
+                    <th>Rating</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+
+                    <td>Oversized T-Shirt</td>
+
+                    <td>Men</td>
+
+                    <td>120</td>
+
+                    <td>₹1,08,000</td>
+
+                    <td>⭐⭐⭐⭐⭐</td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Winter Hoodie</td>
+
+                    <td>Men</td>
+
+                    <td>80</td>
+
+                    <td>₹1,20,000</td>
+
+                    <td>⭐⭐⭐⭐</td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Running Shoes</td>
+
+                    <td>Sports</td>
+
+                    <td>65</td>
+
+                    <td>₹97,500</td>
+
+                    <td>⭐⭐⭐⭐⭐</td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+{% endblock %}

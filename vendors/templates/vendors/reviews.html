@@ -1,0 +1,166 @@
+{% extends 'vendor_base.html' %} 
+{% block title%}{% endblock %} 
+{% load static %}
+{%block css %}<link rel="stylesheet" href="{% static 'css/reviews.css' %}"/>{% endblock css %} 
+{% block main_content %}
+
+<div class="reviews-container">
+
+    <!-- Page Header -->
+    <div class="page-header">
+
+        <div>
+            <h2>Customer Reviews</h2>
+            <p>View and manage product reviews.</p>
+        </div>
+
+    </div>
+
+    <!-- Review Statistics -->
+
+    <div class="review-stats">
+
+        <div class="stat-card">
+            <i class="fa-solid fa-star"></i>
+            <h3>4.8</h3>
+            <p>Average Rating</p>
+        </div>
+
+        <div class="stat-card">
+            <i class="fa-solid fa-comment"></i>
+            <h3>248</h3>
+            <p>Total Reviews</p>
+        </div>
+
+        <div class="stat-card">
+            <i class="fa-solid fa-face-smile"></i>
+            <h3>215</h3>
+            <p>Positive Reviews</p>
+        </div>
+
+        <div class="stat-card">
+            <i class="fa-solid fa-face-frown"></i>
+            <h3>33</h3>
+            <p>Negative Reviews</p>
+        </div>
+
+    </div>
+
+    <!-- Search & Filter -->
+
+    <div class="filter-box">
+
+        <input type="text" placeholder="Search customer or product...">
+
+        <select>
+            <option>All Ratings</option>
+            <option>⭐⭐⭐⭐⭐ (5)</option>
+            <option>⭐⭐⭐⭐ (4)</option>
+            <option>⭐⭐⭐ (3)</option>
+            <option>⭐⭐ (2)</option>
+            <option>⭐ (1)</option>
+        </select>
+
+    </div>
+
+    <!-- Reviews -->
+
+    <div class="review-list">
+
+        <!-- Review Card -->
+
+        <div class="review-card">
+
+            <div class="review-header">
+
+                <img src="images/user1.jpg">
+
+                <div>
+
+                    <h3>Rahul Sharma</h3>
+
+                    <p>Oversized T-Shirt</p>
+
+                    <span>22 July 2026</span>
+
+                </div>
+
+                <div class="rating">
+                    ⭐⭐⭐⭐⭐
+                </div>
+
+            </div>
+
+            <p class="review-text">
+
+                Excellent quality and perfect fitting.
+                Delivery was very fast.
+                Highly recommended!
+
+            </p>
+
+            <div class="review-actions">
+
+                <button class="reply-btn">
+                    Reply
+                </button>
+
+                <button class="delete-btn">
+                    Delete
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- Review Card -->
+
+        <div class="review-card">
+
+            <div class="review-header">
+
+                <img src="images/user2.jpg">
+
+                <div>
+
+                    <h3>Priya Singh</h3>
+
+                    <p>Winter Hoodie</p>
+
+                    <span>20 July 2026</span>
+
+                </div>
+
+                <div class="rating">
+                    ⭐⭐⭐⭐
+                </div>
+
+            </div>
+
+            <p class="review-text">
+
+                Nice fabric and good quality.
+                The size was slightly larger than expected.
+
+            </p>
+
+            <div class="review-actions">
+
+                <button class="reply-btn">
+                    Reply
+                </button>
+
+                <button class="delete-btn">
+                    Delete
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+{% endblock %}

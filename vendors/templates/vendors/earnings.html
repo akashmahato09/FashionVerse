@@ -1,0 +1,169 @@
+{% extends 'vendor_base.html' %} 
+{% block title%}{% endblock %} 
+{% load static %}
+{%block css %}<link rel="stylesheet" href="{% static 'css/earnings.css' %}"/>{% endblock css %} 
+{% block main_content %}
+
+<div class="earnings-container">
+
+    <!-- Page Header -->
+    <div class="page-header">
+
+        <div>
+            <h2>Earnings</h2>
+            <p>Track your sales revenue and payment history.</p>
+        </div>
+
+        <button class="withdraw-btn">
+            <i class="fa-solid fa-wallet"></i>
+            Withdraw Money
+        </button>
+
+    </div>
+
+    <!-- Statistics -->
+
+    <div class="earning-cards">
+
+        <div class="card">
+            <i class="fa-solid fa-indian-rupee-sign"></i>
+            <h3>₹1,85,450</h3>
+            <p>Total Earnings</p>
+        </div>
+
+        <div class="card">
+            <i class="fa-solid fa-money-bill-transfer"></i>
+            <h3>₹25,000</h3>
+            <p>Pending Payment</p>
+        </div>
+
+        <div class="card">
+            <i class="fa-solid fa-circle-check"></i>
+            <h3>₹1,60,450</h3>
+            <p>Available Balance</p>
+        </div>
+
+        <div class="card">
+            <i class="fa-solid fa-chart-line"></i>
+            <h3>₹32,500</h3>
+            <p>This Month</p>
+        </div>
+
+    </div>
+
+    <!-- Filters -->
+
+    <div class="filter-box">
+
+        <input type="date">
+
+        <input type="date">
+
+        <button class="filter-btn">
+            Filter
+        </button>
+
+    </div>
+
+    <!-- Revenue Chart -->
+
+    <div class="chart-box">
+
+        <h3>Monthly Revenue</h3>
+
+        <div class="chart-placeholder">
+
+            Revenue Chart
+
+        </div>
+
+    </div>
+
+    <!-- Transaction Table -->
+
+    <div class="table-box">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Transaction ID</th>
+                    <th>Order ID</th>
+                    <th>Date</th>
+                    <th>Amount</th>
+                    <th>Payment Method</th>
+                    <th>Status</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+
+                    <td>TXN10001</td>
+
+                    <td>#FV1021</td>
+
+                    <td>22 Jul 2026</td>
+
+                    <td>₹1,299</td>
+
+                    <td>UPI</td>
+
+                    <td>
+                        <span class="paid">Paid</span>
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>TXN10002</td>
+
+                    <td>#FV1018</td>
+
+                    <td>21 Jul 2026</td>
+
+                    <td>₹2,199</td>
+
+                    <td>Credit Card</td>
+
+                    <td>
+                        <span class="pending">
+                            Pending
+                        </span>
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>TXN10003</td>
+
+                    <td>#FV1015</td>
+
+                    <td>20 Jul 2026</td>
+
+                    <td>₹899</td>
+
+                    <td>Net Banking</td>
+
+                    <td>
+                        <span class="paid">Paid</span>
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+{% endblock %}

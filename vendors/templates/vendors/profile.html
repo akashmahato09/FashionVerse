@@ -1,0 +1,146 @@
+{% extends 'vendor_base.html' %} 
+{% block title%}{% endblock %} 
+{% load static %}
+{%block css %}<link rel="stylesheet" href="{% static 'css/profile.css' %}"/>{% endblock css %} 
+{% block main_content %}
+
+<div class="profile-container">
+
+    <!-- Profile Header -->
+    <div class="profile-header">
+
+        <div class="profile-image">
+            <img src="{% static 'images/akasj.jpg'%}" alt="Vendor">
+        </div>
+
+        <div class="profile-info">
+            <h2>Akash Mahato</h2>
+            <p>FashionVerse Seller</p>
+            <span>Vendor ID : FV1001</span>
+        </div>
+
+        <button>Edit Profile</button>
+
+    </div>
+
+    <!-- Profile Body -->
+    <div class="profile-grid">
+
+        <!-- Personal Information -->
+        <div class="profile-card">
+
+            <h3>Personal Information</h3>
+
+            <div class="profile-row">
+                <label>Full Name</label>
+                <input type="text" value="Akash Mahato">
+            </div>
+
+            <div class="profile-row">
+                <label>Email</label>
+                <input type="email" value="akash@gmail.com">
+            </div>
+
+            <div class="profile-row">
+                <label>Mobile</label>
+                <input type="text" value="+91 9876543210">
+            </div>
+
+            <div class="profile-row">
+                <label>Date of Birth</label>
+                <input type="date">
+            </div>
+
+        </div>
+
+        <!-- Store Information -->
+        <div class="profile-card">
+
+            <h3>Store Information</h3>
+
+            <div class="profile-row">
+                <label>Store Name</label>
+                <input type="text" value="FashionVerse Store">
+            </div>
+
+            <div class="profile-row">
+                <label>Store Email</label>
+                <input type="email">
+            </div>
+
+            <div class="profile-row">
+                <label>GST Number</label>
+                <input type="text">
+            </div>
+
+            <div class="profile-row">
+                <label>PAN Number</label>
+                <input type="text">
+            </div>
+
+        </div>
+
+        <!-- Address -->
+        <div class="profile-card">
+
+            <h3>Address</h3>
+
+            <div class="profile-row">
+                <label>Address</label>
+                <textarea rows="4"></textarea>
+            </div>
+
+            <div class="profile-row">
+                <label>City</label>
+                <input type="text">
+            </div>
+
+            <div class="profile-row">
+                <label>State</label>
+                <input type="text">
+            </div>
+
+            <div class="profile-row">
+                <label>Pincode</label>
+                <input type="text">
+            </div>
+
+        </div>
+
+        <!-- Bank Details -->
+        <div class="profile-card">
+
+            <h3>Bank Details</h3>
+
+            <div class="profile-row">
+                <label>Account Holder</label>
+                <input type="text">
+            </div>
+
+            <div class="profile-row">
+                <label>Account Number</label>
+                <input type="text">
+            </div>
+
+            <div class="profile-row">
+                <label>IFSC Code</label>
+                <input type="text">
+            </div>
+
+            <div class="profile-row">
+                <label>Bank Name</label>
+                <input type="text">
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="save-btn">
+        <button>Save Changes</button>
+    </div>
+
+</div>
+
+
+{% endblock %}

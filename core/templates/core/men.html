@@ -1,0 +1,123 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block css %}<link rel="stylesheet" href="{% static 'css/kids.css' %}"/>{% endblock css %} 
+{% block content %}
+
+<!-- Hero Section -->
+
+<section class="men-hero">
+
+    <div class="men-hero-content">
+
+        <h1>Men's Fashion Collection</h1>
+
+        <p>Discover Trending Styles For Every Occasion</p>
+
+        <button>Shop Now</button>
+
+    </div>
+
+</section>
+
+<!-- Categories -->
+
+<section class="men-categories">
+
+    <button>T-Shirts</button>
+    <button>Shirts</button>
+    <button>Jeans</button>
+    <button>Trousers</button>
+    <button>Shoes</button>
+    <button>Watches</button>
+    <button>Jackets</button>
+
+</section>
+
+<!-- Products -->
+
+<section class="products">
+
+    <div class="product-card">
+
+        <div class="product-img">
+          <div class="men-img-sec">
+            <img src="{% static 'images/menbannerdown.webp' %}" width="100%">
+          </div>
+            <span class="discount">30% OFF</span>
+
+            <i class="fa-regular fa-heart"></i>
+        </div>
+
+        <div class="product-info">
+
+            <h4>Roadster</h4>
+
+            <p>Casual Cotton Shirt</p>
+
+            <div class="price">
+
+                ₹999
+
+                <span>₹1499</span>
+
+            </div>
+
+            <button>Add To Cart</button>
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+
+<!------------product cart ---------->
+<section class="index-products">
+  <h2>Featured Products</h2>
+
+  <div class="index-product-grid">
+    {% for p in products %}
+    <a href="{% url 'core:products_details' p.id  %}" style="text-decoration:none;" >
+      <div class="index-product-card">
+        <!-- Discount Badge -->
+        <span class="discount-badge">{{p.discount_percentage}}% OFF</span>
+
+        <!-- Wishlist -->
+        <button class="wishlist-btn">
+          <i class="fa-regular fa-heart"></i>
+        </button>
+
+        <!-- Product Image -->
+        <div class="index-img">
+          <img src="{{ p.product_image.url }}" alt="Women Kurti" />
+        </div>
+
+        <!-- Product Details -->
+        <div class="product-info">
+          <h3>{{p.product_name}}</h3>
+
+          <div class="rating">
+            <i class="fa-solid fa-star"></i>
+            4.8
+            <span>(245 Reviews)</span>
+          </div>
+
+          <div class="price-box">
+            <span class="current-price">₹{{p.selling_price}}</span>
+
+            <span class="old-price">₹{{p.original_price}}</span>
+          </div>
+
+          <button class="cart-btn">
+            <i class="fa-solid fa-cart-shopping"></i>
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

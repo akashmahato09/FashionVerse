@@ -1,0 +1,213 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Poppins,sans-serif;
+}
+
+body{
+    background:#f4f6f9;
+}
+
+.add-product-container{
+    padding:30px;
+}
+
+/* Header */
+
+.page-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+.page-header h2{
+    margin-bottom:8px;
+}
+
+.page-header p{
+    color:#666;
+}
+
+.back-btn{
+    text-decoration:none;
+    background:#ff3f6c;
+    color:#fff;
+    padding:12px 20px;
+    border-radius:8px;
+}
+
+/* Form */
+
+form{
+    background:#fff;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+}
+
+.form-group label{
+    margin-bottom:8px;
+    font-weight:600;
+}
+
+.form-group input,
+.form-group select,
+textarea{
+
+    padding:12px;
+
+    border:1px solid #ddd;
+
+    border-radius:8px;
+
+    outline:none;
+
+    font-size:15px;
+
+}
+
+.form-group input:focus,
+.form-group select:focus,
+textarea:focus{
+
+    border-color:#ff3f6c;
+
+}
+
+.description{
+
+    margin-top:25px;
+
+}
+
+.description label{
+
+    display:block;
+
+    margin-bottom:10px;
+
+    font-weight:600;
+
+}
+
+.description textarea{
+
+    width:100%;
+
+    resize:vertical;
+
+}
+
+/* Buttons */
+
+.btn-group{
+
+    margin-top:30px;
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:15px;
+
+}
+
+.cancel-btn{
+
+    background:#6c757d;
+
+    color:#fff;
+
+    border:none;
+
+    padding:12px 25px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+}
+
+.save-btn{
+
+    background:#ff3f6c;
+
+    color:#fff;
+
+    border:none;
+
+    padding:12px 30px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+}
+
+.save-btn:hover{
+
+    background:#e73361;
+
+}
+
+/* Responsive */
+
+@media(max-width:992px){
+
+.form-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.add-product-container{
+
+    padding:15px;
+
+}
+
+.page-header{
+
+    flex-direction:column;
+    align-items:flex-start;
+
+}
+
+form{
+
+    padding:20px;
+
+}
+
+.btn-group{
+
+    flex-direction:column;
+
+}
+
+.btn-group button{
+
+    width:100%;
+
+}
+
+}

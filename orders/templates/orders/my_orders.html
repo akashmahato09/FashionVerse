@@ -1,0 +1,83 @@
+{% extends 'dashboard_base.html' %}
+{% block title %}{% endblock%}
+{% load static %}
+{% block css %}<link rel="stylesheet" href="{% static 'css/my_orders.css' %}" />{% endblock css %} 
+{% block main_content %}
+<div class="myorder-container">
+
+    <div class="order-header">
+        <h1>🎁 My Orders</h1>
+    </div>
+
+    {% if orders %}
+
+        {% for order in orders %}
+
+        <div class="order-card">
+
+            <div class="order-image">
+
+                {% if order.product.product_image %}
+                    <img src="{{ order.product.product_image.url }}" alt="{{ order.product.product_name }}">
+                {% endif %}
+
+            </div>
+
+            <div class="order-details">
+
+                <h2>{{ order.product.product_name }}</h2>
+
+                <p><strong>Order ID:</strong> #{{ order.id }}</p>
+
+                <p><strong>Ordered:</strong> {{ order.ordered_at|date:"d M Y" }}</p>
+
+                <p><strong>Quantity:</strong> {{ order.quantity }}</p>
+
+                <p><strong>Customer:</strong> {{ order.full_name }}</p>
+
+                <h3>₹{{ order.total_price }}</h3>
+
+            </div>
+
+            <div class="status">
+
+                <span class="{{ order.order_status|lower|slugify }}">
+                    {{ order.order_status }}
+                </span>
+
+                <p>Shipping Address</p>
+
+                <strong>
+                    {{ order.city }}, {{ order.state }}
+                </strong>
+
+                {% if order.order_status == "Pending" or order.order_status == "Processing" %}
+                  <a href="#">
+                        <button class="danger">
+                            track your order
+                        </button>
+                    </a>
+                    <a href="#">
+                        <button class="danger">
+                            Cancel Order
+                        </button>
+                    </a>
+                {% endif %}
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    {% else %}
+
+        <h2 style="text-align:center;">
+            You haven't placed any orders yet.
+        </h2>
+
+    {% endif %}
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,128 @@
+{% extends 'vendor_base.html' %} 
+{% block title%}{% endblock %} 
+{% load static %}
+{%block css %}<link rel="stylesheet" href="{% static 'css/dashboard_page.css' %}"/>{% endblock css %} 
+{% block main_content %}
+<div class="dashboard-content">
+
+    <!-- Welcome -->
+    <div class="welcome-card">
+        <div>
+            <h2>Welcome Back, Akash 👋</h2>
+            <p>Manage your products, orders, and store performance.</p>
+        </div>
+
+        <button > Add Product</button>
+    </div>
+
+    <!-- Statistics -->
+    <div class="stats">
+
+        <div class="card">
+            <i class="fa-solid fa-box"></i>
+            <h3>125</h3>
+            <p>Total Products</p>
+        </div>
+
+        <div class="card">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <h3>48</h3>
+            <p>Today's Orders</p>
+        </div>
+
+        <div class="card">
+            <i class="fa-solid fa-indian-rupee-sign"></i>
+            <h3>₹52,300</h3>
+            <p>Total Revenue</p>
+        </div>
+
+        <div class="card">
+            <i class="fa-solid fa-users"></i>
+            <h3>780</h3>
+            <p>Customers</p>
+        </div>
+
+    </div>
+
+    <!-- Two Column Layout -->
+    <div class="dashboard-grid">
+
+        <!-- Recent Orders -->
+        <div class="table-card">
+
+            <h3>Recent Orders</h3>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Customer</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>#1001</td>
+                        <td>Rahul</td>
+                        <td>₹899</td>
+                        <td><span class="completed">Delivered</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>#1002</td>
+                        <td>Priya</td>
+                        <td>₹1299</td>
+                        <td><span class="pending">Pending</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>#1003</td>
+                        <td>Akash</td>
+                        <td>₹599</td>
+                        <td><span class="processing">Processing</span></td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <!-- Right Cards -->
+        <div class="side-content">
+
+            <div class="small-card">
+
+                <h3>Low Stock</h3>
+
+                <ul>
+                    <li>Oversized T-Shirt <span>5 Left</span></li>
+                    <li>Men Hoodie <span>3 Left</span></li>
+                    <li>Sneakers <span>2 Left</span></li>
+                </ul>
+
+            </div>
+
+            <div class="small-card">
+
+                <h3>Notifications</h3>
+
+                <ul>
+                    <li>🛒 New Order Received</li>
+                    <li>💰 Payment Credited</li>
+                    <li>⭐ New Review</li>
+                    <li>📦 Product Approved</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}

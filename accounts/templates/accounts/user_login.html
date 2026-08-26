@@ -1,0 +1,50 @@
+{% extends 'base.html' %} 
+{% block title%}{% endblock %} 
+{% load static %}
+{%block css %}<link rel="stylesheet" href="{% static 'css/user_login.css' %}"/>{% endblock css %} 
+{% block content %}
+
+<section class="user-login">
+  <div class="login-container">
+    <!-- Left Side -->
+    <div class="left-panel">
+      <h1>Login</h1>
+
+      <p>Get access to your Orders, Wishlist and Recommendations.</p>
+
+      <img src="https://cdn-icons-png.flaticon.com/512/3081/3081559.png" />
+    </div>
+
+    <!-- Right Side -->
+
+    <div class="right-panel">
+      <form  method="POST">
+        {% csrf_token %}
+        <h5>Login Your Self</h5>
+        <div class="input-box">
+          <i class="fa-solid fa-user"></i>
+          <input type="text" name="username" placeholder="user name" />
+        </div>
+        <div class="input-box">
+       <i class="fa-solid fa-key"></i>
+          <input type="password" name="password" placeholder="password" />
+        </div>
+        <p class="terms">
+          By continuing, you agree to FashionVerse's
+          <a href="#">Terms of Use</a> &
+          <a href="#">Privacy Policy</a>
+        </p>
+
+        <button type="submit" class="loginbtn">Login</button>
+
+        <p class="register">
+          New to FashionVerse?
+
+          <a href="{% url 'accounts:user_register' %}"> Create an account </a>
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

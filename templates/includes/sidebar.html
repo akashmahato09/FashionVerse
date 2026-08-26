@@ -1,0 +1,72 @@
+
+{% load static %}
+<!-- Sidebar -->
+<aside class="sidebar">
+  <div class="profile-box">
+    <img src="#" alt="Profile" />
+    <h5>USER</h5>
+    <p>akash@gmail.com</p>
+  </div>
+
+  <nav class="menu">
+    <a href="{% url 'dashboard:myprofile' %}" >
+      <i class="fa-solid fa-user"></i>
+      <span>My Profile</span>
+    </a>
+
+    <a href="{% url 'orders:my_orders' %}" >
+      <i class="fa-solid fa-box"></i>
+      <span>My Orders</span>
+    </a>
+
+    <a href="{% url 'wishlist:mywishlist' %}" >
+      <i class="fa-solid fa-heart"></i>
+      <span>Wishlist</span>
+    </a>
+    
+    <a href="{% url 'cart:cart_page' %}" >
+      <i class="fa-solid fa-cart-shopping"></i>
+      <span>Cart</span>
+    </a>
+
+    <a href="#" >
+      <i class="fa-solid fa-location-dot"></i>
+      <span>Saved Address</span>
+    </a>
+
+    <a href="#" >
+      <i class="fa-solid fa-credit-card"></i>
+      <span>Payment Methods</span>
+    </a>
+
+    <a href="#" >
+      <i class="fa-solid fa-ticket"></i>
+      <span>Coupons</span>
+    </a>
+
+    <a href="#" >
+      <i class="fa-solid fa-bell"></i>
+      <span>Notifications</span>
+    </a>
+
+    <a href="#" >
+      <i class="fa-solid fa-star"></i>
+      <span>Reviews & Ratings</span>
+    </a>
+
+    <a href="#" >
+      <i class="fa-solid fa-headset"></i>
+      <span>Help Center</span>
+    </a>
+
+    <a href="#" >
+      <i class="fa-solid fa-gear"></i>
+      <span>Settings</span>
+    </a>
+
+    <a href="{% url 'core:home' %}" class="logout">
+      <i class="fa-solid fa-right-from-bracket"></i>
+      <span>Logout</span>
+    </a>
+  </nav>
+</aside>

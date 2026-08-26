@@ -1,0 +1,179 @@
+{% extends 'vendor_base.html' %} 
+{% block title%}{% endblock %} 
+{% load static %}
+{%block css %}<link rel="stylesheet" href="{% static 'css/orders.css' %}"/>{% endblock css %} 
+{% block main_content %}
+
+<div class="orders-container">
+
+    <!-- Page Header -->
+    <div class="orders-header">
+
+        <div>
+            <h2>Orders</h2>
+            <p>Manage and track customer orders.</p>
+        </div>
+
+    </div>
+
+    <!-- Order Summary -->
+    <div class="order-summary">
+
+        <div class="summary-card">
+            <i class="fa-solid fa-box"></i>
+            <h3>250</h3>
+            <p>Total Orders</p>
+        </div>
+
+        <div class="summary-card">
+            <i class="fa-solid fa-hourglass-half"></i>
+            <h3>18</h3>
+            <p>Pending</p>
+        </div>
+
+        <div class="summary-card">
+            <i class="fa-solid fa-truck-fast"></i>
+            <h3>42</h3>
+            <p>Shipped</p>
+        </div>
+
+        <div class="summary-card">
+            <i class="fa-solid fa-circle-check"></i>
+            <h3>190</h3>
+            <p>Delivered</p>
+        </div>
+
+    </div>
+
+    <!-- Search & Filter -->
+    <div class="filter-box">
+
+        <input
+            type="text"
+            placeholder="Search Order ID or Customer">
+
+        <select>
+            <option>All Status</option>
+            <option>Pending</option>
+            <option>Processing</option>
+            <option>Shipped</option>
+            <option>Delivered</option>
+            <option>Cancelled</option>
+        </select>
+
+    </div>
+
+    <!-- Orders Table -->
+
+    <div class="table-wrapper">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Order ID</th>
+                    <th>Customer</th>
+                    <th>Product</th>
+                    <th>Date</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                    <th>Action</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+
+                    <td>#FV1001</td>
+                    <td>Rahul Sharma</td>
+                    <td>Oversized T-Shirt</td>
+                    <td>22 Jul 2026</td>
+                    <td>₹899</td>
+
+                    <td>
+                        <span class="pending">Pending</span>
+                    </td>
+
+                    <td>
+                        <button class="view-btn">
+                            View
+                        </button>
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>#FV1002</td>
+                    <td>Priya Singh</td>
+                    <td>Winter Hoodie</td>
+                    <td>21 Jul 2026</td>
+                    <td>₹1499</td>
+
+                    <td>
+                        <span class="processing">Processing</span>
+                    </td>
+
+                    <td>
+                        <button class="view-btn">
+                            View
+                        </button>
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>#FV1003</td>
+                    <td>Aman Kumar</td>
+                    <td>Jeans</td>
+                    <td>20 Jul 2026</td>
+                    <td>₹1199</td>
+
+                    <td>
+                        <span class="shipped">Shipped</span>
+                    </td>
+
+                    <td>
+                        <button class="view-btn">
+                            View
+                        </button>
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>#FV1004</td>
+                    <td>Neha Verma</td>
+                    <td>Sneakers</td>
+                    <td>19 Jul 2026</td>
+                    <td>₹2199</td>
+
+                    <td>
+                        <span class="delivered">Delivered</span>
+                    </td>
+
+                    <td>
+                        <button class="view-btn">
+                            View
+                        </button>
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+
+{% endblock %}

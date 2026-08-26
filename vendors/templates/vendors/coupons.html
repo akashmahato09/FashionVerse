@@ -1,0 +1,185 @@
+{% extends 'vendor_base.html' %} 
+{% block title%}{% endblock %} 
+{% load static %}
+{%block css %}<link rel="stylesheet" href="{% static 'css/coupons.css' %}"/>{% endblock css %} 
+{% block main_content %}
+
+<div class="coupon-container">
+
+    <!-- Header -->
+    <div class="coupon-header">
+
+        <div>
+            <h2>Coupons</h2>
+            <p>Create and manage discount coupons for your store.</p>
+        </div>
+
+        <button class="add-btn">
+            <i class="fa-solid fa-plus"></i>
+            Add Coupon
+        </button>
+
+    </div>
+
+    <!-- Statistics -->
+
+    <div class="coupon-stats">
+
+        <div class="stat-card">
+            <i class="fa-solid fa-ticket"></i>
+            <h3>20</h3>
+            <p>Total Coupons</p>
+        </div>
+
+        <div class="stat-card">
+            <i class="fa-solid fa-circle-check"></i>
+            <h3>12</h3>
+            <p>Active</p>
+        </div>
+
+        <div class="stat-card">
+            <i class="fa-solid fa-clock"></i>
+            <h3>5</h3>
+            <p>Upcoming</p>
+        </div>
+
+        <div class="stat-card">
+            <i class="fa-solid fa-ban"></i>
+            <h3>3</h3>
+            <p>Expired</p>
+        </div>
+
+    </div>
+
+    <!-- Search -->
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            placeholder="Search Coupon Code...">
+
+        <select>
+            <option>All Status</option>
+            <option>Active</option>
+            <option>Upcoming</option>
+            <option>Expired</option>
+        </select>
+
+    </div>
+
+    <!-- Coupon Table -->
+
+    <div class="table-wrapper">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Coupon Code</th>
+                    <th>Discount</th>
+                    <th>Minimum Order</th>
+                    <th>Expiry Date</th>
+                    <th>Status</th>
+                    <th>Usage</th>
+                    <th>Action</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+
+                    <td>WELCOME10</td>
+
+                    <td>10%</td>
+
+                    <td>₹999</td>
+
+                    <td>31 Dec 2026</td>
+
+                    <td>
+                        <span class="active">Active</span>
+                    </td>
+
+                    <td>120</td>
+
+                    <td>
+
+                        <button class="edit-btn">Edit</button>
+
+                        <button class="delete-btn">Delete</button>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>SUMMER20</td>
+
+                    <td>20%</td>
+
+                    <td>₹1499</td>
+
+                    <td>15 Aug 2026</td>
+
+                    <td>
+                        <span class="upcoming">
+                            Upcoming
+                        </span>
+                    </td>
+
+                    <td>0</td>
+
+                    <td>
+
+                        <button class="edit-btn">Edit</button>
+
+                        <button class="delete-btn">Delete</button>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>SALE50</td>
+
+                    <td>₹500 OFF</td>
+
+                    <td>₹3000</td>
+
+                    <td>15 Jun 2026</td>
+
+                    <td>
+                        <span class="expired">
+                            Expired
+                        </span>
+                    </td>
+
+                    <td>450</td>
+
+                    <td>
+
+                        <button class="edit-btn">Edit</button>
+
+                        <button class="delete-btn">Delete</button>
+
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+{% endblock %}

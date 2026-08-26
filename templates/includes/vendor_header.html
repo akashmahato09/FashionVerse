@@ -1,0 +1,101 @@
+
+{% load static %}
+<nav class="vendor-header">
+
+    <!-- Logo -->
+    <div class="vendor-logo">
+        <a href="#">
+            Fashion<span>Verse</span>
+        </a>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="menu-btn" id="menuBtn">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+
+    <!-- Header Right -->
+    <div class="vendor-right" id="vendorRight">
+
+        <!-- Search -->
+        <div class="vendor-search">
+            <input type="text" placeholder="Search products, orders..." />
+            <button>
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </div>
+
+        <!-- Notification -->
+        <a href="#" class="notification-box">
+            <i class="fa-regular fa-bell"></i>
+        </a>
+
+        <!-- Messages -->
+        <a href="#" class="message-box">
+            <i class="fa-regular fa-envelope"></i>
+        </a>
+
+        <!-- Profile -->
+        <div class="dropdown">
+
+            <a href="#"
+               class="profile-btn dropdown-toggle"
+               data-bs-toggle="dropdown">
+
+                <img src="{% static 'images/akasj.jpg'%}" alt="">
+                <span>Vendor</span>
+
+            </a>
+
+            <ul class="dropdown-menu">
+
+                <li>
+                    <a class="dropdown-item"
+                       href="{% url 'vendors:profile' %}">
+                        <i class="fa-regular fa-user"></i>
+                        My Profile
+                    </a>
+                </li>
+
+                <li>
+                    <a class="dropdown-item"
+                       href="#">
+                        <i class="fa-solid fa-gear"></i>
+                        Settings
+                    </a>
+                </li>
+
+                <li>
+                    <a class="dropdown-item"
+                       href="#">
+                        <i class="fa-solid fa-lock"></i>
+                        Change Password
+                    </a>
+                </li>
+
+                <li><hr class="dropdown-divider"></li>
+
+                <li>
+                    <a class="dropdown-item text-danger"
+                       href="{% url 'vendors:login' %}">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        Log out
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+<script>
+const menuBtn=document.getElementById("menuBtn");
+const vendorRight=document.getElementById("vendorRight");
+
+menuBtn.onclick=()=>{
+    vendorRight.classList.toggle("active");
+}
+</script>
