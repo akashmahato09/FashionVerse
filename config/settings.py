@@ -137,7 +137,7 @@ STATICFILES_DIRS = [
 ]
 
 STATICFILES_DIRS = [
-    BASE_DIR '/core/static'
+    BASE_DIR / 'core/static/'
 
 ]
 
