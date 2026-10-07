@@ -132,13 +132,21 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+# STATICFILES_DIRS = [
+#     BASE_DIR / 'static',
+# ]
+STATIC_ROOT = BASE_DIR / "staticfiles"
 STATICFILES_DIRS = [
-    BASE_DIR / 'static',
-]
-
-STATICFILES_DIRS = [
-    BASE_DIR / 'core/static/'
-
+    BASE_DIR / "core" / "static",
+    BASE_DIR / "dashboard" / "static",
+    BASE_DIR / "vendors" / "static",
+    BASE_DIR / "orders" / "static",
+    BASE_DIR / "wishlist" / "static",
+    BASE_DIR / "cart" / "static",
+    BASE_DIR / "payments" / "static",
+    BASE_DIR / "accounts" / "static",
+    BASE_DIR / "templates" / "static",
+    BASE_DIR / "reviews" / "static",
 ]
 
 STORAGES = {
