@@ -136,8 +136,18 @@ STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
 
-STATIC_ROOT = [
-    BASE_DIR / 'core/static/', 'dashboard/static/','vendors/static/', 'orders/static/', 'wishlist/static/', 'cart/static/', 'payments/static/', 'accounts/static/', 'templates/static/', 'reviews/static/'] 
+STATICFILES_DIRS = [
+    BASE_DIR / "core" / "static",
+    BASE_DIR / "dashboard" / "static",
+    BASE_DIR / "vendors" / "static",
+    BASE_DIR / "orders" / "static",
+    BASE_DIR / "wishlist" / "static",
+    BASE_DIR / "cart" / "static",
+    BASE_DIR / "payments" / "static",
+    BASE_DIR / "accounts" / "static",
+    BASE_DIR / "templates" / "static",
+    BASE_DIR / "reviews" / "static",
+]
 
 STORAGES = {
     "default": {
