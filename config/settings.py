@@ -136,7 +136,7 @@ STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
 
-STATIC_ROOT =[ BASE_DIR / 'core/static']
+STATIC_ROOT =[ BASE_DIR / 'core/static/']
 
 STORAGES = {
     "default": {
