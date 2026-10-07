@@ -20,6 +20,7 @@
 
 body {
     background: #f5f5f5;
+    overflow-x:hidden;
 }
 
 
@@ -536,6 +537,7 @@ body {
     .top-navbar {
 
         padding: 15px 20px;
+        overflow-x:hidden;
 
     }
 
