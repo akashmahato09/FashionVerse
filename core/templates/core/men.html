@@ -1,123 +1,537 @@
-{% extends 'base.html' %} 
-{% load static %} 
-{% block css %}<link rel="stylesheet" href="{% static 'css/kids.css' %}"/>{% endblock css %} 
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+
+<link rel="stylesheet" href="{% static 'css/men.css' %}">
+{% endblock css %}
+
 {% block content %}
 
-<!-- Hero Section -->
+<!-- =========================================================
+     MEN HERO SECTION
+========================================================= -->
 
 <section class="men-hero">
 
-    <div class="men-hero-content">
 
-        <h1>Men's Fashion Collection</h1>
+<div class="men-hero-overlay"></div>
 
-        <p>Discover Trending Styles For Every Occasion</p>
+<div class="men-hero-content">
 
-        <button>Shop Now</button>
+    <span class="men-hero-tag">NEW SEASON 2026</span>
 
+    <h1>Elevate Your<br><strong>Everyday Style</strong></h1>
+
+    <p>
+        Discover refined essentials, modern streetwear and timeless
+        pieces designed for every occasion.
+    </p>
+
+    <div class="men-hero-buttons">
+        <a href="#men-products" class="men-primary-btn">
+            Shop Collection
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+        <a href="#men-categories" class="men-outline-btn">
+            Explore Styles
+        </a>
     </div>
 
-</section>
+</div>
 
-<!-- Categories -->
+<div class="men-hero-badge">
+    <span>UP TO</span>
+    <strong>50%</strong>
+    <small>OFF</small>
+</div>
 
-<section class="men-categories">
-
-    <button>T-Shirts</button>
-    <button>Shirts</button>
-    <button>Jeans</button>
-    <button>Trousers</button>
-    <button>Shoes</button>
-    <button>Watches</button>
-    <button>Jackets</button>
 
 </section>
 
-<!-- Products -->
+<!-- =========================================================
+     QUICK SHOP CATEGORIES
+========================================================= -->
 
-<section class="products">
+<section class="men-categories-section" id="men-categories">
 
-    <div class="product-card">
 
-        <div class="product-img">
-          <div class="men-img-sec">
-            <img src="{% static 'images/menbannerdown.webp' %}" width="100%">
-          </div>
-            <span class="discount">30% OFF</span>
+<div class="men-section-heading">
+    <span>EXPLORE COLLECTION</span>
+    <h2>Shop By Category</h2>
+    <p>Find the perfect look for every moment.</p>
+</div>
 
-            <i class="fa-regular fa-heart"></i>
+<div class="men-category-grid">
+
+    <a href="#" class="men-category-card men-category-large">
+        <img src="{% static 'images/men/mentt4.jpg' %}" alt="Men Shirts">
+        <div class="category-overlay"></div>
+
+        <div class="category-content">
+            <span>01</span>
+            <h3>Shirts</h3>
+            <p>Explore Collection →</p>
+        </div>
+    </a>
+
+    <a href="#" class="men-category-card">
+        <img src="{% static 'images/men/mentt6.jpg' %}" alt="Men T-Shirts">
+        <div class="category-overlay"></div>
+
+        <div class="category-content">
+            <span>02</span>
+            <h3>T-Shirts</h3>
+            <p>Explore Collection →</p>
+        </div>
+    </a>
+
+    <a href="#" class="men-category-card">
+        <img src="{% static 'images/men/mentt5.jpg' %}" alt="Men Jeans">
+        <div class="category-overlay"></div>
+
+        <div class="category-content">
+            <span>03</span>
+            <h3>Denim</h3>
+            <p>Explore Collection →</p>
+        </div>
+    </a>
+
+    <a href="#" class="men-category-card">
+        <img src="{% static 'images/men_jacket.jpg' %}" alt="Men Jackets">
+        <div class="category-overlay"></div>
+
+        <div class="category-content">
+            <span>04</span>
+            <h3>Jackets</h3>
+            <p>Explore Collection →</p>
+        </div>
+    </a>
+
+</div>
+
+
+</section>
+
+<!-- =========================================================
+     CATEGORY PILLS
+========================================================= -->
+
+<section class="men-category-pills">
+
+
+<div class="category-pill active">
+    <i class="fa-solid fa-shirt"></i>
+    <span>T-Shirts</span>
+</div>
+
+<div class="category-pill">
+    <i class="fa-solid fa-user-tie"></i>
+    <span>Shirts</span>
+</div>
+
+<div class="category-pill">
+    <i class="fa-solid fa-jeans"></i>
+    <span>Jeans</span>
+</div>
+
+<div class="category-pill">
+    <i class="fa-solid fa-shoe-prints"></i>
+    <span>Shoes</span>
+</div>
+
+<div class="category-pill">
+    <i class="fa-regular fa-clock"></i>
+    <span>Watches</span>
+</div>
+
+<div class="category-pill">
+    <i class="fa-solid fa-vest"></i>
+    <span>Jackets</span>
+</div>
+
+
+</section>
+
+<!-- =========================================================
+     TRENDING NOW
+========================================================= -->
+
+<section class="men-trending">
+
+
+<div class="men-section-heading trending-heading">
+
+    <div>
+        <span>WHAT'S HOT</span>
+        <h2>Trending Now</h2>
+    </div>
+
+    <a href="#">View All <i class="fa-solid fa-arrow-right"></i></a>
+
+</div>
+
+<div class="trending-grid">
+
+    <div class="trend-card">
+        <div class="trend-image">
+            <img src="{% static  'images/men/ment.jpg' %}" alt="Oversized T Shirt">
+
+            <span>HOT</span>
         </div>
 
-        <div class="product-info">
-
-            <h4>Roadster</h4>
-
-            <p>Casual Cotton Shirt</p>
-
-            <div class="price">
-
-                ₹999
-
-                <span>₹1499</span>
-
-            </div>
-
-            <button>Add To Cart</button>
-
+        <div class="trend-info">
+            <small>STREETWEAR</small>
+            <h3>Oversized Essentials</h3>
+            <p>Relaxed fits. Premium comfort.</p>
+            <a href="#">Shop Now →</a>
         </div>
-
     </div>
 
 
+    <div class="trend-card">
+        <div class="trend-image">
+            <img src="{% static 'images/men/ment2.jpg' %}" alt="Classic Shirt">
+
+            <span>NEW</span>
+        </div>
+
+        <div class="trend-info">
+            <small>SMART CASUAL</small>
+            <h3>Modern Classics</h3>
+            <p>Sharp looks for every occasion.</p>
+            <a href="#">Shop Now →</a>
+        </div>
+    </div>
+
+
+    <div class="trend-card">
+        <div class="trend-image">
+            <img src="{% static 'images/men/mentt3.jpg' %}" alt="Denim Collection">
+
+            <span>BESTSELLER</span>
+        </div>
+
+        <div class="trend-info">
+            <small>DENIM</small>
+            <h3>Denim Culture</h3>
+            <p>Built for everyday adventures.</p>
+            <a href="#">Shop Now →</a>
+        </div>
+    </div>
+
+</div>
+
+
 </section>
 
+<!-- =========================================================
+     PROMOTIONAL STRIP
+========================================================= -->
+
+<section class="men-promo">
 
 
-<!------------product cart ---------->
-<section class="index-products">
+<div class="promo-content">
+
+    <span>LIMITED TIME OFFER</span>
+
+    <h2>Upgrade Your Wardrobe</h2>
+
+    <p>
+        Get up to <strong>50% OFF</strong> on selected men's styles.
+    </p>
+
+    <a href="#">
+        Shop Sale
+        <i class="fa-solid fa-arrow-right"></i>
+    </a>
+
+</div>
+
+<div class="promo-decoration">
+    <span>50</span>
+    <small>% OFF</small>
+</div>
+
+
+</section>
+
+<!-- =========================================================
+     EXISTING PRODUCT SECTION
+     DO NOT CHANGE THIS SECTION
+========================================================= -->
+
+<section class="index-products" id="men-products">
+
   <h2>Featured Products</h2>
 
   <div class="index-product-grid">
-    {% for p in products %}
-    <a href="{% url 'core:products_details' p.id  %}" style="text-decoration:none;" >
-      <div class="index-product-card">
-        <!-- Discount Badge -->
-        <span class="discount-badge">{{p.discount_percentage}}% OFF</span>
 
-        <!-- Wishlist -->
-        <button class="wishlist-btn">
-          <i class="fa-regular fa-heart"></i>
-        </button>
 
-        <!-- Product Image -->
-        <div class="index-img">
-          <img src="{{ p.product_image.url }}" alt="Women Kurti" />
-        </div>
+{% for p in products %}
 
-        <!-- Product Details -->
-        <div class="product-info">
-          <h3>{{p.product_name}}</h3>
+<a href="{% url 'core:products_details' p.id  %}" style="text-decoration:none;">
 
-          <div class="rating">
-            <i class="fa-solid fa-star"></i>
-            4.8
-            <span>(245 Reviews)</span>
-          </div>
+  <div class="index-product-card">
 
-          <div class="price-box">
-            <span class="current-price">₹{{p.selling_price}}</span>
+    <!-- Discount Badge -->
+    <span class="discount-badge">{{p.discount_percentage}}% OFF</span>
 
-            <span class="old-price">₹{{p.original_price}}</span>
-          </div>
+    <!-- Wishlist -->
+    <button class="wishlist-btn">
+      <i class="fa-regular fa-heart"></i>
+    </button>
 
-          <button class="cart-btn">
-            <i class="fa-solid fa-cart-shopping"></i>
-            Add to Cart
-          </button>
-        </div>
+    <!-- Product Image -->
+    <div class="index-img">
+      <img src="{{ p.product_image.url }}" alt="Women Kurti" />
+    </div>
+
+    <!-- Product Details -->
+    <div class="product-info">
+
+      <h3>{{p.product_name}}</h3>
+
+      <div class="rating">
+        <i class="fa-solid fa-star"></i>
+        4.8
+        <span>(245 Reviews)</span>
       </div>
-    </a>
-    {% endfor %}
+
+      <div class="price-box">
+        <span class="current-price">₹{{p.selling_price}}</span>
+
+        <span class="old-price">₹{{p.original_price}}</span>
+      </div>
+
+      <button class="cart-btn">
+        <i class="fa-solid fa-cart-shopping"></i>
+        Add to Cart
+      </button>
+
+    </div>
+
   </div>
+
+</a>
+
+{% endfor %}
+
+
+  </div>
+
 </section>
+
+
+
+
+<!-- =========================================================
+     COMPLETE THE LOOK
+========================================================= -->
+
+<section class="complete-look">
+
+<div class="men-section-heading">
+
+    <span>STYLE IT YOUR WAY</span>
+
+    <h2>Complete The Look</h2>
+
+    <p>Build a complete outfit with pieces that work together.</p>
+
+</div>
+
+
+<div class="look-grid">
+
+    <div class="look-card">
+        <img src="{% static 'images/men/mentt10.jpg' %}" alt="Casual Look">
+
+        <div class="look-content">
+            <span>THE CASUAL EDIT</span>
+            <h3>Weekend Ready</h3>
+            <a href="#">Discover Look →</a>
+        </div>
+    </div>
+
+
+    <div class="look-card">
+        <img src="{% static 'images/men/mentt9.jpg' %}" alt="Formal Look">
+
+        <div class="look-content">
+            <span>THE FORMAL EDIT</span>
+            <h3>Sharp & Refined</h3>
+            <a href="#">Discover Look →</a>
+        </div>
+    </div>
+
+</div>
+
+
+</section>
+
+<!-- =========================================================
+     STYLE GUIDE
+========================================================= -->
+
+<section class="men-style-guide">
+
+
+<div class="style-guide-image">
+    <img src="{% static 'images/boys shirt.webp' %}" alt="Men Style Guide">
+</div>
+
+<div class="style-guide-content">
+
+    <span>THE STYLE GUIDE</span>
+
+    <h2>
+        Dress Better.<br>
+        Feel Better.
+    </h2>
+
+    <p>
+        From everyday essentials to statement pieces, discover simple
+        ways to build a wardrobe that reflects your personality.
+    </p>
+
+    <div class="style-features">
+
+        <div>
+            <strong>01</strong>
+            <span>Find Your Fit</span>
+        </div>
+
+        <div>
+            <strong>02</strong>
+            <span>Mix & Match</span>
+        </div>
+
+        <div>
+            <strong>03</strong>
+            <span>Own Your Style</span>
+        </div>
+
+    </div>
+
+    <a href="#" class="style-btn">
+        Read Style Guide
+        <i class="fa-solid fa-arrow-right"></i>
+    </a>
+
+</div>
+
+
+</section>
+
+<!-- =========================================================
+     TRUST FEATURES
+========================================================= -->
+
+<section class="men-trust">
+
+
+<div class="trust-item">
+
+    <div class="trust-icon">
+        <i class="fa-solid fa-truck-fast"></i>
+    </div>
+
+    <div>
+        <h4>Free Shipping</h4>
+        <p>On orders above ₹999</p>
+    </div>
+
+</div>
+
+
+<div class="trust-item">
+
+    <div class="trust-icon">
+        <i class="fa-solid fa-rotate-left"></i>
+    </div>
+
+    <div>
+        <h4>Easy Returns</h4>
+        <p>7 days easy returns</p>
+    </div>
+
+</div>
+
+
+<div class="trust-item">
+
+    <div class="trust-icon">
+        <i class="fa-solid fa-shield-halved"></i>
+    </div>
+
+    <div>
+        <h4>Secure Payment</h4>
+        <p>100% secure checkout</p>
+    </div>
+
+</div>
+
+
+<div class="trust-item">
+
+    <div class="trust-icon">
+        <i class="fa-solid fa-headset"></i>
+    </div>
+
+    <div>
+        <h4>24/7 Support</h4>
+        <p>We're here to help</p>
+    </div>
+
+</div>
+
+
+</section>
+
+<!-- =========================================================
+     NEWSLETTER
+========================================================= -->
+
+<section class="men-newsletter">
+
+
+<div class="newsletter-content">
+
+    <span>STAY IN STYLE</span>
+
+    <h2>Never Miss A Drop</h2>
+
+    <p>
+        Get first access to new collections, exclusive offers and
+        style inspiration.
+    </p>
+
+    <form>
+
+        <div class="newsletter-input">
+
+            <i class="fa-regular fa-envelope"></i>
+
+            <input
+                type="email"
+                placeholder="Enter your email address"
+            >
+
+            <button type="submit">
+                Subscribe
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+        </div>
+
+    </form>
+
+</div>
+
+
+</section>
+
 {% endblock %}

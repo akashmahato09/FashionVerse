@@ -4,7 +4,11 @@
 <aside class="sidebar">
   <div class="profile-box">
     <img src="#" alt="Profile" />
-    <h5>USER</h5>
+    {% if user.is_authenticated %}
+    <h5>{{ user.username }}</h5>
+    {% else %}
+    <h5>User</h5>
+    {% endif %}
     <p>akash@gmail.com</p>
   </div>
 

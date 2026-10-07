@@ -1,0 +1,134 @@
+{% extends 'dashboard_base.html' %}
+
+{% load static %}
+
+
+{% block title %}
+Cancel Order
+{% endblock %}
+
+
+{% block css %}
+
+<link
+    rel="stylesheet"
+    href="{% static 'css/cancel_order.css' %}"
+>
+
+{% endblock css %}
+
+
+{% block main_content %}
+
+<div class="cancel-container">
+
+    <div class="cancel-card">
+
+
+        <!-- WARNING ICON -->
+
+        <div class="cancel-icon">
+            ⚠️
+        </div>
+
+
+        <h1>
+            Cancel Order?
+        </h1>
+
+
+        <p class="cancel-question">
+            Are you sure you want to cancel this order?
+        </p>
+
+
+        <!-- PRODUCT -->
+
+        <div class="cancel-product">
+
+            {% if order.product.product_image %}
+
+                <img
+                    src="{{ order.product.product_image.url }}"
+                    alt="{{ order.product.product_name }}"
+                >
+
+            {% endif %}
+
+
+            <div class="cancel-product-info">
+
+                <h2>
+                    {{ order.product.product_name }}
+                </h2>
+
+                <p>
+                    <strong>Order ID:</strong>
+                    #{{ order.id }}
+                </p>
+
+                <p>
+                    <strong>Quantity:</strong>
+                    {{ order.quantity }}
+                </p>
+
+                <h3>
+                    ₹{{ order.total_price }}
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <!-- WARNING -->
+
+        <div class="cancel-warning">
+
+            <span>⚠</span>
+
+            <p>
+                Once you cancel this order, it cannot be restored.
+            </p>
+
+        </div>
+
+
+        <!-- ACTION BUTTONS -->
+
+        <div class="cancel-actions">
+
+
+            <!-- CONFIRM CANCEL -->
+
+            <form method="POST">
+
+                {% csrf_token %}
+
+                <button
+                    type="submit"
+                    class="confirm-cancel-btn"
+                >
+                    Yes, Cancel Order
+                </button>
+
+            </form>
+
+
+            <!-- KEEP ORDER -->
+
+            <a
+                href="{% url 'orders:my_orders' %}"
+                class="keep-order-btn"
+            >
+                No, Keep My Order
+            </a>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,132 +1,748 @@
-{% extends 'base.html' %} 
-{% load static %} 
-{% block css %}<link rel="stylesheet" href="{% static 'css/women.css' %}"/>{% endblock css %} 
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+
+<link rel="stylesheet" href="{% static 'css/women.css' %}">
+{% endblock css %}
+
 {% block content %}
 
-
-<!-- Hero Section -->
+<!-- =========================================================
+     WOMEN HERO SECTION
+========================================================= -->
 
 <section class="women-hero">
 
-    <div class="women-hero-content">
 
-        <h1>Women's Fashion</h1>
+<div class="women-hero-overlay"></div>
 
-        <p>Elegant Styles For Every Woman</p>
+<div class="women-hero-content">
 
-        <a href="#" class="women-shop-btn">Explore Collection</a>
+    <span class="women-hero-tag">NEW SEASON 2026</span>
 
-    </div>
+    <h1>
+        Elevate Your<br>
+        <strong>Everyday Style</strong>
+    </h1>
 
-</section>
+    <p>
+        Discover elegant essentials, modern trends and timeless
+        pieces designed to express your unique style.
+    </p>
 
-<!-- Categories -->
+    <div class="women-hero-buttons">
 
-<section class="women-category-section">
+        <a href="#women-products" class="women-primary-btn">
+            Shop Collection
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
 
-    <button>Dresses</button>
-    <button>Sarees</button>
-    <button>Kurtis</button>
-    <button>Tops</button>
-    <button>Jeans</button>
-    <button>Footwear</button>
-    <button>Handbags</button>
-    <button>Jewellery</button>
-
-</section>
-
-<!-- Products -->
-
-<section class="products">
-
-    <div class="card">
-
-        <div class="image">
-
-            <img src="{% static 'images/womenbannerdown.webp' %}">
-
-            <span class="offer">40% OFF</span>
-
-            <i class="fa-regular fa-heart"></i>
-
-        </div>
-
-        <div class="details">
-
-            <h3>Zara</h3>
-
-            <p>Floral Summer Dress</p>
-
-            <div class="rating">
-
-                ⭐⭐⭐⭐⭐
-
-            </div>
-
-            <div class="price">
-
-                ₹1499
-
-                <span>₹2499</span>
-
-            </div>
-
-            <button>Add To Cart</button>
-
-        </div>
+        <a href="#women-categories" class="women-outline-btn">
+            Explore Styles
+        </a>
 
     </div>
 
-    <!-- Repeat Product Cards -->
+</div>
+
+<div class="women-hero-badge">
+
+    <span>UP TO</span>
+
+    <strong>50%</strong>
+
+    <small>OFF</small>
+
+</div>
+
 
 </section>
 
-<section class="index-products">
+<!-- =========================================================
+     WOMEN CATEGORIES
+========================================================= -->
+
+<section class="women-categories-section" id="women-categories">
+
+
+<div class="women-section-heading">
+
+    <span>EXPLORE COLLECTION</span>
+
+    <h2>Shop By Category</h2>
+
+    <p>
+        Discover styles curated for every mood and occasion.
+    </p>
+
+</div>
+
+
+<div class="women-category-grid">
+
+    <!-- Category 01 -->
+    <a href="#" class="women-category-card women-category-large">
+
+        <img
+            src="{% static 'images/women/womentt.jpg' %}"
+            alt="Women Dresses"
+        >
+
+        <div class="women-category-overlay"></div>
+
+        <div class="women-category-content">
+
+            <span>01</span>
+
+            <h3>Dresses</h3>
+
+            <p>Explore Collection →</p>
+
+        </div>
+
+    </a>
+
+
+    <!-- Category 02 -->
+    <a href="#" class="women-category-card">
+
+        <img
+            src="{% static 'images/women/women-top.jpg' %}"
+            alt="Women Tops"
+        >
+
+        <div class="women-category-overlay"></div>
+
+        <div class="women-category-content">
+
+            <span>02</span>
+
+            <h3>Tops</h3>
+
+            <p>Explore Collection →</p>
+
+        </div>
+
+    </a>
+
+
+    <!-- Category 03 -->
+    <a href="#" class="women-category-card">
+
+        <img
+            src="{% static 'images/women/womenttt.jpg' %}"
+            alt="Women Kurti"
+        >
+
+        <div class="women-category-overlay"></div>
+
+        <div class="women-category-content">
+
+            <span>03</span>
+
+            <h3>Kurtis</h3>
+
+            <p>Explore Collection →</p>
+
+        </div>
+
+    </a>
+
+
+    <!-- Category 04 -->
+    <a href="#" class="women-category-card">
+
+        <img
+            src="{% static 'images/women/womenjacket.jpg' %}"
+            alt="Women Jackets"
+        >
+
+        <div class="women-category-overlay"></div>
+
+        <div class="women-category-content">
+
+            <span>04</span>
+
+            <h3>Jackets</h3>
+
+            <p>Explore Collection →</p>
+
+        </div>
+
+    </a>
+
+</div>
+
+
+</section>
+
+<!-- =========================================================
+     WOMEN CATEGORY PILLS
+========================================================= -->
+
+<section class="women-category-pills">
+
+
+<div class="women-category-pill active">
+
+    <i class="fa-solid fa-shirt"></i>
+
+    <span>Tops</span>
+
+</div>
+
+
+<div class="women-category-pill">
+
+    <i class="fa-solid fa-person-dress"></i>
+
+    <span>Dresses</span>
+
+</div>
+
+
+<div class="women-category-pill">
+
+    <i class="fa-solid fa-person"></i>
+
+    <span>Kurtis</span>
+
+</div>
+
+
+<div class="women-category-pill">
+
+    <i class="fa-solid fa-shoe-prints"></i>
+
+    <span>Footwear</span>
+
+</div>
+
+
+<div class="women-category-pill">
+
+    <i class="fa-regular fa-gem"></i>
+
+    <span>Jewellery</span>
+
+</div>
+
+
+<div class="women-category-pill">
+
+    <i class="fa-solid fa-bag-shopping"></i>
+
+    <span>Bags</span>
+
+</div>
+
+
+</section>
+
+<!-- =========================================================
+     WOMEN TRENDING
+========================================================= -->
+
+<section class="women-trending">
+
+
+<div class="women-trending-heading women-section-heading">
+
+    <div>
+
+        <span>WHAT'S HOT</span>
+
+        <h2>Trending Now</h2>
+
+    </div>
+
+    <a href="#">
+        View All
+        <i class="fa-solid fa-arrow-right"></i>
+    </a>
+
+</div>
+
+
+<div class="women-trending-grid">
+
+    <!-- Trend 01 -->
+    <div class="women-trend-card">
+
+        <div class="women-trend-image">
+
+            <img
+                src="{% static 'images/product 2.jpeg' %}"
+                alt="Women Summer Collection"
+            >
+
+            <span>HOT</span>
+
+        </div>
+
+        <div class="women-trend-info">
+
+            <small>SUMMER EDIT</small>
+
+            <h3>Light & Lovely</h3>
+
+            <p>
+                Fresh silhouettes made for sunny days.
+            </p>
+
+            <a href="#">Shop Now →</a>
+
+        </div>
+
+    </div>
+
+
+    <!-- Trend 02 -->
+    <div class="women-trend-card">
+
+        <div class="women-trend-image">
+
+            <img
+                src="{% static 'images/women/womencasual .jpg' %}"
+                alt="Women Casual Collection"
+            >
+
+            <span>NEW</span>
+
+        </div>
+
+        <div class="women-trend-info">
+
+            <small>CASUAL EDIT</small>
+
+            <h3>Everyday Elegance</h3>
+
+            <p>
+                Effortless styles for your everyday moments.
+            </p>
+
+            <a href="#">Shop Now →</a>
+
+        </div>
+
+    </div>
+
+
+    <!-- Trend 03 -->
+    <div class="women-trend-card">
+
+        <div class="women-trend-image">
+
+            <img
+                src="{% static 'images/women/womenparty.jpg' %}"
+                alt="Women Party Collection"
+            >
+
+            <span>BESTSELLER</span>
+
+        </div>
+
+        <div class="women-trend-info">
+
+            <small>PARTY EDIT</small>
+
+            <h3>Made To Shine</h3>
+
+            <p>
+                Statement pieces for unforgettable evenings.
+            </p>
+
+            <a href="#">Shop Now →</a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</section>
+
+<!-- =========================================================
+     WOMEN PROMOTION
+========================================================= -->
+
+<section class="women-promo">
+
+
+<div class="women-promo-content">
+
+    <span>LIMITED TIME OFFER</span>
+
+    <h2>
+        Refresh Your<br>
+        Wardrobe
+    </h2>
+
+    <p>
+        Get up to <strong>50% OFF</strong> on selected women's styles.
+    </p>
+
+    <a href="#">
+        Shop Sale
+        <i class="fa-solid fa-arrow-right"></i>
+    </a>
+
+</div>
+
+
+<div class="women-promo-decoration">
+
+    <span>50</span>
+
+    <small>% OFF</small>
+
+</div>
+
+
+</section>
+
+<!-- =========================================================
+     EXISTING PRODUCT SECTION
+     DO NOT CHANGE THIS SECTION
+========================================================= -->
+
+<section class="index-products" id="men-products">
+
   <h2>Featured Products</h2>
 
   <div class="index-product-grid">
-    {% for p in products %}
-    <a href="{% url 'core:products_details' p.id  %}" style="text-decoration:none;" >
-      <div class="index-product-card">
-        <!-- Discount Badge -->
-        <span class="discount-badge">{{p.discount_percentage}}% OFF</span>
 
-        <!-- Wishlist -->
-        <button class="wishlist-btn">
-          <i class="fa-regular fa-heart"></i>
-        </button>
 
-        <!-- Product Image -->
-        <div class="index-img">
-          <img src="{{ p.product_image.url }}" alt="Women Kurti" />
-        </div>
+{% for p in products %}
 
-        <!-- Product Details -->
-        <div class="product-info">
-          <h3>{{p.product_name}}</h3>
+<a href="{% url 'core:products_details' p.id  %}" style="text-decoration:none;">
 
-          <div class="rating">
-            <i class="fa-solid fa-star"></i>
-            4.8
-            <span>(245 Reviews)</span>
-          </div>
+  <div class="index-product-card">
 
-          <div class="price-box">
-            <span class="current-price">₹{{p.selling_price}}</span>
+    <!-- Discount Badge -->
+    <span class="discount-badge">{{p.discount_percentage}}% OFF</span>
 
-            <span class="old-price">₹{{p.original_price}}</span>
-          </div>
+    <!-- Wishlist -->
+    <button class="wishlist-btn">
+      <i class="fa-regular fa-heart"></i>
+    </button>
 
-          <button class="cart-btn">
-            <i class="fa-solid fa-cart-shopping"></i>
-            Add to Cart
-          </button>
-        </div>
+    <!-- Product Image -->
+    <div class="index-img">
+      <img src="{{ p.product_image.url }}" alt="Women Kurti" />
+    </div>
+
+    <!-- Product Details -->
+    <div class="product-info">
+
+      <h3>{{p.product_name}}</h3>
+
+      <div class="rating">
+        <i class="fa-solid fa-star"></i>
+        4.8
+        <span>(245 Reviews)</span>
       </div>
-    </a>
-    {% endfor %}
+
+      <div class="price-box">
+        <span class="current-price">₹{{p.selling_price}}</span>
+
+        <span class="old-price">₹{{p.original_price}}</span>
+      </div>
+
+      <button class="cart-btn">
+        <i class="fa-solid fa-cart-shopping"></i>
+        Add to Cart
+      </button>
+
+    </div>
+
   </div>
+
+</a>
+
+{% endfor %}
+
+
+  </div>
+
 </section>
 
+<!-- =========================================================
+     WOMEN COMPLETE THE LOOK
+========================================================= -->
+
+<section class="women-complete-look">
+
+
+<div class="women-section-heading">
+
+    <span>STYLE IT YOUR WAY</span>
+
+    <h2>Complete The Look</h2>
+
+    <p>
+        Create beautiful outfits with pieces that work perfectly together.
+    </p>
+
+</div>
+
+
+<div class="women-look-grid">
+
+    <!-- Casual -->
+    <div class="women-look-card">
+
+        <img
+            src="{% static 'images/women/womencasual .jpg' %}"
+            alt="Women Casual Look"
+        >
+
+        <div class="women-look-content">
+
+            <span>THE CASUAL EDIT</span>
+
+            <h3>Effortless Weekend</h3>
+
+            <a href="#">Discover Look →</a>
+
+        </div>
+
+    </div>
+
+
+    <!-- Party -->
+    <div class="women-look-card">
+
+        <img
+            src="{% static 'images/women/womenparty.jpg' %}"
+            alt="Women Party Look"
+        >
+
+        <div class="women-look-content">
+
+            <span>THE PARTY EDIT</span>
+
+            <h3>Make An Entrance</h3>
+
+            <a href="#">Discover Look →</a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</section>
+
+<!-- =========================================================
+     WOMEN STYLE GUIDE
+========================================================= -->
+
+<section class="women-style-guide">
+
+
+<div class="women-style-guide-image">
+
+    <img
+        src="{% static 'images/women/womenttttt.jpg' %}"
+        alt="Women Style Guide"
+    >
+
+</div>
+
+
+<div class="women-style-guide-content">
+
+    <span>THE STYLE GUIDE</span>
+
+    <h2>
+        Wear Your<br>
+        Confidence.
+    </h2>
+
+    <p>
+        Discover styling inspiration, wardrobe essentials and easy
+        ways to create looks that feel completely yours.
+    </p>
+
+
+    <div class="women-style-features">
+
+        <div>
+
+            <strong>01</strong>
+
+            <span>Find Your Fit</span>
+
+        </div>
+
+
+        <div>
+
+            <strong>02</strong>
+
+            <span>Mix & Match</span>
+
+        </div>
+
+
+        <div>
+
+            <strong>03</strong>
+
+            <span>Own Your Style</span>
+
+        </div>
+
+    </div>
+
+
+    <a href="#" class="women-style-btn">
+
+        Read Style Guide
+
+        <i class="fa-solid fa-arrow-right"></i>
+
+    </a>
+
+</div>
+
+
+</section>
+
+<!-- =========================================================
+     WOMEN TRUST FEATURES
+========================================================= -->
+
+<section class="women-trust">
+
+
+<div class="women-trust-item">
+
+    <div class="women-trust-icon">
+
+        <i class="fa-solid fa-truck-fast"></i>
+
+    </div>
+
+    <div>
+
+        <h4>Free Shipping</h4>
+
+        <p>On orders above ₹999</p>
+
+    </div>
+
+</div>
+
+
+<div class="women-trust-item">
+
+    <div class="women-trust-icon">
+
+        <i class="fa-solid fa-rotate-left"></i>
+
+    </div>
+
+    <div>
+
+        <h4>Easy Returns</h4>
+
+        <p>7 days easy returns</p>
+
+    </div>
+
+</div>
+
+
+<div class="women-trust-item">
+
+    <div class="women-trust-icon">
+
+        <i class="fa-solid fa-shield-halved"></i>
+
+    </div>
+
+    <div>
+
+        <h4>Secure Payment</h4>
+
+        <p>100% secure checkout</p>
+
+    </div>
+
+</div>
+
+
+<div class="women-trust-item">
+
+    <div class="women-trust-icon">
+
+        <i class="fa-solid fa-headset"></i>
+
+    </div>
+
+    <div>
+
+        <h4>24/7 Support</h4>
+
+        <p>We're here to help</p>
+
+    </div>
+
+</div>
+
+
+</section>
+
+<!-- =========================================================
+     WOMEN NEWSLETTER
+========================================================= -->
+
+<section class="women-newsletter">
+
+
+<div class="women-newsletter-content">
+
+    <span>STAY IN STYLE</span>
+
+    <h2>Never Miss A Drop</h2>
+
+    <p>
+        Get first access to new collections, exclusive offers and
+        style inspiration.
+    </p>
+
+
+    <form>
+
+        <div class="women-newsletter-input">
+
+            <i class="fa-regular fa-envelope"></i>
+
+            <input
+                type="email"
+                placeholder="Enter your email address"
+            >
+
+            <button type="submit">
+
+                Subscribe
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </button>
+
+        </div>
+
+    </form>
+
+</div>
+
+
+</section>
 
 {% endblock %}

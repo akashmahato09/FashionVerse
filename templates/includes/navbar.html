@@ -1,25 +1,39 @@
+
 {% load static %}
+
+<!-- =========================================================
+     TOP NAVBAR
+========================================================= -->
+
 <nav class="top-navbar">
+
   <!-- Logo -->
   <div class="logo">
-    <a href="{% url 'core:home' %}">Fashion<span>Verse</span> </a>
+    <a href="{% url 'core:home' %}">
+      Fashion<span>Verse</span>
+    </a>
   </div>
+
 
   <!-- Mobile Menu Icon -->
   <div class="menu-btn" id="menuBtn">
     <i class="fa-solid fa-bars"></i>
   </div>
 
+
   <!-- Navigation Content -->
   <div class="nav-wrapper" id="navWrapper">
+
     <!-- Location -->
     <div class="location">
       <i class="fa-solid fa-location-dot"></i>
       <span>Jamshedpur</span>
     </div>
 
+
     <!-- Search -->
     <div class="search-box">
+
       <select>
         <option>All</option>
         <option>Men</option>
@@ -29,204 +43,460 @@
         <option>Kid's</option>
       </select>
 
-      <input type="text" placeholder="Search Products" />
+      <input
+        type="text"
+        placeholder="Search Products"
+      />
 
-      <button>
+      <button type="button">
         <i class="fa-solid fa-magnifying-glass"></i>
       </button>
+
     </div>
 
-    <!-- Icons -->
+
+    <!-- =====================================================
+         NAVIGATION ICONS
+    ====================================================== -->
+
     <div class="nav-icons">
-      <!-- Login -->
+
+
+      <!-- =================================================
+           PROFILE / LOGIN
+      ================================================== -->
+
       <div class="dropdown">
+
         <a
-          href=""
+          href="#"
           class="icon-box dropdown-toggle"
           data-bs-toggle="dropdown"
           aria-expanded="false"
         >
+
           <i class="fa-solid fa-user"></i>
+
           {% if user.is_authenticated %}
             <span>{{ user.username }}</span>
           {% else %}
             <span>Login</span>
           {% endif %}
+
         </a>
 
+
+        <!-- Profile Dropdown -->
         <ul class="dropdown-menu profile-dropdown">
+
+          <!-- New Customer -->
           <li class="dropdown-header">
+
             <h6>New Customer ?</h6>
+
             <button class="SignUpbtn">
-              <a href="{% url 'accounts:user_login' %}" class="SignUp">SignUp</a>
+              <a
+                href="{% url 'accounts:user_login' %}"
+                class="SignUp"
+              >
+                SignUp
+              </a>
             </button>
+
           </li>
 
-          <li><hr class="dropdown-divider" /></li>
 
           <li>
+            <hr class="dropdown-divider">
+          </li>
+
+
+          <!-- My Profile -->
+          <li>
+
             {% if user.is_authenticated %}
-            <a class="dropdown-item" href="{% url 'dashboard:myprofile' %}">
-              <i class="fa-regular fa-user"></i>
-              My Profile
-            </a>
-            {% else %}
-              <a class="dropdown-item" href="{% url 'accounts:user_login' %}">
+
+              <a
+                class="dropdown-item"
+                href="{% url 'dashboard:myprofile' %}"
+              >
                 <i class="fa-regular fa-user"></i>
                 My Profile
               </a>
+
+            {% else %}
+
+              <a
+                class="dropdown-item"
+                href="{% url 'accounts:user_login' %}"
+              >
+                <i class="fa-regular fa-user"></i>
+                My Profile
+              </a>
+
             {% endif %}
+
           </li>
 
+
+          <!-- Orders -->
           <li>
+
             {% if user.is_authenticated %}
-            <a class="dropdown-item" href="{% url 'orders:my_orders' %}">
-              <i class="fa-solid fa-box"></i>
-              Orders
-            </a>
-            {% else %}
-              <a class="dropdown-item" href="{% url 'accounts:user_login' %}">
+
+              <a
+                class="dropdown-item"
+                href="{% url 'orders:my_orders' %}"
+              >
                 <i class="fa-solid fa-box"></i>
                 Orders
               </a>
-            {% endif %} 
+
+            {% else %}
+
+              <a
+                class="dropdown-item"
+                href="{% url 'accounts:user_login' %}"
+              >
+                <i class="fa-solid fa-box"></i>
+                Orders
+              </a>
+
+            {% endif %}
+
           </li>
 
+
+          <!-- Coupons -->
           <li>
+
             {% if user.is_authenticated %}
+
               <a class="dropdown-item" href="#">
                 <i class="fa-solid fa-ticket"></i>
                 Coupons
               </a>
+
             {% else %}
-              <a class="dropdown-item" href="{% url 'accounts:user_login' %}">
+
+              <a
+                class="dropdown-item"
+                href="{% url 'accounts:user_login' %}"
+              >
                 <i class="fa-solid fa-ticket"></i>
                 Coupons
-              </a> 
-              {% endif %} 
-          </li>
+              </a>
 
-          <li>
-            {% if user.is_authenticated  %}
-            <a class="dropdown-item" href="{% url 'wishlist:mywishlist' %}">
-              <i class="fa-regular fa-heart"></i>
-              Wishlist
-            </a>
-            {% else %}
-            <a class="dropdown-item" href="{% url 'accounts:user_login' %}">
-              <i class="fa-regular fa-heart"></i>
-              Wishlist
-            </a>
             {% endif %}
+
           </li>
 
+
+          <!-- Wishlist -->
           <li>
+
             {% if user.is_authenticated %}
-            <a class="dropdown-item" href="#">
-              <i class="fa-solid fa-award"></i>
-              Rewards
-            </a>
+
+              <a
+                class="dropdown-item"
+                href="{% url 'wishlist:mywishlist' %}"
+              >
+                <i class="fa-regular fa-heart"></i>
+                Wishlist
+              </a>
+
             {% else %}
-            <a class="dropdown-item" href="{% url 'accounts:user_login' %}">
-              <i class="fa-solid fa-award"></i>
-              Rewards
-            </a>
+
+              <a
+                class="dropdown-item"
+                href="{% url 'accounts:user_login' %}"
+              >
+                <i class="fa-regular fa-heart"></i>
+                Wishlist
+              </a>
+
             {% endif %}
+
           </li>
 
+
+          <!-- Rewards -->
           <li>
+
             {% if user.is_authenticated %}
-            <a class="dropdown-item" href="#">
-              <i class="fa-solid fa-gift"></i>
-              Gift Cards
-            </a>
+
+              <a class="dropdown-item" href="#">
+                <i class="fa-solid fa-award"></i>
+                Rewards
+              </a>
+
             {% else %}
-            <a class="dropdown-item" href="{% url 'accounts:user_login' %}">
-              <i class="fa-solid fa-gift"></i>
-              Gift Cards
-            </a>
+
+              <a
+                class="dropdown-item"
+                href="{% url 'accounts:user_login' %}"
+              >
+                <i class="fa-solid fa-award"></i>
+                Rewards
+              </a>
+
             {% endif %}
+
           </li>
 
+
+          <!-- Gift Cards -->
           <li>
+
+            {% if user.is_authenticated %}
+
+              <a class="dropdown-item" href="#">
+                <i class="fa-solid fa-gift"></i>
+                Gift Cards
+              </a>
+
+            {% else %}
+
+              <a
+                class="dropdown-item"
+                href="{% url 'accounts:user_login' %}"
+              >
+                <i class="fa-solid fa-gift"></i>
+                Gift Cards
+              </a>
+
+            {% endif %}
+
+          </li>
+
+
+          <!-- Advertise -->
+          <li>
+
             <a class="dropdown-item" href="#">
               <i class="fa-regular fa-newspaper"></i>
               Advertise
             </a>
+
           </li>
 
+
+          <!-- Download App -->
           <li>
+
             <a class="dropdown-item" href="#">
               <i class="fa-solid fa-download"></i>
               Download App
             </a>
+
           </li>
+
+
+          <!-- Logout -->
           {% if user.is_authenticated %}
-          <li>
-            <form action="{% url 'accounts:logout_user' %}" method="POST">
-              {% csrf_token %}
-              <button type="submit" class="logout-btn">
-              <i class="fa-solid fa-arrow-right-from-bracket"></i>
-              Logout
-              </button>
-            </form>
-          </li>
+
+            <li>
+
+              <form
+                action="{% url 'accounts:logout_user' %}"
+                method="POST"
+              >
+
+                {% csrf_token %}
+
+                <button
+                  type="submit"
+                  class="logout-btn"
+                >
+                  <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                  Logout
+                </button>
+
+              </form>
+
+            </li>
+
           {% endif %}
+
         </ul>
+
       </div>
 
-      <!-- Wishlist -->
-       {% if user.is_authenticated %}
-      <a href="{% url 'wishlist:mywishlist' %}" class="icon-box">
-        <i class="fa-solid fa-heart"></i>
-        <span>Wishlist</span>
-      </a>
+
+      <!-- =================================================
+           WISHLIST
+      ================================================== -->
+
+      {% if user.is_authenticated %}
+
+        <a
+          href="{% url 'wishlist:mywishlist' %}"
+          class="icon-box"
+        >
+          <i class="fa-solid fa-heart"></i>
+          <span>Wishlist</span>
+        </a>
+
       {% else %}
-       <a href="{% url 'accounts:user_login' %}" class="icon-box">
-        <i class="fa-solid fa-heart"></i>
-        <span>Wishlist</span>
-      </a>
+
+        <a
+          href="{% url 'accounts:user_login' %}"
+          class="icon-box"
+        >
+          <i class="fa-solid fa-heart"></i>
+          <span>Wishlist</span>
+        </a>
+
       {% endif %}
 
-      <!-- Cart -->
-       {% if request.session.num_of_items %}
-          <p class="number_of_items">{{request.session.num_of_items}}</p>
-        {% else %}
-        <p class="number_of_items" >0</p>
-        {% endif %}
-       {% if user.is_authenticated %}
-      <a href="{% url 'cart:cart_page' %}" class="icon-box">
-        <i class="fa-solid fa-cart-shopping"></i>
-        <span>Cart</span>
-      </a>
+
+      <!-- =================================================
+           CART COUNT
+      ================================================== -->
+
+      {% if request.session.num_of_items %}
+
+        <p class="number_of_items">
+          {{ request.session.num_of_items }}
+        </p>
+
       {% else %}
-      <a href="{% url 'accounts:user_login' %}" class="icon-box">
-        <i class="fa-solid fa-cart-shopping"></i>
-        <span>Cart</span>
-      </a>
+
+        <p class="number_of_items">
+          0
+        </p>
+
       {% endif %}
+
+
+      <!-- =================================================
+           CART
+      ================================================== -->
+
+      {% if user.is_authenticated %}
+
+        <a
+          href="{% url 'cart:cart_page' %}"
+          class="icon-box"
+        >
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span>Cart</span>
+        </a>
+
+      {% else %}
+
+        <a
+          href="{% url 'accounts:user_login' %}"
+          class="icon-box"
+        >
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span>Cart</span>
+        </a>
+
+      {% endif %}
+
+
     </div>
+
   </div>
+
 </nav>
 
-<!-- Bottom Navbar -->
+
+
+<!-- =========================================================
+     BOTTOM NAVBAR
+========================================================= -->
 
 <nav class="down-navbar">
+
   <ul class="nav-links">
-    <li><a href="{% url 'core:home' %}">For You</a></li>
-    <li><a href="{% url 'core:men' %}">MEN</a></li>
-    <li><a href="{% url 'core:women' %}">WOMEN</a></li>
-    <li><a href="{% url 'core:boys' %}">BOY'S</a></li>
-    <li><a href="{% url 'core:girls' %}">GIRL'S</a></li>
-    <li><a href="{% url 'core:kids' %}">KID'S</a></li>
+
+    <!-- FOR YOU / HOME -->
+    <li>
+      <a
+        href="{% url 'core:home' %}"
+        class="{% if request.resolver_match.url_name == 'home' %}active{% endif %}"
+      >
+        For You
+      </a>
+    </li>
+
+
+    <!-- MEN -->
+    <li>
+      <a
+        href="{% url 'core:men' %}"
+        class="{% if request.resolver_match.url_name == 'men' %}active{% endif %}"
+      >
+        MEN
+      </a>
+    </li>
+
+
+    <!-- WOMEN -->
+    <li>
+      <a
+        href="{% url 'core:women' %}"
+        class="{% if request.resolver_match.url_name == 'women' %}active{% endif %}"
+      >
+        WOMEN
+      </a>
+    </li>
+
+
+    <!-- BOYS -->
+    <li>
+      <a
+        href="{% url 'core:boys' %}"
+        class="{% if request.resolver_match.url_name == 'boys' %}active{% endif %}"
+      >
+        BOY'S
+      </a>
+    </li>
+
+
+    <!-- GIRLS -->
+    <li>
+      <a
+        href="{% url 'core:girls' %}"
+        class="{% if request.resolver_match.url_name == 'girls' %}active{% endif %}"
+      >
+        GIRL'S
+      </a>
+    </li>
+
+
+    <!-- KIDS -->
+    <li>
+      <a
+        href="{% url 'core:kids' %}"
+        class="{% if request.resolver_match.url_name == 'kids' %}active{% endif %}"
+      >
+        KID'S
+      </a>
+    </li>
+
   </ul>
+
 </nav>
 
+
+
+<!-- =========================================================
+     MOBILE MENU JAVASCRIPT
+========================================================= -->
+
 <script>
+
   const menuBtn = document.getElementById("menuBtn");
   const navWrapper = document.getElementById("navWrapper");
 
-  menuBtn.addEventListener("click", () => {
+  menuBtn.addEventListener("click", function () {
+
     navWrapper.classList.toggle("active");
+
   });
+
 </script>
+

@@ -1,0 +1,199 @@
+/* ===========================
+      Vendor Category Page
+=========================== */
+
+.vendor-category-page{
+
+    width:100%;
+    padding:30px;
+    background:#f6f8fb;
+    min-height:100vh;
+
+}
+
+/* Header */
+
+.category-header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+    flex-wrap:wrap;
+    gap:20px;
+
+}
+
+.category-header h2{
+
+    font-size:30px;
+    color:#222;
+    margin-bottom:8px;
+
+}
+
+.category-header p{
+
+    color:#777;
+
+}
+
+
+
+/* Grid */
+
+.category-grid{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+
+}
+
+/* Card */
+
+.category-card{
+
+    background:#fff;
+    border-radius:14px;
+    padding:22px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    text-decoration:none;
+    color:#222;
+
+    box-shadow:0 6px 18px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.category-card:hover{
+
+    transform:translateY(-5px);
+    box-shadow:0 15px 30px rgba(0,0,0,.15);
+
+}
+
+.category-icon{
+
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    color:#fff;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:30px;
+    margin-right:18px;
+
+}
+
+/* Different Colors */
+
+.men .category-icon{
+
+    background:#0d6efd;
+
+}
+
+.women .category-icon{
+
+    background:#e83e8c;
+
+}
+
+.boys .category-icon{
+
+    background:#198754;
+
+}
+
+.girls .category-icon{
+
+    background:#fd7e14;
+
+}
+
+.kids .category-icon{
+
+    background:#6f42c1;
+
+}
+
+/* Content */
+
+.category-content{
+
+    flex:1;
+
+}
+
+.category-content h3{
+
+    margin-bottom:8px;
+    font-size:22px;
+
+}
+
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.category-header{
+
+    flex-direction:column;
+    align-items:flex-start;
+
+}
+
+.category-header h2{
+
+    font-size:26px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.vendor-category-page{
+
+    padding:18px;
+
+}
+
+.category-card{
+
+    flex-direction:column;
+    text-align:center;
+    gap:18px;
+
+}
+
+.category-icon{
+
+    margin-right:0;
+
+}
+
+.arrow{
+
+    display:none;
+
+}
+
+.add-btn{
+
+    width:100%;
+    text-align:center;
+
+}
+
+}

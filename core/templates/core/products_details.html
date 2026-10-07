@@ -1,93 +1,295 @@
-{% extends 'base.html' %} {% load static %} {% block css %}<link
-  rel="stylesheet"
-  href="{% static 'css/products_details.css' %}"
-/>{% endblock css %} {% block content %}
+{% extends 'base.html' %}
+{% load static %}
 
-<div class="product-detail-container">
-  <!-- Left -->
-  <div class="product-image-section">
-    <div class="main-image">
-      {% if product.product_image %}
-      <img
-        src="{{ product.product_image.url }}"
-        alt="{{ product.product_name }}"
-      />
-      {% else %}
-      <img src="{% static 'images/default_product.jpg' %}" />
-      {% endif %}
-    </div>
-  </div>
+{% block css %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<link rel="stylesheet" href="{% static 'css/products_details.css' %}" />
+{% endblock css %}
 
-  <!-- Right -->
+{% block content %}
+<div class="pdp-wrapper">
+  <!-- Breadcrumb Navigation -->
+  <nav class="breadcrumb-trail">
+    <a href="/">Home</a>
+    <i class="fa-solid fa-chevron-right"></i>
+    <a href="#">{{ product.brand|default:"Collection" }}</a>
+    <i class="fa-solid fa-chevron-right"></i>
+    <span>{{ product.product_name }}</span>
+  </nav>
 
-  <div class="product-info">
-    <h1>{{ product.product_name }}</h1>
-
-    <h4>{{ product.brand }}</h4>
-
-    <div class="rating">
-      ★★★★★
-
-      <span>4.8 (245 Reviews)</span>
-    </div>
-
-    <div class="price">
-      <span class="selling"> ₹{{ product.selling_price }} </span>
-
-      <span class="original"> ₹{{ product.original_price }} </span>
-
-      <span class="discount"> {{ product.discount_percentage }}% OFF </span>
-    </div>
-
-    <div class="stock">
-      <strong>Status :</strong>
-
-      {{ product.stock_status }}
-    </div>
-
-    <div class="color">
-      <strong>Color :</strong>
-
-      {{ product.color }}
-    </div>
-
-    <div class="size">
-      <strong>Size :</strong>
-
-      {{ product.size }}
-    </div>
-
-    <div class="quantity">
-      <label>Quantity</label>
-
-      <input type="number" value="1" min="1" />
-    </div>
-
-    <div class="buttons">
-      <
-      <form action="{% url 'cart:add_to_cart' product.id %}" method="post">
-        {% csrf_token %}
-        <button type="submit" class="cart-btn">
-          <i class="fa-solid fa-cart-shopping"></i>
-          Add to Cart
+  <div class="product-detail-container">
+    <!-- LEFT: Media Gallery & Zoom Viewport -->
+    <div class="product-media-column">
+      <div class="main-image-container" id="zoomContainer">
+        {% if product.product_image %}
+          <img id="mainProductImg" src="{{ product.product_image.url }}" alt="{{ product.product_name }}" />
+        {% else %}
+          <img id="mainProductImg" src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=800&auto=format&fit=crop&q=80" alt="{{ product.product_name }}" />
+        {% endif %}
+        <span class="badge-tag">Bestseller</span>
+        <button type="button" class="btn-fullscreen" title="Enlarge Image" onclick="openFullscreenModal()">
+          <i class="fa-solid fa-expand"></i>
         </button>
-      </form>
-      <a href="{% url 'orders:shipping' product.id %}">
-        <button class="buy-btn">Buy Now</button>
-      </a>
-      <form action="{% url 'wishlist:add_wishlist' product.id %}" method="POST">
-        {% csrf_token %}
-         <button type="submit" class="wish-btn">❤</button>
-      </form>
-     
+      </div>
+
+      <!-- Thumbnail Strip with matching data-color attributes -->
+      <div class="thumbnail-strip" id="thumbnailStrip">
+        <button type="button" class="thumb-btn active"
+                data-color="Midnight Black"
+                data-img="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=800&auto=format&fit=crop&q=80">
+          <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=160&auto=format&fit=crop&q=80" alt="Midnight Black View" />
+        </button>
+
+        <button type="button" class="thumb-btn"
+                data-color="Sand Beige"
+                data-img="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=800&auto=format&fit=crop&q=80">
+          <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=160&auto=format&fit=crop&q=80" alt="Sand Beige View" />
+        </button>
+
+        <button type="button" class="thumb-btn"
+                data-color="Olive Green"
+                data-img="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=800&auto=format&fit=crop&q=80">
+          <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=160&auto=format&fit=crop&q=80" alt="Olive Green View" />
+        </button>
+
+        <button type="button" class="thumb-btn"
+                data-color="Classic Navy"
+                data-img="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=800&auto=format&fit=crop&q=80">
+          <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=160&auto=format&fit=crop&q=80" alt="Classic Navy View" />
+        </button>
+      </div>
+
+      <!-- Trust Badges -->
+      <div class="guarantee-grid">
+        <div class="guarantee-card">
+          <i class="fa-solid fa-truck-fast"></i>
+          <div>
+            <strong>Free Express Shipping</strong>
+            <p>On all orders above ₹999</p>
+          </div>
+        </div>
+        <div class="guarantee-card">
+          <i class="fa-solid fa-rotate-left"></i>
+          <div>
+            <strong>7-Day Returns</strong>
+            <p>Hassle-free doorstep pickup</p>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <hr />
+    <!-- RIGHT: Product Info & Purchase Options -->
+    <div class="product-info-column">
+      <div class="vendor-bar">
+        <span class="brand-name">{{ product.brand|default:"URBAN CLOTHING CO." }}</span>
+        <span class="stock-indicator in-stock">
+          <span class="dot"></span> {{ product.stock_status|default:"In Stock" }}
+        </span>
+      </div>
 
-    <h3>Description</h3>
+      <h1 class="product-title">{{ product.product_name }}</h1>
 
-    <p>{{ product.description }}</p>
+      <!-- Ratings -->
+      <div class="rating-cluster">
+        <div class="star-rating">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star-half-stroke"></i>
+        </div>
+        <span class="rating-value">4.8</span>
+        <span class="review-count">(245 Verified Reviews)</span>
+        <span class="divider-dot">•</span>
+        <span class="order-metric"><i class="fa-solid fa-fire"></i> 52 bought today</span>
+      </div>
+
+      <!-- Pricing -->
+      <div class="price-banner">
+        <div class="price-figures">
+          <span class="currency-symbol">₹</span>
+          <span class="selling-price">{{ product.selling_price }}</span>
+          {% if product.original_price %}
+            <span class="original-price">₹{{ product.original_price }}</span>
+          {% endif %}
+        </div>
+        {% if product.discount_percentage %}
+          <span class="discount-pill">{{ product.discount_percentage }}% OFF</span>
+        {% endif %}
+      </div>
+      <p class="tax-note">Inclusive of all taxes & duty charges</p>
+
+      <hr class="separator" />
+
+      <!-- Purchase Form -->
+      <form id="pdpForm" action="{% url 'cart:add_to_cart' product.id %}" method="POST">
+        {% csrf_token %}
+
+        <!-- COLOR SELECTOR -->
+        <div class="variant-block">
+          <div class="variant-header">
+            <span class="variant-title">Color:</span>
+            <span class="selected-text" id="activeColorName">Midnight Black</span>
+          </div>
+          <div class="color-swatches">
+            <label class="color-swatch-item active" title="Midnight Black"
+                   data-color="Midnight Black"
+                   data-img="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=800&auto=format&fit=crop&q=80">
+              <input type="radio" name="color" value="Midnight Black" checked />
+              <span class="color-circle" style="background-color: #1a1a1a;"></span>
+            </label>
+
+            <label class="color-swatch-item" title="Sand Beige"
+                   data-color="Sand Beige"
+                   data-img="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=800&auto=format&fit=crop&q=80">
+              <input type="radio" name="color" value="Sand Beige" />
+              <span class="color-circle" style="background-color: #d6c6b2;"></span>
+            </label>
+
+            <label class="color-swatch-item" title="Olive Green"
+                   data-color="Olive Green"
+                   data-img="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=800&auto=format&fit=crop&q=80">
+              <input type="radio" name="color" value="Olive Green" />
+              <span class="color-circle" style="background-color: #556b2f;"></span>
+            </label>
+
+            <label class="color-swatch-item" title="Classic Navy"
+                   data-color="Classic Navy"
+                   data-img="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=800&auto=format&fit=crop&q=80">
+              <input type="radio" name="color" value="Classic Navy" />
+              <span class="color-circle" style="background-color: #1e3a8a;"></span>
+            </label>
+          </div>
+        </div>
+
+        <!-- SIZE SELECTOR -->
+        <div class="variant-block">
+          <div class="variant-header">
+            <span class="variant-title">Size:</span>
+            <button type="button" class="size-guide-trigger" onclick="openSizeModal()">
+              <i class="fa-solid fa-ruler-horizontal"></i> Size Chart
+            </button>
+          </div>
+          <div class="size-options">
+            <label class="size-box">
+              <input type="radio" name="size" value="S" />
+              <span class="box-content">S</span>
+            </label>
+            <label class="size-box active">
+              <input type="radio" name="size" value="M" checked />
+              <span class="box-content">M</span>
+            </label>
+            <label class="size-box">
+              <input type="radio" name="size" value="L" />
+              <span class="box-content">L</span>
+            </label>
+            <label class="size-box">
+              <input type="radio" name="size" value="XL" />
+              <span class="box-content">XL</span>
+            </label>
+            <label class="size-box out-of-stock">
+              <input type="radio" name="size" value="XXL" disabled />
+              <span class="box-content">XXL</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- QUANTITY SELECTOR -->
+        <div class="variant-block">
+          <span class="variant-title">Quantity</span>
+          <div class="quantity-controller">
+            <button type="button" class="qty-btn" id="qtyMinus" aria-label="Decrease quantity">−</button>
+            <input type="number" name="quantity" id="quantityInput" value="1" min="1" max="10" readonly />
+            <button type="button" class="qty-btn" id="qtyPlus" aria-label="Increase quantity">+</button>
+          </div>
+        </div>
+
+        <!-- CALL TO ACTIONS -->
+        <div class="cta-cluster">
+          <button type="submit" class="btn-primary-cart">
+            <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+          </button>
+          <a href="{% url 'orders:shipping' product.id %}" class="btn-secondary-buy" id="directBuyLink">
+            <i class="fa-solid fa-bolt"></i> Buy Now
+          </a>
+          <button type="button" class="btn-wishlist-toggle" id="wishlistBtn" aria-label="Save to Wishlist" onclick="toggleWishlist()">
+            <i class="fa-regular fa-heart"></i>
+          </button>
+        </div>
+      </form>
+
+      <!-- Separate Wishlist Form for POST integrity -->
+      <form id="wishlistForm" action="{% url 'wishlist:add_wishlist' product.id %}" method="POST" style="display: none;">
+        {% csrf_token %}
+      </form>
+
+      <!-- Pincode Checker -->
+      <div class="delivery-checker">
+        <label for="pincodeField"><i class="fa-solid fa-location-dot"></i> Check Delivery &amp; COD Availability</label>
+        <div class="pincode-input-row">
+          <input type="text" id="pincodeField" maxlength="6" placeholder="Enter 6-digit Pincode" />
+          <button type="button" id="pincodeCheckBtn">Check</button>
+        </div>
+        <p class="delivery-status" id="deliveryStatus"></p>
+      </div>
+
+      <!-- Accordion Details -->
+      <div class="accordion-group">
+        <details class="accordion-item" open>
+          <summary>Description &amp; Fit <i class="fa-solid fa-chevron-down"></i></summary>
+          <div class="accordion-body">
+            <p>{{ product.description|default:"Crafted from 100% combed organic cotton with an ultra-soft handle. Features drop shoulders, a ribbed collar, and double-needle stitching along the hems for lasting shape retention." }}</p>
+          </div>
+        </details>
+
+        <details class="accordion-item">
+          <summary>Material &amp; Wash Care <i class="fa-solid fa-chevron-down"></i></summary>
+          <div class="accordion-body">
+            <ul>
+              <li>100% Combed Compact Cotton (240 GSM)</li>
+              <li>Cold machine wash with like colors</li>
+              <li>Do not bleach or tumble dry</li>
+              <li>Medium heat iron inside out</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+    </div>
   </div>
 </div>
 
+<!-- Size Modal -->
+<div class="modal-backdrop" id="sizeModal">
+  <div class="modal-card">
+    <div class="modal-header">
+      <h3>Garment Size Chart (Inches)</h3>
+      <button type="button" class="close-btn" onclick="closeSizeModal()">&times;</button>
+    </div>
+    <div class="modal-body">
+      <table class="size-table">
+        <thead>
+          <tr>
+            <th>Size</th>
+            <th>Chest</th>
+            <th>Length</th>
+            <th>Shoulder</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>S</td><td>38"</td><td>27"</td><td>17.5"</td></tr>
+          <tr class="highlighted"><td>M</td><td>40"</td><td>28"</td><td>18.5"</td></tr>
+          <tr><td>L</td><td>42"</td><td>29"</td><td>19.5"</td></tr>
+          <tr><td>XL</td><td>44"</td><td>30"</td><td>20.5"</td></tr>
+          <tr><td>XXL</td><td>46"</td><td>31"</td><td>21.5"</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script src="{% static 'js/product_details.js' %}"></script>
+
 {% endblock %}
+
+
+

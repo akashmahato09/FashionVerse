@@ -1,0 +1,761 @@
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+.cancel-container {
+    min-height: calc(100vh - 80px);
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 60px 20px;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(239, 68, 68, 0.06),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at bottom right,
+            rgba(17, 24, 39, 0.05),
+            transparent 35%
+        ),
+        #f7f8fb;
+}
+
+
+/* =========================================================
+   MAIN CARD
+========================================================= */
+
+.cancel-card {
+    width: 100%;
+    max-width: 760px;
+
+    background: #ffffff;
+
+    padding: 48px;
+
+    border-radius: 24px;
+
+    border: 1px solid #e9eaee;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 60px rgba(15, 23, 42, 0.08),
+        0 4px 12px rgba(15, 23, 42, 0.04);
+
+    animation: cardAppear 0.55s ease;
+}
+
+
+/* =========================================================
+   CARD ANIMATION
+========================================================= */
+
+@keyframes cardAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* =========================================================
+   WARNING ICON
+========================================================= */
+
+.cancel-icon {
+    width: 82px;
+    height: 82px;
+
+    margin: 0 auto 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #fff4f3;
+
+    border: 8px solid #ffebea;
+
+    font-size: 34px;
+
+    box-shadow:
+        0 10px 25px rgba(239, 68, 68, 0.10);
+
+    animation: warningPulse 2s infinite;
+}
+
+
+/* =========================================================
+   WARNING ICON ANIMATION
+========================================================= */
+
+@keyframes warningPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.cancel-card h1 {
+    margin: 0;
+
+    color: #111827;
+
+    font-size: 32px;
+
+    font-weight: 750;
+
+    line-height: 1.25;
+
+    letter-spacing: -0.6px;
+}
+
+
+/* =========================================================
+   QUESTION
+========================================================= */
+
+.cancel-question {
+    margin: 12px auto 30px;
+
+    max-width: 520px;
+
+    color: #6b7280;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   PRODUCT CARD
+========================================================= */
+
+.cancel-product {
+    display: flex;
+
+    align-items: center;
+
+    gap: 22px;
+
+    width: 100%;
+
+    padding: 20px;
+
+    margin-top: 10px;
+
+    text-align: left;
+
+    background: #f9fafb;
+
+    border: 1px solid #eceef2;
+
+    border-radius: 18px;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+.cancel-product:hover {
+    transform: translateY(-2px);
+
+    border-color: #e0e3e8;
+
+    box-shadow:
+        0 10px 25px rgba(15, 23, 42, 0.06);
+}
+
+
+/* =========================================================
+   PRODUCT IMAGE
+========================================================= */
+
+.cancel-product img {
+    width: 105px;
+    height: 105px;
+
+    flex-shrink: 0;
+
+    object-fit: cover;
+
+    border-radius: 14px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    padding: 6px;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+
+/* =========================================================
+   PRODUCT INFORMATION
+========================================================= */
+
+.cancel-product-info {
+    flex: 1;
+
+    min-width: 0;
+}
+
+
+.cancel-product-info h2 {
+    margin: 0 0 10px;
+
+    color: #111827;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    line-height: 1.4;
+
+    word-break: break-word;
+}
+
+
+.cancel-product-info p {
+    margin: 5px 0;
+
+    color: #6b7280;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+.cancel-product-info p strong {
+    color: #374151;
+
+    font-weight: 600;
+}
+
+
+.cancel-product-info h3 {
+    margin: 12px 0 0;
+
+    color: #111827;
+
+    font-size: 20px;
+
+    font-weight: 750;
+}
+
+
+/* =========================================================
+   WARNING MESSAGE
+========================================================= */
+
+.cancel-warning {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 24px;
+
+    padding: 15px 18px;
+
+    text-align: left;
+
+    background: #fff8eb;
+
+    border: 1px solid #fde7b2;
+
+    border-radius: 12px;
+}
+
+
+/* Warning symbol */
+
+.cancel-warning span {
+    width: 30px;
+    height: 30px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #f59e0b;
+
+    color: #ffffff;
+
+    font-size: 16px;
+
+    font-weight: 800;
+}
+
+
+/* Warning text */
+
+.cancel-warning p {
+    margin: 0;
+
+    color: #92400e;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   ACTION BUTTON AREA
+========================================================= */
+
+.cancel-actions {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 14px;
+
+    margin-top: 30px;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.cancel-actions form {
+    margin: 0;
+}
+
+
+/* =========================================================
+   COMMON BUTTON STYLE
+========================================================= */
+
+.confirm-cancel-btn,
+.keep-order-btn {
+    min-height: 48px;
+
+    padding: 13px 22px;
+
+    border-radius: 11px;
+
+    font-size: 14px;
+
+    font-weight: 650;
+
+    font-family: inherit;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    cursor: pointer;
+
+    text-decoration: none;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+/* =========================================================
+   CANCEL BUTTON
+========================================================= */
+
+.confirm-cancel-btn {
+    border: 1px solid #dc2626;
+
+    background: #dc2626;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 6px 15px rgba(220, 38, 38, 0.16);
+}
+
+
+.confirm-cancel-btn:hover {
+    background: #b91c1c;
+
+    border-color: #b91c1c;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 22px rgba(220, 38, 38, 0.22);
+}
+
+
+.confirm-cancel-btn:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   KEEP ORDER BUTTON
+========================================================= */
+
+.keep-order-btn {
+    background: #ffffff;
+
+    color: #374151;
+
+    border: 1px solid #d1d5db;
+}
+
+
+.keep-order-btn:hover {
+    background: #111827;
+
+    color: #ffffff;
+
+    border-color: #111827;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 18px rgba(17, 24, 39, 0.15);
+}
+
+
+.keep-order-btn:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   BUTTON FOCUS
+========================================================= */
+
+.confirm-cancel-btn:focus-visible,
+.keep-order-btn:focus-visible {
+    outline: 3px solid rgba(59, 130, 246, 0.25);
+
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .cancel-container {
+        min-height: auto;
+
+        padding: 45px 18px;
+    }
+
+
+    .cancel-card {
+        max-width: 650px;
+
+        padding: 38px 28px;
+
+        border-radius: 20px;
+    }
+
+
+    .cancel-card h1 {
+        font-size: 28px;
+    }
+
+
+    .cancel-question {
+        font-size: 15px;
+
+        margin-bottom: 25px;
+    }
+
+
+    .cancel-product {
+        gap: 16px;
+
+        padding: 16px;
+    }
+
+
+    .cancel-product img {
+        width: 90px;
+        height: 90px;
+    }
+
+
+    .cancel-product-info h2 {
+        font-size: 16px;
+    }
+
+
+    .cancel-product-info h3 {
+        font-size: 18px;
+    }
+
+
+    .cancel-actions {
+        gap: 10px;
+    }
+
+
+    .confirm-cancel-btn,
+    .keep-order-btn {
+        padding: 12px 18px;
+
+        font-size: 13px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 550px) {
+
+    .cancel-container {
+        padding: 30px 14px;
+
+        align-items: flex-start;
+    }
+
+
+    .cancel-card {
+        padding: 32px 18px;
+
+        border-radius: 18px;
+    }
+
+
+    /* Icon */
+
+    .cancel-icon {
+        width: 70px;
+        height: 70px;
+
+        margin-bottom: 20px;
+
+        border-width: 6px;
+
+        font-size: 28px;
+    }
+
+
+    /* Heading */
+
+    .cancel-card h1 {
+        font-size: 24px;
+
+        letter-spacing: -0.3px;
+    }
+
+
+    .cancel-question {
+        font-size: 14px;
+
+        line-height: 1.6;
+
+        margin: 10px auto 22px;
+    }
+
+
+    /* Product */
+
+    .cancel-product {
+        align-items: flex-start;
+
+        gap: 13px;
+
+        padding: 14px;
+
+        border-radius: 14px;
+    }
+
+
+    .cancel-product img {
+        width: 78px;
+        height: 78px;
+
+        border-radius: 11px;
+
+        padding: 4px;
+    }
+
+
+    .cancel-product-info h2 {
+        font-size: 15px;
+
+        margin-bottom: 7px;
+    }
+
+
+    .cancel-product-info p {
+        font-size: 12px;
+
+        margin: 4px 0;
+    }
+
+
+    .cancel-product-info h3 {
+        font-size: 17px;
+
+        margin-top: 8px;
+    }
+
+
+    /* Warning */
+
+    .cancel-warning {
+        align-items: flex-start;
+
+        gap: 10px;
+
+        padding: 13px;
+
+        margin-top: 18px;
+
+        border-radius: 11px;
+    }
+
+
+    .cancel-warning span {
+        width: 27px;
+        height: 27px;
+
+        font-size: 14px;
+    }
+
+
+    .cancel-warning p {
+        font-size: 12px;
+    }
+
+
+    /* Buttons */
+
+    .cancel-actions {
+        flex-direction: column;
+
+        width: 100%;
+
+        gap: 10px;
+
+        margin-top: 24px;
+    }
+
+
+    .cancel-actions form {
+        width: 100%;
+    }
+
+
+    .confirm-cancel-btn,
+    .keep-order-btn {
+        width: 100%;
+
+        min-height: 48px;
+
+        font-size: 13px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .cancel-container {
+        padding: 22px 10px;
+    }
+
+
+    .cancel-card {
+        padding: 28px 14px;
+    }
+
+
+    .cancel-card h1 {
+        font-size: 22px;
+    }
+
+
+    .cancel-product {
+        gap: 10px;
+
+        padding: 11px;
+    }
+
+
+    .cancel-product img {
+        width: 68px;
+        height: 68px;
+    }
+
+
+    .cancel-product-info h2 {
+        font-size: 14px;
+    }
+
+
+    .cancel-product-info p {
+        font-size: 11px;
+    }
+
+
+    .cancel-product-info h3 {
+        font-size: 16px;
+    }
+}
+

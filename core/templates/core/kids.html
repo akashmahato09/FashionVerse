@@ -1,148 +1,744 @@
-{% extends 'base.html' %} 
-{% load static %} 
-{% block css %}<link rel="stylesheet" href="{% static 'css/kids.css' %}"/>{% endblock css %} 
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+
+<link rel="stylesheet" href="{% static 'css/kids.css' %}">
+{% endblock css %}
+
 {% block content %}
 
-<!-- ================= HERO ================= -->
+<!-- =========================================================
+     KIDS HERO SECTION
+========================================================= -->
 
 <section class="kids-hero">
 
-    <div class="kids-hero-content">
 
-        <h1>Kids Fashion World</h1>
+<div class="kids-hero-overlay"></div>
 
-        <p>Fun • Comfortable • Colorful</p>
+<div class="kids-hero-content">
 
-        <a href="#" class="kids-shop-btn">
-            Explore Collection
+    <span class="kids-hero-tag">NEW SEASON 2026</span>
+
+    <h1>
+        Little Styles,<br>
+        <strong>Big Adventures</strong>
+    </h1>
+
+    <p>
+        Discover playful fashion, comfortable essentials and
+        adorable styles made for every little adventure.
+    </p>
+
+    <div class="kids-hero-buttons">
+
+        <a href="#kids-products" class="kids-primary-btn">
+            Shop Collection
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+        <a href="#kids-categories" class="kids-outline-btn">
+            Explore Styles
         </a>
 
     </div>
 
-</section>
+</div>
 
-<!-- ================= CATEGORY ================= -->
+<div class="kids-hero-badge">
 
-<section class="kids-categories">
+    <span>UP TO</span>
 
-    <button>👕 Boys</button>
+    <strong>50%</strong>
 
-    <button>👗 Girls</button>
+    <small>OFF</small>
 
-    <button>🍼 Baby Wear</button>
+</div>
 
-    <button>👟 Shoes</button>
-
-    <button>🎒 School Bags</button>
-
-    <button>🧸 Toys</button>
-
-    <button>⌚ Watches</button>
-
-    <button>🎁 Accessories</button>
 
 </section>
 
-<!-- ================= PRODUCTS ================= -->
+<!-- =========================================================
+     KIDS CATEGORIES
+========================================================= -->
 
-<section class="kids-products">
+<section class="kids-categories-section" id="kids-categories">
 
-<div class="kids-product-card">
 
-<div class="image">
+<div class="kids-section-heading">
 
-<img src="{% static 'images/kidsbannerdown.webp' %}">
+    <span>EXPLORE COLLECTION</span>
 
-<span class="kids-offer">
-30% OFF
-</span>
+    <h2>Shop By Category</h2>
 
-<i class="fa-regular fa-heart"></i>
-
-</div>
-
-<div class="kids-details">
-
-<h3>FashionVerse Kids</h3>
-
-<p>Kids Printed T-Shirt</p>
-
-<div class="kids-rating">
-
-⭐⭐⭐⭐⭐
+    <p>
+        Cute, comfortable and stylish outfits for every little one.
+    </p>
 
 </div>
 
-<div class="kids-price">
 
-₹699
+<div class="kids-category-grid">
 
-<span>₹999</span>
+    <a href="#" class="kids-category-card kids-category-large">
+
+        <img
+            src="{% static 'images/kids-girls.jpg' %}"
+            alt="Girls Fashion"
+        >
+
+        <div class="kids-category-overlay"></div>
+
+        <div class="kids-category-content">
+
+            <span>01</span>
+
+            <h3>Girls</h3>
+
+            <p>Explore Collection →</p>
+
+        </div>
+
+    </a>
+
+
+    <a href="#" class="kids-category-card">
+
+        <img
+            src="{% static 'images/kids-boys.jpg' %}"
+            alt="Boys Fashion"
+        >
+
+        <div class="kids-category-overlay"></div>
+
+        <div class="kids-category-content">
+
+            <span>02</span>
+
+            <h3>Boys</h3>
+
+            <p>Explore Collection →</p>
+
+        </div>
+
+    </a>
+
+
+    <a href="#" class="kids-category-card">
+
+        <img
+            src="{% static 'images/kids-tshirt.jpg' %}"
+            alt="Kids T-Shirts"
+        >
+
+        <div class="kids-category-overlay"></div>
+
+        <div class="kids-category-content">
+
+            <span>03</span>
+
+            <h3>T-Shirts</h3>
+
+            <p>Explore Collection →</p>
+
+        </div>
+
+    </a>
+
+
+    <a href="#" class="kids-category-card">
+
+        <img
+            src="{% static 'images/kids-dresses.jpg' %}"
+            alt="Kids Dresses"
+        >
+
+        <div class="kids-category-overlay"></div>
+
+        <div class="kids-category-content">
+
+            <span>04</span>
+
+            <h3>Dresses</h3>
+
+            <p>Explore Collection →</p>
+
+        </div>
+
+    </a>
 
 </div>
 
-<button>
-
-<i class="fa-solid fa-cart-shopping"></i>
-
-Add To Cart
-
-</button>
-
-</div>
-
-</div>
-
-<!-- Repeat Product Cards -->
 
 </section>
 
-<section class="kids-index-products">
+<!-- =========================================================
+     KIDS CATEGORY PILLS
+========================================================= -->
+
+<section class="kids-category-pills">
+
+
+<div class="kids-category-pill active">
+
+    <i class="fa-solid fa-shirt"></i>
+
+    <span>T-Shirts</span>
+
+</div>
+
+
+<div class="kids-category-pill">
+
+    <i class="fa-solid fa-child"></i>
+
+    <span>Boys</span>
+
+</div>
+
+
+<div class="kids-category-pill">
+
+    <i class="fa-solid fa-child-dress"></i>
+
+    <span>Girls</span>
+
+</div>
+
+
+<div class="kids-category-pill">
+
+    <i class="fa-solid fa-person-dress"></i>
+
+    <span>Dresses</span>
+
+</div>
+
+
+<div class="kids-category-pill">
+
+    <i class="fa-solid fa-shoe-prints"></i>
+
+    <span>Shoes</span>
+
+</div>
+
+
+<div class="kids-category-pill">
+
+    <i class="fa-solid fa-hat-cowboy"></i>
+
+    <span>Accessories</span>
+
+</div>
+
+
+</section>
+
+<!-- =========================================================
+     TRENDING KIDS COLLECTION
+========================================================= -->
+
+<section class="kids-trending">
+
+
+<div class="kids-section-heading kids-trending-heading">
+
+    <div>
+
+        <span>WHAT'S TRENDING</span>
+
+        <h2>Little Fashion Stars</h2>
+
+    </div>
+
+    <a href="#">
+        View All
+        <i class="fa-solid fa-arrow-right"></i>
+    </a>
+
+</div>
+
+
+<div class="kids-trending-grid">
+
+    <div class="kids-trend-card">
+
+        <div class="kids-trend-image">
+
+            <img
+                src="{% static 'images/kids-trend-1.jpg' %}"
+                alt="Kids Casual Wear"
+            >
+
+            <span>HOT</span>
+
+        </div>
+
+        <div class="kids-trend-info">
+
+            <small>CASUAL WEAR</small>
+
+            <h3>Playground Ready</h3>
+
+            <p>
+                Comfortable outfits made for everyday adventures.
+            </p>
+
+            <a href="#">Shop Now →</a>
+
+        </div>
+
+    </div>
+
+
+    <div class="kids-trend-card">
+
+        <div class="kids-trend-image">
+
+            <img
+                src="{% static 'images/kids-trend-2.jpg' %}"
+                alt="Kids Party Wear"
+            >
+
+            <span>NEW</span>
+
+        </div>
+
+        <div class="kids-trend-info">
+
+            <small>PARTY WEAR</small>
+
+            <h3>Little Party Looks</h3>
+
+            <p>
+                Adorable outfits for special celebrations.
+            </p>
+
+            <a href="#">Shop Now →</a>
+
+        </div>
+
+    </div>
+
+
+    <div class="kids-trend-card">
+
+        <div class="kids-trend-image">
+
+            <img
+                src="{% static 'images/kids-trend-3.jpg' %}"
+                alt="Kids Denim Collection"
+            >
+
+            <span>BESTSELLER</span>
+
+        </div>
+
+        <div class="kids-trend-info">
+
+            <small>DENIM EDIT</small>
+
+            <h3>Mini Denim Collection</h3>
+
+            <p>
+                Cool denim styles designed for little explorers.
+            </p>
+
+            <a href="#">Shop Now →</a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</section>
+
+<!-- =========================================================
+     KIDS PROMOTIONAL STRIP
+========================================================= -->
+
+<section class="kids-promo">
+
+
+<div class="kids-promo-content">
+
+    <span>LIMITED TIME OFFER</span>
+
+    <h2>Make Every Day Stylish</h2>
+
+    <p>
+        Get up to <strong>50% OFF</strong> on selected kids' styles.
+    </p>
+
+    <a href="#kids-products">
+
+        Shop Sale
+
+        <i class="fa-solid fa-arrow-right"></i>
+
+    </a>
+
+</div>
+
+
+<div class="kids-promo-decoration">
+
+    <span>50</span>
+
+    <small>% OFF</small>
+
+</div>
+
+
+</section>
+
+<!-- =========================================================
+     EXISTING PRODUCT SECTION
+     DO NOT CHANGE THIS SECTION
+========================================================= -->
+
+<section class="index-products" id="men-products">
+
   <h2>Featured Products</h2>
 
-  <div class="kids-index-product-grid">
-    {% for p in products %}
-    <a href="{% url 'core:products_details' p.id  %}" style="text-decoration:none;" >
-      <div class="kids-index-product-card">
-        <!-- Discount Badge -->
-        <span class="kids-discount-badge">{{p.discount_percentage}}% OFF</span>
+  <div class="index-product-grid">
 
-        <!-- Wishlist -->
-        <button class="kids-wishlist-btn">
-          <i class="fa-regular fa-heart"></i>
-        </button>
 
-        <!-- Product Image -->
-        <div class="index-img">
-          <img src="{{ p.product_image.url }}" alt="Women Kurti" />
-        </div>
+{% for p in products %}
 
-        <!-- Product Details -->
-        <div class="product-info">
-          <h3>{{p.product_name}}</h3>
+<a href="{% url 'core:products_details' p.id  %}" style="text-decoration:none;">
 
-          <div class="rating">
-            <i class="fa-solid fa-star"></i>
-            4.8
-            <span>(245 Reviews)</span>
-          </div>
+  <div class="index-product-card">
 
-          <div class="price-box">
-            <span class="current-price">₹{{p.selling_price}}</span>
+    <!-- Discount Badge -->
+    <span class="discount-badge">{{p.discount_percentage}}% OFF</span>
 
-            <span class="old-price">₹{{p.original_price}}</span>
-          </div>
+    <!-- Wishlist -->
+    <button class="wishlist-btn">
+      <i class="fa-regular fa-heart"></i>
+    </button>
 
-          <button class="cart-btn">
-            <i class="fa-solid fa-cart-shopping"></i>
-            Add to Cart
-          </button>
-        </div>
+    <!-- Product Image -->
+    <div class="index-img">
+      <img src="{{ p.product_image.url }}" alt="Women Kurti" />
+    </div>
+
+    <!-- Product Details -->
+    <div class="product-info">
+
+      <h3>{{p.product_name}}</h3>
+
+      <div class="rating">
+        <i class="fa-solid fa-star"></i>
+        4.8
+        <span>(245 Reviews)</span>
       </div>
-    </a>
-    {% endfor %}
+
+      <div class="price-box">
+        <span class="current-price">₹{{p.selling_price}}</span>
+
+        <span class="old-price">₹{{p.original_price}}</span>
+      </div>
+
+      <button class="cart-btn">
+        <i class="fa-solid fa-cart-shopping"></i>
+        Add to Cart
+      </button>
+
+    </div>
+
   </div>
+
+</a>
+
+{% endfor %}
+
+
+  </div>
+
 </section>
 
+<!-- =========================================================
+     COMPLETE THE LOOK
+========================================================= -->
+
+<section class="kids-complete-look">
+
+
+<div class="kids-section-heading">
+
+    <span>STYLE IT YOUR WAY</span>
+
+    <h2>Complete The Look</h2>
+
+    <p>
+        Build adorable outfits with pieces that perfectly match.
+    </p>
+
+</div>
+
+
+<div class="kids-look-grid">
+
+    <div class="kids-look-card">
+
+        <img
+            src="{% static 'images/kids-look-casual.jpg' %}"
+            alt="Kids Casual Look"
+        >
+
+        <div class="kids-look-content">
+
+            <span>THE CASUAL EDIT</span>
+
+            <h3>Weekend Adventures</h3>
+
+            <a href="#">
+                Discover Look →
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="kids-look-card">
+
+        <img
+            src="{% static 'images/kids-look-party.jpg' %}"
+            alt="Kids Party Look"
+        >
+
+        <div class="kids-look-content">
+
+            <span>THE PARTY EDIT</span>
+
+            <h3>Little Celebration</h3>
+
+            <a href="#">
+                Discover Look →
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</section>
+
+<!-- =========================================================
+     KIDS STYLE GUIDE
+========================================================= -->
+
+<section class="kids-style-guide">
+
+
+<div class="kids-style-guide-image">
+
+    <img
+        src="{% static 'images/kids-style-guide.jpg' %}"
+        alt="Kids Style Guide"
+    >
+
+</div>
+
+
+<div class="kids-style-guide-content">
+
+    <span>THE KIDS STYLE GUIDE</span>
+
+    <h2>
+        Little Looks.<br>
+        Big Smiles.
+    </h2>
+
+    <p>
+        Discover fun and practical styling ideas for your little
+        ones. From everyday essentials to special occasion outfits,
+        find styles made for every moment.
+    </p>
+
+
+    <div class="kids-style-features">
+
+        <div>
+
+            <strong>01</strong>
+
+            <span>Pick Their Fit</span>
+
+        </div>
+
+
+        <div>
+
+            <strong>02</strong>
+
+            <span>Mix & Match</span>
+
+        </div>
+
+
+        <div>
+
+            <strong>03</strong>
+
+            <span>Let Them Shine</span>
+
+        </div>
+
+    </div>
+
+
+    <a href="#" class="kids-style-btn">
+
+        Read Style Guide
+
+        <i class="fa-solid fa-arrow-right"></i>
+
+    </a>
+
+</div>
+
+
+</section>
+
+<!-- =========================================================
+     KIDS TRUST FEATURES
+========================================================= -->
+
+<section class="kids-trust">
+
+
+<div class="kids-trust-item">
+
+    <div class="kids-trust-icon">
+
+        <i class="fa-solid fa-truck-fast"></i>
+
+    </div>
+
+    <div>
+
+        <h4>Free Shipping</h4>
+
+        <p>On orders above ₹999</p>
+
+    </div>
+
+</div>
+
+
+<div class="kids-trust-item">
+
+    <div class="kids-trust-icon">
+
+        <i class="fa-solid fa-rotate-left"></i>
+
+    </div>
+
+    <div>
+
+        <h4>Easy Returns</h4>
+
+        <p>7 days easy returns</p>
+
+    </div>
+
+</div>
+
+
+<div class="kids-trust-item">
+
+    <div class="kids-trust-icon">
+
+        <i class="fa-solid fa-shield-halved"></i>
+
+    </div>
+
+    <div>
+
+        <h4>Secure Payment</h4>
+
+        <p>100% secure checkout</p>
+
+    </div>
+
+</div>
+
+
+<div class="kids-trust-item">
+
+    <div class="kids-trust-icon">
+
+        <i class="fa-solid fa-headset"></i>
+
+    </div>
+
+    <div>
+
+        <h4>24/7 Support</h4>
+
+        <p>We're here to help</p>
+
+    </div>
+
+</div>
+
+
+</section>
+
+<!-- =========================================================
+     KIDS NEWSLETTER
+========================================================= -->
+
+<section class="kids-newsletter">
+
+
+<div class="kids-newsletter-content">
+
+    <span>STAY IN STYLE</span>
+
+    <h2>Never Miss A Drop</h2>
+
+    <p>
+        Get first access to new collections, exclusive offers
+        and adorable kids fashion inspiration.
+    </p>
+
+
+    <form>
+
+        <div class="kids-newsletter-input">
+
+            <i class="fa-regular fa-envelope"></i>
+
+            <input
+                type="email"
+                placeholder="Enter your email address"
+            >
+
+            <button type="submit">
+
+                Subscribe
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </button>
+
+        </div>
+
+    </form>
+
+</div>
+
+
+</section>
 
 {% endblock %}

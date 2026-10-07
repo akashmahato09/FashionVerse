@@ -59,6 +59,8 @@ def user_register(request):
             })
 
     return render(request, "accounts/user_register.html")
+
+
 def logout_user(request):
     logout(request)              # Clears the user's session
     return redirect("core:home")

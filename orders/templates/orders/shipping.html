@@ -1,181 +1,844 @@
-{% extends 'base.html' %} {% load static %} {% block css %}
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+
 <link rel="stylesheet" href="{% static 'css/shipping.css' %}" />
-{% endblock %} {% block content %}
+{% endblock %}
 
-<div class="checkout-container">
-  <div class="checkout-header">
-    <h2>Checkout</h2>
-    <p>Complete your shipping details to place your order.</p>
-  </div>
+{% block content %}
 
-  <form action="" method="POST">
+<div class="checkout-page">
+
+
+<!-- Header -->
+<div class="checkout-heading">
+
+    <div>
+        <span class="checkout-label">SECURE CHECKOUT</span>
+
+        <h1>Complete Your Order</h1>
+
+        <p>
+            Fill in your details below to place your order.
+        </p>
+    </div>
+
+    <div class="secure-badge">
+        🔒 Secure Checkout
+    </div>
+
+</div>
+
+
+<form action="" method="POST" id="checkoutForm">
+
     {% csrf_token %}
 
-    <div class="checkout-grid">
-      <!-- Customer Details -->
 
-      <div class="checkout-card">
-        <h3>Customer Details</h3>
+    <div class="checkout-layout">
 
-        <div class="form-group">
-          <label>Full Name</label>
-          <input
-            type="text"
-            name="full_name"
-            placeholder="Enter your full name"
-            required
-          />
+        <!-- =========================
+             LEFT SIDE
+        ========================== -->
+
+        <div class="checkout-left">
+
+
+            <!-- CUSTOMER DETAILS -->
+
+            <div class="checkout-card">
+
+                <div class="card-header">
+
+                    <div class="step-number">
+                        01
+                    </div>
+
+                    <div>
+                        <h2>Customer Details</h2>
+
+                        <p>
+                            Enter your personal information
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+
+                    <!-- Full Name -->
+
+                    <div class="form-group full-width">
+
+                        <label for="full_name">
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="full_name"
+                            name="full_name"
+                            placeholder="Enter your full name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Phone -->
+
+                    <div class="form-group">
+
+                        <label for="phone_number">
+                            Phone Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone_number"
+                            name="phone_number"
+                            placeholder="9876543210"
+                            maxlength="10"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Email -->
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="example@gmail.com"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================
+                 SHIPPING ADDRESS
+            ========================== -->
+
+            <div class="checkout-card">
+
+                <div class="card-header">
+
+                    <div class="step-number">
+                        02
+                    </div>
+
+                    <div>
+
+                        <h2>Shipping Address</h2>
+
+                        <p>
+                            Enter the address where you want your order delivered.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+
+                    <!-- Address -->
+
+                    <div class="form-group full-width">
+
+                        <label for="address_line_1">
+                            Address Line 1
+                        </label>
+
+                        <input
+                            type="text"
+                            id="address_line_1"
+                            name="address_line_1"
+                            placeholder="House No, Street"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Address 2 -->
+
+                    <div class="form-group full-width">
+
+                        <label for="address_line_2">
+                            Address Line 2
+                        </label>
+
+                        <input
+                            type="text"
+                            id="address_line_2"
+                            name="address_line_2"
+                            placeholder="Apartment, Area"
+                        >
+
+                    </div>
+
+
+                    <!-- Landmark -->
+
+                    <div class="form-group full-width">
+
+                        <label for="landmark">
+                            Landmark
+                        </label>
+
+                        <input
+                            type="text"
+                            id="landmark"
+                            name="landmark"
+                            placeholder="Near Temple / School"
+                        >
+
+                    </div>
+
+
+                    <!-- City -->
+
+                    <div class="form-group">
+
+                        <label for="city">
+                            City
+                        </label>
+
+                        <input
+                            type="text"
+                            id="city"
+                            name="city"
+                            placeholder="Enter city"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- District -->
+
+                    <div class="form-group">
+
+                        <label for="district">
+                            District
+                        </label>
+
+                        <input
+                            type="text"
+                            id="district"
+                            name="district"
+                            placeholder="Enter district"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- State -->
+
+                    <div class="form-group">
+
+                        <label for="state">
+                            State
+                        </label>
+
+                        <input
+                            type="text"
+                            id="state"
+                            name="state"
+                            placeholder="Enter state"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Pincode -->
+
+                    <div class="form-group">
+
+                        <label for="pincode">
+                            Pincode
+                        </label>
+
+                        <input
+                            type="text"
+                            id="pincode"
+                            name="pincode"
+                            placeholder="6 digit pincode"
+                            maxlength="6"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Country -->
+
+                    <div class="form-group full-width">
+
+                        <label for="country">
+                            Country
+                        </label>
+
+                        <input
+                            type="text"
+                            id="country"
+                            name="country"
+                            value="India"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================
+                 ORDER DETAILS
+            ========================== -->
+
+            <div class="checkout-card">
+
+                <div class="card-header">
+
+                    <div class="step-number">
+                        03
+                    </div>
+
+                    <div>
+
+                        <h2>Order Details</h2>
+
+                        <p>
+                            Check your product and order quantity.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Product -->
+
+                <div class="product-box">
+
+                    <div class="product-image">
+
+                        {% if product.product_image %}
+
+                            <img
+                                src="{{ product.product_image.url }}"
+                                alt="{{ product.product_name }}"
+                            >
+
+                        {% else %}
+
+                            <div class="no-image">
+                                🛍️
+                            </div>
+
+                        {% endif %}
+
+                    </div>
+
+
+                    <div class="product-information">
+
+                        <span class="product-label">
+                            PRODUCT
+                        </span>
+
+                        <h3>
+                            {{ product.product_name }}
+                        </h3>
+
+                        <p>
+                            ₹{{ product.selling_price }}
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Order Fields -->
+
+                <div class="order-fields">
+
+
+                    <!-- Quantity -->
+
+                    <div class="order-field">
+
+                        <label>
+                            Quantity
+                        </label>
+
+                        <div class="quantity-control">
+
+                            <button
+                                type="button"
+                                id="decreaseQty"
+                            >
+                                −
+                            </button>
+
+                            <input
+                                type="number"
+                                id="quantity"
+                                name="quantity"
+                                value="1"
+                                min="1"
+                                max="{{ product.quantity }}"
+                            >
+
+                            <button
+                                type="button"
+                                id="increaseQty"
+                            >
+                                +
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Total -->
+
+                    <div class="order-field">
+
+                        <label>
+                            Total Price
+                        </label>
+
+                        <div class="total-price-box">
+
+                            ₹<span id="totalDisplay">
+                                {{ product.selling_price }}
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Status -->
+
+                    <div class="order-field">
+
+                        <label for="order_status">
+                            Order Status
+                        </label>
+
+                        <select
+                            name="order_status"
+                            id="order_status"
+                        >
+
+                            <option value="Pending">
+                                Pending
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Hidden Total -->
+
+                <input
+                    type="hidden"
+                    id="total_price"
+                    name="total_price"
+                    value="{{ product.selling_price }}"
+                >
+
+            </div>
+
         </div>
 
-        <div class="form-group">
-          <label>Phone Number</label>
-          <input
-            type="tel"
-            name="phone_number"
-            placeholder="9876543210"
-            required
-          />
+
+
+        <!-- =========================
+             RIGHT SIDE SUMMARY
+        ========================== -->
+
+        <div class="checkout-right">
+
+            <div class="summary-card">
+
+                <div class="summary-title">
+
+                    <div>
+
+                        <span>
+                            ORDER SUMMARY
+                        </span>
+
+                        <h2>
+                            Your Order
+                        </h2>
+
+                    </div>
+
+                    <div class="summary-icon">
+                        🛒
+                    </div>
+
+                </div>
+
+
+                <!-- Product -->
+
+                <div class="summary-product">
+
+                    <div class="summary-product-image">
+
+                        {% if product.product_image %}
+
+                            <img
+                                src="{{ product.product_image.url }}"
+                                alt="{{ product.product_name }}"
+                            >
+
+                        {% else %}
+
+                            🛍️
+
+                        {% endif %}
+
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            {{ product.product_name }}
+                        </h3>
+
+                        <p>
+                            ₹{{ product.selling_price }}
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Price -->
+
+                <div class="summary-details">
+
+                    <div>
+
+                        <span>
+                            Product Price
+                        </span>
+
+                        <strong>
+                            ₹{{ product.selling_price }}
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Quantity
+                        </span>
+
+                        <strong id="summaryQuantity">
+                            1
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Delivery
+                        </span>
+
+                        <strong class="free">
+                            FREE
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="summary-line"></div>
+
+
+                <!-- Final Total -->
+
+                <div class="summary-total">
+
+                    <span>
+                        Total Amount
+                    </span>
+
+                    <strong>
+                        ₹<span id="summaryTotal">
+                            {{ product.selling_price }}
+                        </span>
+                    </strong>
+
+                </div>
+
+
+                <div class="summary-note">
+
+                    🔒 Your information is protected and secure.
+
+                </div>
+
+            </div>
+
         </div>
 
-        <div class="form-group">
-          <label>Email</label>
-          <input
-            type="email"
-            name="email"
-            placeholder="example@gmail.com"
-            required
-          />
-        </div>
-      </div>
-
-      <!-- Shipping Address -->
-
-      <div class="checkout-card">
-        <h3>Shipping Address</h3>
-
-        <div class="form-group">
-          <label>Address Line 1</label>
-          <input
-            type="text"
-            name="address_line_1"
-            placeholder="House No, Street"
-            required
-          />
-        </div>
-
-        <div class="form-group">
-          <label>Address Line 2</label>
-          <input
-            type="text"
-            name="address_line_2"
-            placeholder="Apartment, Area"
-          />
-        </div>
-
-        <div class="form-group">
-          <label>Landmark</label>
-          <input
-            type="text"
-            name="landmark"
-            placeholder="Near Temple / School"
-          />
-        </div>
-
-        <div class="row">
-          <div class="form-group">
-            <label>City</label>
-            <input type="text" name="city" required />
-          </div>
-
-          <div class="form-group">
-            <label>District</label>
-            <input type="text" name="district" required />
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="form-group">
-            <label>State</label>
-            <input type="text" name="state" required />
-          </div>
-
-          <div class="form-group">
-            <label>Pincode</label>
-            <input type="text" name="pincode" maxlength="6" required />
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label>Country</label>
-          <input type="text" name="country" value="India" />
-        </div>
-      </div>
-
-      <!-- Order Details -->
-
-      <div class="checkout-card">
-        <h3>Order Details</h3>
-
-        <div class="form-group">
-          <label>Quantity</label>
-
-          <input
-            type="number"
-            id="quantity"
-            name="quantity"
-            value="1"
-            min="1"
-            max="{{ product.quantity }}"
-          />
-        </div>
-
-        <div class="form-group">
-          <label>Total Price</label>
-
-          <input
-            type="text"
-            id="total_price"
-            name="total_price"
-            value="{{ product.selling_price }}"
-            readonly
-          />
-        </div>
-        <div class="form-group">
-          <label>Order Status</label>
-
-          <select name="order_status">
-            <option value="Pending">Pending</option>
-          </select>
-        </div>
-      </div>
     </div>
 
-    <div class="checkout-btn">
-      <button type="submit">Place Order</button>
+
+
+    <!-- =========================
+         PLACE ORDER
+    ========================== -->
+
+    <div class="place-order-section">
+
+        <div class="order-note">
+
+            <div class="check-icon">
+                ✓
+            </div>
+
+            <div>
+
+                <strong>
+                    Ready to place your order?
+                </strong>
+
+                <p>
+                    Please make sure all the information above is correct.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <button
+            type="button"
+            id="placeOrderBtn"
+            class="place-order-btn"
+        >
+
+            <span>
+                Place Order
+            </span>
+
+            <span class="arrow">
+                →
+            </span>
+
+        </button>
+
     </div>
-  </form>
+
+
+</form>
+
+
 </div>
 
 <script>
 
-const quantity = document.getElementById("quantity");
+const quantityInput =
+    document.getElementById("quantity");
 
-const totalPrice = document.getElementById("total_price");
+const totalPrice =
+    document.getElementById("total_price");
 
-const price = {{ product.selling_price }};
+const totalDisplay =
+    document.getElementById("totalDisplay");
 
-quantity.addEventListener("input", function(){
+const summaryTotal =
+    document.getElementById("summaryTotal");
 
-    let qty = parseInt(this.value);
+const summaryQuantity =
+    document.getElementById("summaryQuantity");
 
-    if(isNaN(qty) || qty < 1){
+const increaseBtn =
+    document.getElementById("increaseQty");
+
+const decreaseBtn =
+    document.getElementById("decreaseQty");
+
+
+const price =
+    parseFloat("{{ product.selling_price }}");
+
+const maxQuantity =
+    parseInt("{{ product.quantity }}");
+
+
+
+function updateTotal() {
+
+    let qty =
+        parseInt(quantityInput.value);
+
+
+    if (isNaN(qty) || qty < 1) {
+
         qty = 1;
-        this.value = 1;
+
     }
 
-    totalPrice.value = qty * price;
 
-});
+    if (qty > maxQuantity) {
+
+        qty = maxQuantity;
+
+    }
+
+
+    quantityInput.value = qty;
+
+
+    const total =
+        qty * price;
+
+
+    totalPrice.value =
+        total.toFixed(2);
+
+
+    totalDisplay.textContent =
+        total.toFixed(2);
+
+
+    summaryTotal.textContent =
+        total.toFixed(2);
+
+
+    summaryQuantity.textContent =
+        qty;
+
+}
+
+
+
+/* Increase */
+
+increaseBtn.addEventListener(
+    "click",
+    function () {
+
+        let qty =
+            parseInt(quantityInput.value);
+
+
+        if (qty < maxQuantity) {
+
+            quantityInput.value =
+                qty + 1;
+
+            updateTotal();
+
+        }
+
+    }
+);
+
+
+
+/* Decrease */
+
+decreaseBtn.addEventListener(
+    "click",
+    function () {
+
+        let qty =
+            parseInt(quantityInput.value);
+
+
+        if (qty > 1) {
+
+            quantityInput.value =
+                qty - 1;
+
+            updateTotal();
+
+        }
+
+    }
+);
+
+
+
+/* Manual quantity */
+
+quantityInput.addEventListener(
+    "input",
+    updateTotal
+);
+
+
+
+/* Place Order */
+
+document
+    .getElementById("placeOrderBtn")
+    .addEventListener(
+        "click",
+        function () {
+
+            {% if user.is_authenticated %}
+
+                document
+                    .getElementById("checkoutForm")
+                    .submit();
+
+            {% else %}
+
+                window.location.href =
+                    "{% url 'accounts:user_login' %}";
+
+            {% endif %}
+
+        }
+    );
 
 </script>
 

@@ -1,13 +1,20 @@
 {% extends 'dashboard_base.html' %}
-{% block title %}{% endblock%}
+
 {% load static %}
-{% block css %}<link rel="stylesheet" href="{% static 'css/my_orders.css' %}" />{% endblock css %} 
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/my_orders.css' %}">
+{% endblock css %}
+
+
 {% block main_content %}
+
 <div class="myorder-container">
 
     <div class="order-header">
         <h1>🎁 My Orders</h1>
     </div>
+
 
     {% if orders %}
 
@@ -15,53 +22,101 @@
 
         <div class="order-card">
 
+            <!-- PRODUCT IMAGE -->
             <div class="order-image">
 
                 {% if order.product.product_image %}
-                    <img src="{{ order.product.product_image.url }}" alt="{{ order.product.product_name }}">
+
+                    <img
+                        src="{{ order.product.product_image.url }}"
+                        alt="{{ order.product.product_name }}"
+                    >
+
                 {% endif %}
 
             </div>
 
+
+            <!-- ORDER DETAILS -->
             <div class="order-details">
 
-                <h2>{{ order.product.product_name }}</h2>
+                <h2>
+                    {{ order.product.product_name }}
+                </h2>
 
-                <p><strong>Order ID:</strong> #{{ order.id }}</p>
+                <p>
+                    <strong>Order ID:</strong>
+                    #{{ order.id }}
+                </p>
 
-                <p><strong>Ordered:</strong> {{ order.ordered_at|date:"d M Y" }}</p>
+                <p>
+                    <strong>Ordered:</strong>
+                    {{ order.ordered_at|date:"d M Y" }}
+                </p>
 
-                <p><strong>Quantity:</strong> {{ order.quantity }}</p>
+                <p>
+                    <strong>Quantity:</strong>
+                    {{ order.quantity }}
+                </p>
 
-                <p><strong>Customer:</strong> {{ order.full_name }}</p>
+                <p>
+                    <strong>Customer:</strong>
+                    {{ order.full_name }}
+                </p>
 
-                <h3>₹{{ order.total_price }}</h3>
+                <h3>
+                    ₹{{ order.total_price }}
+                </h3>
 
             </div>
 
+
+            <!-- STATUS -->
             <div class="status">
 
-                <span class="{{ order.order_status|lower|slugify }}">
+                <span class="order-status {{ order.order_status|lower|slugify }}">
                     {{ order.order_status }}
                 </span>
 
-                <p>Shipping Address</p>
+
+                <p>
+                    Shipping Address
+                </p>
 
                 <strong>
                     {{ order.city }}, {{ order.state }}
                 </strong>
 
+
                 {% if order.order_status == "Pending" or order.order_status == "Processing" %}
-                  <a href="#">
-                        <button class="danger">
-                            track your order
-                        </button>
+
+                    <!-- TRACK ORDER -->
+
+                    <a href="#" class="track-btn">
+                        Track Your Order
                     </a>
-                    <a href="#">
-                        <button class="danger">
-                            Cancel Order
-                        </button>
+
+
+                    <!-- CANCEL ORDER -->
+
+                    <a
+                        href="{% url 'orders:cancel_order' order.id %}"
+                        class="cancel-btn"
+                    >
+                        Cancel Order
                     </a>
+
+
+                {% elif order.order_status == "Cancelled" %}
+
+                    <div class="cancelled-message">
+
+                        <span>✕</span>
+
+                        Order Cancelled
+
+                    </div>
+
                 {% endif %}
 
             </div>
@@ -72,12 +127,18 @@
 
     {% else %}
 
-        <h2 style="text-align:center;">
-            You haven't placed any orders yet.
-        </h2>
+        <div class="no-orders">
+
+            <h2>No Orders Yet</h2>
+
+            <p>
+                You haven't placed any orders yet.
+            </p>
+
+        </div>
 
     {% endif %}
 
 </div>
 
-{% endblock %}
+{% endblock main_content %}

@@ -1,0 +1,964 @@
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.order-confirm-page {
+    min-height: calc(100vh - 80px);
+
+    padding: 55px 20px 80px;
+
+    background: #f7f8fb;
+
+    font-family:
+        Inter,
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: #111827;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.order-header {
+    text-align: center;
+
+    max-width: 650px;
+
+    margin: 0 auto 45px;
+}
+
+.payment-check {
+    width: 64px;
+    height: 64px;
+
+    margin: 0 auto 18px;
+
+    border-radius: 50%;
+
+    background: #16a34a;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+
+    font-size: 30px;
+    font-weight: 700;
+
+    box-shadow:
+        0 10px 30px rgba(22, 163, 74, 0.22);
+
+    animation: checkAppear 0.7s ease;
+}
+
+.order-header h1 {
+    margin: 0;
+
+    font-size: 32px;
+
+    font-weight: 750;
+}
+
+.order-header p {
+    margin-top: 10px;
+
+    color: #6b7280;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   DELIVERY SCENE
+========================================================= */
+
+.delivery-scene {
+    position: relative;
+
+    width: min(1050px, 100%);
+
+    height: 390px;
+
+    margin: auto;
+
+    overflow: hidden;
+
+    border-radius: 24px;
+
+    background: #dff3ff;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================================
+   SKY
+========================================================= */
+
+.sky {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            #d9f1ff,
+            #f4fbff
+        );
+}
+
+
+/* =========================================================
+   CLOUDS
+========================================================= */
+
+.cloud {
+    position: absolute;
+
+    width: 100px;
+    height: 30px;
+
+    background: rgba(255,255,255,0.8);
+
+    border-radius: 50px;
+}
+
+.cloud::before,
+.cloud::after {
+    content: "";
+
+    position: absolute;
+
+    background: white;
+
+    border-radius: 50%;
+}
+
+.cloud::before {
+    width: 45px;
+    height: 45px;
+
+    left: 15px;
+    bottom: 5px;
+}
+
+.cloud::after {
+    width: 55px;
+    height: 55px;
+
+    right: 15px;
+    bottom: 0;
+}
+
+.cloud-one {
+    top: 60px;
+    left: 10%;
+
+    animation: cloudMove 15s linear infinite;
+}
+
+.cloud-two {
+    top: 105px;
+    right: 10%;
+
+    transform: scale(0.7);
+
+    animation: cloudMoveReverse 18s linear infinite;
+}
+
+
+/* =========================================================
+   GROUND
+========================================================= */
+
+.ground {
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 105px;
+
+    background: #d9dee5;
+}
+
+
+/* =========================================================
+   ROAD
+========================================================= */
+
+.road {
+    position: absolute;
+
+    bottom: 0;
+
+    width: 100%;
+    height: 72px;
+
+    background: #303846;
+}
+
+.road-mark {
+    position: absolute;
+
+    top: 34px;
+
+    width: 90px;
+    height: 5px;
+
+    background: #f8fafc;
+}
+
+.road-mark-one {
+    left: 5%;
+}
+
+.road-mark-two {
+    left: 30%;
+}
+
+.road-mark-three {
+    left: 55%;
+}
+
+.road-mark-four {
+    left: 80%;
+}
+
+
+/* =========================================================
+   PACKAGE
+========================================================= */
+
+.package {
+    position: absolute;
+
+    left: 20%;
+
+    bottom: 115px;
+
+    width: 85px;
+    height: 78px;
+
+    z-index: 10;
+
+    transition:
+        left 1.8s ease-in-out,
+        bottom 1.8s ease-in-out,
+        transform 1.8s ease,
+        opacity 0.5s ease;
+}
+
+.package-body {
+    width: 85px;
+    height: 65px;
+
+    position: absolute;
+
+    bottom: 0;
+
+    background: #c88743;
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 10px 20px rgba(0,0,0,0.16);
+}
+
+.package-top {
+    position: absolute;
+
+    top: 5px;
+    left: 4px;
+
+    width: 77px;
+    height: 20px;
+
+    background: #dfa35d;
+
+    transform: skewX(-20deg);
+
+    border-radius: 4px;
+}
+
+.package-tape {
+    position: absolute;
+
+    left: 36px;
+
+    top: 0;
+
+    width: 13px;
+    height: 65px;
+
+    background: #f0c17c;
+}
+
+.package-label {
+    position: absolute;
+
+    left: 13px;
+    top: 25px;
+
+    display: flex;
+
+    gap: 5px;
+
+    align-items: center;
+
+    color: #5b3415;
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   TRUCK
+========================================================= */
+
+.delivery-truck {
+    position: absolute;
+
+    left: 52%;
+
+    bottom: 82px;
+
+    width: 330px;
+
+    height: 145px;
+
+    z-index: 8;
+
+    transition:
+        left 5s cubic-bezier(.65,0,.35,1);
+}
+
+
+/* Truck container */
+
+.truck-container {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 235px;
+    height: 105px;
+
+    border-radius: 8px 5px 5px 8px;
+
+    background: #ffffff;
+
+    border: 2px solid #d1d5db;
+
+    box-shadow:
+        0 12px 20px rgba(0,0,0,0.15);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Blue top */
+
+.truck-container::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 9px;
+
+    background: #2563eb;
+
+    border-radius: 7px 5px 0 0;
+}
+
+
+/* Brand */
+
+.truck-brand {
+    font-size: 18px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    color: #2563eb;
+}
+
+
+/* Truck cabin */
+
+.truck-cabin {
+    position: absolute;
+
+    right: 0;
+
+    top: 37px;
+
+    width: 95px;
+    height: 68px;
+
+    background: #2563eb;
+
+    border-radius: 5px 18px 5px 5px;
+
+    box-shadow:
+        0 10px 18px rgba(0,0,0,0.15);
+}
+
+
+/* Window */
+
+.truck-window {
+    position: absolute;
+
+    left: 12px;
+    top: 10px;
+
+    width: 58px;
+    height: 28px;
+
+    background: #dff6ff;
+
+    border: 3px solid #1e40af;
+
+    border-radius: 6px;
+
+    overflow: hidden;
+}
+
+.window-shine {
+    position: absolute;
+
+    width: 60px;
+    height: 5px;
+
+    background: rgba(255,255,255,0.7);
+
+    transform: rotate(-25deg);
+
+    top: 5px;
+    left: -10px;
+}
+
+
+/* Door handle */
+
+.truck-handle {
+    position: absolute;
+
+    left: 15px;
+    bottom: 12px;
+
+    width: 20px;
+    height: 4px;
+
+    background: #bfdbfe;
+
+    border-radius: 5px;
+}
+
+
+/* Headlight */
+
+.truck-headlight {
+    position: absolute;
+
+    right: -4px;
+    bottom: 10px;
+
+    width: 9px;
+    height: 18px;
+
+    background: #fef08a;
+
+    border-radius: 3px;
+}
+
+
+/* Truck door */
+
+.truck-door {
+    position: absolute;
+
+    left: 205px;
+
+    top: 10px;
+
+    width: 3px;
+    height: 85px;
+
+    background: #d1d5db;
+
+    opacity: 0;
+
+    transition: opacity 0.5s;
+}
+
+
+/* =========================================================
+   WHEELS
+========================================================= */
+
+.truck-wheel {
+    position: absolute;
+
+    bottom: 0;
+
+    width: 52px;
+    height: 52px;
+
+    border-radius: 50%;
+
+    background: #111827;
+
+    border: 7px solid #4b5563;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    animation: wheelSpin 0.6s linear infinite;
+}
+
+.wheel-left {
+    left: 42px;
+}
+
+.wheel-right {
+    right: 30px;
+}
+
+.wheel-center {
+    width: 17px;
+    height: 17px;
+
+    background: #9ca3af;
+
+    border-radius: 50%;
+}
+
+
+/* =========================================================
+   LOADING TEXT
+========================================================= */
+
+.loading-text {
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 18px;
+
+    transform: translateX(-50%);
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    background: rgba(17,24,39,0.75);
+
+    padding: 8px 16px;
+
+    border-radius: 30px;
+
+    z-index: 20;
+
+    transition: opacity 0.4s;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.delivery-status {
+    width: min(760px, 100%);
+
+    margin: 40px auto 0;
+
+    background: white;
+
+    padding: 25px 30px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,0.06);
+}
+
+.status-item {
+    display: flex;
+
+    gap: 16px;
+
+    align-items: center;
+
+    opacity: 0.35;
+
+    transition: 0.5s ease;
+}
+
+.status-item.active {
+    opacity: 1;
+}
+
+.status-item.completed {
+    opacity: 1;
+}
+
+.status-dot {
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #e5e7eb;
+
+    color: #6b7280;
+
+    font-weight: 700;
+
+    transition: 0.4s;
+}
+
+.status-item.active .status-dot,
+.status-item.completed .status-dot {
+    background: #2563eb;
+
+    color: white;
+}
+
+.status-item strong {
+    display: block;
+
+    font-size: 15px;
+
+    margin-bottom: 4px;
+}
+
+.status-item span {
+    display: block;
+
+    color: #6b7280;
+
+    font-size: 13px;
+}
+
+.status-connector {
+    width: 2px;
+
+    height: 30px;
+
+    margin-left: 20px;
+
+    background: #e5e7eb;
+
+    transition: 0.5s;
+}
+
+.status-connector.active {
+    background: #2563eb;
+}
+
+
+/* =========================================================
+   FINAL SUCCESS
+========================================================= */
+
+.final-success {
+    max-width: 600px;
+
+    margin: 35px auto 0;
+
+    padding: 38px 30px;
+
+    background: white;
+
+    border-radius: 22px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.08);
+
+    opacity: 0;
+
+    transform: translateY(30px) scale(0.96);
+
+    pointer-events: none;
+
+    transition: all 0.8s ease;
+}
+
+.final-success.show {
+    opacity: 1;
+
+    transform: translateY(0) scale(1);
+
+    pointer-events: auto;
+}
+
+.success-circle {
+    width: 70px;
+    height: 70px;
+
+    margin: 0 auto 18px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #16a34a;
+
+    color: white;
+
+    font-size: 34px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 12px 30px rgba(22,163,74,0.25);
+}
+
+.final-success h2 {
+    margin: 0;
+
+    font-size: 28px;
+}
+
+.final-success p {
+    color: #6b7280;
+
+    line-height: 1.6;
+
+    margin: 10px auto 25px;
+
+    max-width: 480px;
+}
+
+
+/* Details */
+
+.success-details {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-bottom: 25px;
+}
+
+.success-details div {
+    min-width: 130px;
+
+    padding: 12px 18px;
+
+    background: #f8fafc;
+
+    border-radius: 10px;
+}
+
+.success-details span {
+    display: block;
+
+    color: #9ca3af;
+
+    font-size: 12px;
+
+    margin-bottom: 5px;
+}
+
+.success-details strong {
+    color: #16a34a;
+
+    font-size: 14px;
+}
+
+
+/* Button */
+
+.continue-shopping {
+    display: inline-block;
+
+    padding: 13px 28px;
+
+    background: #2563eb;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.continue-shopping:hover {
+    background: #1d4ed8;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes checkAppear {
+
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    70% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes wheelSpin {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes cloudMove {
+
+    from {
+        transform: translateX(-100px);
+    }
+
+    to {
+        transform: translateX(100px);
+    }
+}
+
+@keyframes cloudMoveReverse {
+
+    from {
+        transform: translateX(100px);
+    }
+
+    to {
+        transform: translateX(-100px);
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .order-confirm-page {
+        padding: 35px 15px 60px;
+    }
+
+    .order-header h1 {
+        font-size: 27px;
+    }
+
+    .delivery-scene {
+        height: 320px;
+    }
+
+    .delivery-truck {
+        transform: scale(0.75);
+
+        transform-origin: bottom center;
+
+        left: 52%;
+    }
+
+    .package {
+        left: 8%;
+
+        transform: scale(0.8);
+    }
+
+    .delivery-status {
+        padding: 22px 18px;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .delivery-scene {
+        height: 280px;
+    }
+
+    .delivery-truck {
+        transform: scale(0.6);
+
+        left: 50%;
+    }
+
+    .package {
+        left: 3%;
+
+        transform: scale(0.65);
+    }
+
+    .success-details {
+        flex-direction: column;
+    }
+
+    .success-details div {
+        width: auto;
+    }
+
+}
+

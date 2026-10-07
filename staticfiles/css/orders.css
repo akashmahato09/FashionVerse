@@ -1,0 +1,181 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Poppins,sans-serif;
+}
+
+body{
+    background:#f5f6fa;
+}
+
+/* Container */
+
+.orders-container{
+    padding:30px;
+}
+
+/* Header */
+
+.orders-header{
+    margin-bottom:25px;
+}
+
+.orders-header h2{
+    margin-bottom:6px;
+}
+
+.orders-header p{
+    color:#666;
+}
+
+/* Summary Cards */
+
+.order-summary{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    margin-bottom:30px;
+}
+
+.summary-card{
+    background:#fff;
+    padding:25px;
+    text-align:center;
+    border-radius:12px;
+    box-shadow:0 5px 12px rgba(0,0,0,.08);
+}
+
+.summary-card i{
+    font-size:32px;
+    color:#ff3f6c;
+    margin-bottom:12px;
+}
+
+.summary-card h3{
+    margin-bottom:8px;
+}
+
+.summary-card p{
+    color:#666;
+}
+
+/* Search */
+
+.filter-box{
+    display:flex;
+    gap:20px;
+    background:#fff;
+    padding:20px;
+    border-radius:12px;
+    margin-bottom:25px;
+    box-shadow:0 5px 12px rgba(0,0,0,.08);
+}
+
+.filter-box input,
+.filter-box select{
+    flex:1;
+    padding:12px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    outline:none;
+}
+
+/* Table */
+
+.table-wrapper{
+    background:#fff;
+    border-radius:12px;
+    overflow:auto;
+    box-shadow:0 5px 12px rgba(0,0,0,.08);
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+thead{
+    background:#ff3f6c;
+    color:#fff;
+}
+
+th,td{
+    padding:16px;
+    text-align:center;
+}
+
+tbody tr{
+    border-bottom:1px solid #eee;
+}
+
+/* Status */
+
+.pending{
+    background:#fff3cd;
+    color:#d48806;
+    padding:6px 14px;
+    border-radius:20px;
+}
+
+.processing{
+    background:#dbeafe;
+    color:#2563eb;
+    padding:6px 14px;
+    border-radius:20px;
+}
+
+.shipped{
+    background:#ede9fe;
+    color:#6d28d9;
+    padding:6px 14px;
+    border-radius:20px;
+}
+
+.delivered{
+    background:#dcfce7;
+    color:#15803d;
+    padding:6px 14px;
+    border-radius:20px;
+}
+
+/* Button */
+
+.view-btn{
+    background:#ff3f6c;
+    color:#fff;
+    border:none;
+    padding:8px 18px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.view-btn:hover{
+    background:#e53360;
+}
+
+/* Responsive */
+
+@media(max-width:992px){
+
+.order-summary{
+    grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media(max-width:768px){
+
+.orders-container{
+    padding:15px;
+}
+
+.order-summary{
+    grid-template-columns:1fr;
+}
+
+.filter-box{
+    flex-direction:column;
+}
+
+}

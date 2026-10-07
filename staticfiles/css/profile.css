@@ -1,0 +1,244 @@
+/*==============================
+Vendor Profile
+===============================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Poppins,sans-serif;
+}
+
+body{
+    background:#f5f6fa;
+}
+
+/* Container */
+
+.profile-container{
+
+    padding:30px;
+
+}
+
+/* Header */
+
+.profile-header{
+
+    background:#fff;
+
+    padding:25px;
+
+    border-radius:12px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    flex-wrap:wrap;
+
+    gap:20px;
+
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+
+}
+
+.profile-image img{
+
+    width:120px;
+
+    height:120px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:4px solid #ff3f6c;
+
+}
+
+.profile-info{
+
+    flex:1;
+
+}
+
+.profile-info h2{
+
+    margin-bottom:10px;
+
+}
+
+.profile-info p{
+
+    color:#666;
+
+}
+
+.profile-info span{
+
+    color:#888;
+
+    font-size:14px;
+
+}
+
+.profile-header button{
+
+    background:#ff3f6c;
+
+    color:#fff;
+
+    border:none;
+
+    padding:12px 25px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+}
+
+/* Grid */
+
+.profile-grid{
+
+    margin-top:30px;
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:25px;
+
+}
+
+/* Cards */
+
+.profile-card{
+
+    background:#fff;
+
+    border-radius:12px;
+
+    padding:25px;
+
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+
+}
+
+.profile-card h3{
+
+    margin-bottom:25px;
+
+    color:#ff3f6c;
+
+}
+
+/* Rows */
+
+.profile-row{
+
+    margin-bottom:18px;
+
+}
+
+.profile-row label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-weight:600;
+
+}
+
+.profile-row input,
+.profile-row textarea{
+
+    width:100%;
+
+    padding:12px;
+
+    border:1px solid #ddd;
+
+    border-radius:8px;
+
+    outline:none;
+
+    font-size:15px;
+
+}
+
+.profile-row input:focus,
+.profile-row textarea:focus{
+
+    border-color:#ff3f6c;
+
+}
+
+/* Button */
+
+.save-btn{
+
+    text-align:right;
+
+    margin-top:30px;
+
+}
+
+.save-btn button{
+
+    background:#ff3f6c;
+
+    color:#fff;
+
+    border:none;
+
+    padding:14px 35px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+}
+
+/* Responsive */
+
+@media(max-width:992px){
+
+.profile-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.profile-container{
+
+    padding:15px;
+
+}
+
+.profile-header{
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+.save-btn{
+
+    text-align:center;
+
+}
+
+}

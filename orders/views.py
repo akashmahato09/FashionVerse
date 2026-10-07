@@ -52,3 +52,30 @@ def shipping(request, product_id):
     }
 
     return render(request, "orders/shipping.html", context) 
+
+
+
+def order_conform(request):
+    return render(request, "orders/order_conform.html")
+
+def cancel_order(request, order_id):
+
+    order = get_object_or_404(
+        Order,
+        id=order_id
+    )
+
+    if request.method == "POST":
+
+        order.order_status = "Cancelled"
+        order.save()
+
+        return redirect("orders:my_orders")
+
+    return render(
+        request,
+        "orders/cancel_order.html",
+        {
+            "order": order
+        }
+    )

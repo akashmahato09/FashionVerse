@@ -1,151 +1,1110 @@
-{% extends 'base.html' %} 
-{% load static %} 
-{% block css %}<link rel="stylesheet" href="{% static 'css/index.css' %}"/>{% endblock css %} 
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock css %}
+
 {% block content %}
 
-<!-- ================= HERO SECTION ================= -->
-
+<!-- =========================================================
+     HERO SECTION
+========================================================= -->
 <section class="index">
-  <div class="index-content">
-    <h1>Upgrade Your Fashion</h1>
 
-    <p>
-      Discover thousands of stylish products for Men, Women, Boys, Girls & Kids.
-    </p>
+    <div class="index-overlay"></div>
 
-    <button>Shop Now</button>
-  </div>
-</section>
+    <div class="index-content">
 
-<!-- ================= CATEGORY SECTION ================= -->
+        <span class="index-subtitle">
+            NEW COLLECTION 2026
+        </span>
 
-<section class="index-category">
-  <h2>Shop By Category</h2>
+        <h1>
+            Upgrade Your
+            <span>Fashion</span>
+        </h1>
 
-  <div class="index-category-grid">
-    <a href="{% url 'core:men' %}">
-      <div class="index-card">
-        <i class="fa-solid fa-person"></i>
-        <h3>Men</h3>
-      </div>
-    </a>
+        <p>
+            Discover premium fashion for Men, Women, Boys,
+            Girls and Kids. Find your style. Wear your confidence.
+        </p>
 
-    <a href="{% url 'core:women' %}">
-      <div class="index-card">
-        <i class="fa-solid fa-person-dress"></i>
-        <h3>Women</h3>
-      </div>
-    </a>
+        <div class="index-hero-buttons">
+            <a href="{% url 'core:men' %}" class="index-btn index-btn-primary">
+                Shop Now
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
 
-    <a href="{% url 'core:girls' %}">
-      <div class="index-card">
-        <i class="fa-solid fa-child-dress"></i>
-        <h3>Girls</h3>
-      </div>
-    </a>
-
-    <a href="{% url 'core:boys' %}">
-      <div class="index-card">
-        <i class="fa-solid fa-child"></i>
-        <h3>Boys</h3>
-      </div>
-    </a>
-
-    <a href="{% url 'core:kids' %}">
-      <div class="index-card">
-        <i class="fa-solid fa-baby"></i>
-        <h3>Kids</h3>
-      </div>
-    </a>
-  </div>
-</section>
-
-<!-- ================= FEATURED PRODUCTS ================= -->
-
-<section class="index-products">
-  <h2>Featured Products</h2>
-
-  <div class="index-product-grid">
-    {% for p in product %}
-    <a
-      href="{% url 'core:products_details' p.id  %}"
-      style="text-decoration: none"
-    >
-      <div class="index-product-card">
-        <!-- Discount Badge -->
-        <span class="discount-badge">{{p.discount_percentage}}% OFF</span>
-
-        <button class="wishlist-btn">
-          <i class="fa-regular fa-heart"></i>
-        </button>
-
-        <!-- Product Image -->
-        <div class="index-img">
-          <img src="{{ p.product_image.url }}" alt="Women Kurti" />
-        </div>
-
-        <!-- Product Details -->
-        <div class="product-info">
-          <h3>{{p.product_name}}</h3>
-
-          <div class="rating">
-            <i class="fa-solid fa-star"></i>
-            4.8
-            <span>(245 Reviews)</span>
-          </div>
-
-          <div class="price-box">
-            <span class="current-price">₹{{p.selling_price}}</span>
-
-            <span class="old-price">₹{{p.original_price}}</span>
-          </div>
-
-          <button class="cart-btn">
-            <i class="fa-solid fa-cart-shopping"></i>
-            Add to Cart
-          </button>
-        </div>
-      </div>
-    </a>
-    {% endfor %}
-  </div>
-</section>
-
-<!-- ================= BRANDS ================= -->
-<section class="index-brands">
-    <h2>Top Brands</h2>
-
-    <div class="index-brand-grid">
-
-        <div class="brand-card">
-            <span>Nike</span>
-        </div>
-
-        <div class="brand-card">
-            <span>Adidas</span>
-        </div>
-
-        <div class="brand-card">
-            <span>Puma</span>
-        </div>
-
-        <div class="brand-card">
-            <span>Levi's</span>
-        </div>
-
-        <div class="brand-card">
-            <span>H&M</span>
-        </div>
-
-        <div class="brand-card">
-            <span>Zara</span>
+            <a href="#index-category" class="index-btn index-btn-outline">
+                Explore Categories
+            </a>
         </div>
 
     </div>
+
 </section>
 
-<!-- =================  ================= -->
 
-<section class=""></section>
+<!-- =========================================================
+     DEAL / SERVICE STRIP
+========================================================= -->
+<section class="index-deal-strip">
 
-{% endblock %}
+    <div class="index-deal-container">
+
+        <div class="index-deal-item">
+            <div class="index-deal-icon">
+                <i class="fa-solid fa-bolt"></i>
+            </div>
+
+            <div>
+                <h4>Flash Sale</h4>
+                <p>Up to 50% OFF</p>
+            </div>
+        </div>
+
+
+        <div class="index-deal-item">
+            <div class="index-deal-icon">
+                <i class="fa-solid fa-truck-fast"></i>
+            </div>
+
+            <div>
+                <h4>Free Delivery</h4>
+                <p>On orders above ₹999</p>
+            </div>
+        </div>
+
+
+        <div class="index-deal-item">
+            <div class="index-deal-icon">
+                <i class="fa-solid fa-rotate-left"></i>
+            </div>
+
+            <div>
+                <h4>Easy Returns</h4>
+                <p>7 days easy return</p>
+            </div>
+        </div>
+
+
+        <div class="index-deal-item">
+            <div class="index-deal-icon">
+                <i class="fa-solid fa-shield-halved"></i>
+            </div>
+
+            <div>
+                <h4>Secure Payment</h4>
+                <p>100% secure checkout</p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CATEGORY SECTION
+========================================================= -->
+<section class="index-category" id="index-category">
+
+    <div class="index-section-heading">
+
+        <span>EXPLORE COLLECTIONS</span>
+
+        <h2>
+            Shop By <strong>Category</strong>
+        </h2>
+
+        <p>
+            Find your perfect style from our latest collections.
+        </p>
+
+    </div>
+
+
+    <div class="index-category-container">
+
+        <a href="{% url 'core:men' %}" class="index-category-card">
+            <div class="index-category-icon">
+                <i class="fa-solid fa-person"></i>
+            </div>
+
+            <h3>Men</h3>
+            <p>Explore Men's Fashion</p>
+
+            <span>
+                Shop Now
+                <i class="fa-solid fa-arrow-right"></i>
+            </span>
+        </a>
+
+
+        <a href="{% url 'core:women' %}" class="index-category-card">
+            <div class="index-category-icon">
+                <i class="fa-solid fa-person-dress"></i>
+            </div>
+
+            <h3>Women</h3>
+            <p>Discover Women's Fashion</p>
+
+            <span>
+                Shop Now
+                <i class="fa-solid fa-arrow-right"></i>
+            </span>
+        </a>
+
+
+        <a href="{% url 'core:boys' %}" class="index-category-card">
+            <div class="index-category-icon">
+                <i class="fa-solid fa-child"></i>
+            </div>
+
+            <h3>Boys</h3>
+            <p>Cool Styles For Boys</p>
+
+            <span>
+                Shop Now
+                <i class="fa-solid fa-arrow-right"></i>
+            </span>
+        </a>
+
+
+        <a href="{% url 'core:girls' %}" class="index-category-card">
+            <div class="index-category-icon">
+                <i class="fa-solid fa-child-dress"></i>
+            </div>
+
+            <h3>Girls</h3>
+            <p>Trendy Girls Collection</p>
+
+            <span>
+                Shop Now
+                <i class="fa-solid fa-arrow-right"></i>
+            </span>
+        </a>
+
+
+        <a href="{% url 'core:kids' %}" class="index-category-card">
+            <div class="index-category-icon">
+                <i class="fa-solid fa-children"></i>
+            </div>
+
+            <h3>Kids</h3>
+            <p>Fun & Stylish Kids Wear</p>
+
+            <span>
+                Shop Now
+                <i class="fa-solid fa-arrow-right"></i>
+            </span>
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     SHOP BY STYLE
+========================================================= -->
+<section class="index-style-section">
+
+    <div class="index-section-heading">
+
+        <span>FIND YOUR LOOK</span>
+
+        <h2>
+            Shop By <strong>Style</strong>
+        </h2>
+
+        <p>
+            From everyday essentials to premium fashion.
+        </p>
+
+    </div>
+
+
+    <div class="index-style-grid">
+
+        <a href="{% url 'core:men' %}" class="index-style-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=85"
+                alt="Casual Wear"
+            >
+
+            <div class="index-style-overlay"></div>
+
+            <div class="index-style-content">
+                <span>EVERYDAY STYLE</span>
+                <h3>Casual Wear</h3>
+
+                <div>
+                    Explore
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+            </div>
+
+        </a>
+
+
+        <a href="{% url 'core:men' %}" class="index-style-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=900&q=85"
+                alt="Street Style"
+            >
+
+            <div class="index-style-overlay"></div>
+
+            <div class="index-style-content">
+                <span>URBAN COLLECTION</span>
+                <h3>Street Style</h3>
+
+                <div>
+                    Explore
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+            </div>
+
+        </a>
+
+
+        <a href="{% url 'core:women' %}" class="index-style-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=900&q=85"
+                alt="Party Wear"
+            >
+
+            <div class="index-style-overlay"></div>
+
+            <div class="index-style-content">
+                <span>MAKE AN IMPRESSION</span>
+                <h3>Party Wear</h3>
+
+                <div>
+                    Explore
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+            </div>
+
+        </a>
+
+
+        <a href="{% url 'core:women' %}" class="index-style-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=900&q=85"
+                alt="Premium Wear"
+            >
+
+            <div class="index-style-overlay"></div>
+
+            <div class="index-style-content">
+                <span>PREMIUM COLLECTION</span>
+                <h3>Premium Wear</h3>
+
+                <div>
+                    Explore
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+            </div>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FEATURED PRODUCTS
+     PRODUCT CARD DESIGN KEPT AS IT IS
+========================================================= -->
+<section class="index-products">
+
+    <div class="index-section-heading">
+
+        <span>OUR COLLECTION</span>
+
+        <h2>
+            Featured <strong>Products</strong>
+        </h2>
+
+        <p>
+            Handpicked styles that deserve a place in your wardrobe.
+        </p>
+
+    </div>
+
+
+    <div class="index-product-container">
+
+        {% for p in product %}
+
+        <div class="index-product-card">
+
+            <div class="index-discount">
+                {{ p.discount_percentage }}% OFF
+            </div>
+
+
+            <button class="index-wishlist" type="button">
+                <i class="fa-regular fa-heart"></i>
+            </button>
+
+
+            <a href="{% url 'core:products_details' p.id %}">
+
+                <div class="index-img">
+
+                    <img
+                        src="{{ p.product_image.url }}"
+                        alt="{{ p.product_name }}"
+                    >
+
+                </div>
+
+            </a>
+
+
+            <div class="index-product-info">
+
+                <h3>
+                    {{ p.product_name }}
+                </h3>
+
+
+                <div class="index-rating">
+
+                    <span>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </span>
+
+                    <small>
+                        4.8 (245 Reviews)
+                    </small>
+
+                </div>
+
+
+                <div class="index-price">
+
+                    <strong>
+                        ₹{{ p.selling_price }}
+                    </strong>
+
+                    <del>
+                        ₹{{ p.original_price }}
+                    </del>
+
+                </div>
+
+
+                <a
+                    href="{% url 'core:products_details' p.id %}"
+                    class="index-cart-btn"
+                >
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Add to Cart
+                </a>
+
+            </div>
+
+        </div>
+
+        {% empty %}
+
+        <div class="index-empty-product">
+
+            <i class="fa-solid fa-box-open"></i>
+
+            <h3>No Products Available</h3>
+
+            <p>
+                New products will be available soon.
+            </p>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     BIG PROMOTIONAL BANNER
+========================================================= -->
+<section class="index-promo">
+
+    <div class="index-promo-overlay"></div>
+
+    <div class="index-promo-content">
+
+        <span>NEW SEASON COLLECTION</span>
+
+        <h2>
+            Define Your
+            <strong>Own Style.</strong>
+        </h2>
+
+        <p>
+            Fresh looks. Premium quality. Timeless confidence.
+        </p>
+
+        <a href="{% url 'core:women' %}">
+            Discover Collection
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FLASH SALE
+========================================================= -->
+<section class="index-flash-sale">
+
+    <div class="index-section-heading">
+
+        <span>LIMITED TIME</span>
+
+        <h2>
+            Flash <strong>Sale</strong>
+        </h2>
+
+        <p>
+            Grab your favourite styles before the offer ends.
+        </p>
+
+    </div>
+
+
+    <div class="index-sale-box">
+
+        <div class="index-sale-text">
+
+            <span class="index-sale-label">
+                UP TO 50% OFF
+            </span>
+
+            <h2>
+                Fashion Deals
+                You Can't Miss
+            </h2>
+
+            <p>
+                Limited-time offers on selected fashion collections.
+            </p>
+
+            <a href="{% url 'core:men' %}">
+                Shop Sale
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <div class="index-countdown">
+
+            <div>
+                <strong>08</strong>
+                <span>Hours</span>
+            </div>
+
+            <b>:</b>
+
+            <div>
+                <strong>42</strong>
+                <span>Minutes</span>
+            </div>
+
+            <b>:</b>
+
+            <div>
+                <strong>19</strong>
+                <span>Seconds</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     PREMIUM COLLECTION
+========================================================= -->
+<section class="index-premium">
+
+    <div class="index-section-heading">
+
+        <span>SHOP WITH CONFIDENCE</span>
+
+        <h2>
+            Premium <strong>Collection</strong>
+        </h2>
+
+    </div>
+
+
+    <div class="index-premium-grid">
+
+        <div class="index-premium-card">
+
+            <div class="index-premium-icon">
+                <i class="fa-solid fa-gem"></i>
+            </div>
+
+            <h3>Premium Quality</h3>
+
+            <p>
+                Carefully selected products made with quality
+                materials and attention to detail.
+            </p>
+
+        </div>
+
+
+        <div class="index-premium-card">
+
+            <div class="index-premium-icon">
+                <i class="fa-solid fa-shirt"></i>
+            </div>
+
+            <h3>Exclusive Styles</h3>
+
+            <p>
+                Discover fresh styles designed to make
+                your everyday fashion stand out.
+            </p>
+
+        </div>
+
+
+        <div class="index-premium-card">
+
+            <div class="index-premium-icon">
+                <i class="fa-solid fa-fire"></i>
+            </div>
+
+            <h3>Modern Trends</h3>
+
+            <p>
+                Stay ahead with the latest fashion trends
+                and contemporary collections.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     WHY SHOP WITH US
+========================================================= -->
+<section class="index-why">
+
+    <div class="index-why-content">
+
+        <span>WHY SHOP WITH US</span>
+
+        <h2>
+            Shopping Made
+            <strong>Simple.</strong>
+        </h2>
+
+        <p>
+            We focus on giving you a smooth, secure and
+            enjoyable shopping experience from browsing
+            to delivery.
+        </p>
+
+    </div>
+
+
+    <div class="index-why-grid">
+
+        <div class="index-why-card">
+
+            <i class="fa-solid fa-truck-fast"></i>
+
+            <h3>Fast Delivery</h3>
+
+            <p>
+                Get your favourite products delivered
+                safely to your doorstep.
+            </p>
+
+        </div>
+
+
+        <div class="index-why-card">
+
+            <i class="fa-solid fa-lock"></i>
+
+            <h3>Secure Payments</h3>
+
+            <p>
+                Your transactions are protected with
+                secure payment processing.
+            </p>
+
+        </div>
+
+
+        <div class="index-why-card">
+
+            <i class="fa-solid fa-rotate-left"></i>
+
+            <h3>Easy Returns</h3>
+
+            <p>
+                Simple return process for eligible
+                products.
+            </p>
+
+        </div>
+
+
+        <div class="index-why-card">
+
+            <i class="fa-solid fa-headset"></i>
+
+            <h3>Customer Support</h3>
+
+            <p>
+                Our support team is here whenever
+                you need assistance.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     TESTIMONIALS
+========================================================= -->
+<section class="index-testimonials">
+
+    <div class="index-section-heading">
+
+        <span>WHAT CUSTOMERS SAY</span>
+
+        <h2>
+            Loved By <strong>Shoppers</strong>
+        </h2>
+
+        <p>
+            Real style. Real experiences.
+        </p>
+
+    </div>
+
+
+    <div class="index-testimonial-grid">
+
+        <div class="index-testimonial-card">
+
+            <div class="index-quote">
+                <i class="fa-solid fa-quote-left"></i>
+            </div>
+
+            <div class="index-testimonial-stars">
+                ★★★★★
+            </div>
+
+            <p>
+                "The quality was much better than I expected.
+                The product looked exactly like the pictures."
+            </p>
+
+            <div class="index-customer">
+
+                <div class="index-customer-avatar">
+                    A
+                </div>
+
+                <div>
+                    <h4>Arjun Kumar</h4>
+                    <span>Verified Customer</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="index-testimonial-card">
+
+            <div class="index-quote">
+                <i class="fa-solid fa-quote-left"></i>
+            </div>
+
+            <div class="index-testimonial-stars">
+                ★★★★★
+            </div>
+
+            <p>
+                "Loved the design and fitting. Delivery was
+                also quick and the shopping experience was smooth."
+            </p>
+
+            <div class="index-customer">
+
+                <div class="index-customer-avatar">
+                    P
+                </div>
+
+                <div>
+                    <h4>Priya Singh</h4>
+                    <span>Verified Customer</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="index-testimonial-card">
+
+            <div class="index-quote">
+                <i class="fa-solid fa-quote-left"></i>
+            </div>
+
+            <div class="index-testimonial-stars">
+                ★★★★★
+            </div>
+
+            <p>
+                "Great collection and reasonable prices.
+                I will definitely shop again."
+            </p>
+
+            <div class="index-customer">
+
+                <div class="index-customer-avatar">
+                    R
+                </div>
+
+                <div>
+                    <h4>Rahul Verma</h4>
+                    <span>Verified Customer</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     BRANDS
+========================================================= -->
+<section class="index-brand-section">
+
+    <div class="index-section-heading">
+
+        <span>BRANDS YOU LOVE</span>
+
+        <h2>
+            Shop By <strong>Brands</strong>
+        </h2>
+
+    </div>
+
+
+    <div class="brand-slider">
+
+        <div class="brand-track">
+
+            <div class="brand-card">
+                <img src="{% static 'images/brands/nike logo.png' %}" alt="Nike">
+            </div>
+
+            <div class="brand-card">
+                <img src="{% static 'images/brands/adidas logo.png' %}" alt="Adidas">
+            </div>
+
+            <div class="brand-card">
+                <img src="{% static 'images/brands/puma logo.png' %}" alt="Puma">
+            </div>
+
+            <div class="brand-card">
+                <img src="{% static 'images/brands/levis logo.png' %}" alt="Levis">
+            </div>
+
+            <div class="brand-card">
+                <img src="{% static 'images/brands/zara logo.png' %}" alt="Zara">
+            </div>
+
+            <div class="brand-card">
+                <img src="{% static 'images/brands/H&M logo.png' %}" alt="H&M">
+            </div>
+
+            <div class="brand-card">
+                <img src="{% static 'images/brands/gucci logo.png' %}" alt="Gucci">
+            </div>
+
+            <div class="brand-card">
+                <img src="{% static 'images/brands/lacoste logo.png' %}" alt="Lacoste">
+            </div>
+
+
+            <!-- DUPLICATE FOR INFINITE SLIDER -->
+
+            <div class="brand-card">
+                <img src="{% static 'images/brands/nike logo.png' %}" alt="Nike">
+            </div>
+
+            <div class="brand-card">
+                <img src="{% static 'images/brands/adidas logo.png' %}" alt="Adidas">
+            </div>
+
+            <div class="brand-card">
+                <img src="{% static 'images/brands/puma logo.png' %}" alt="Puma">
+            </div>
+
+            <div class="brand-card">
+                <img src="{% static 'images/brands/levis logo.png' %}" alt="Levis">
+            </div>
+
+            <div class="brand-card">
+                <img src="{% static 'images/brands/zara logo.png' %}" alt="Zara">
+            </div>
+
+            <div class="brand-card">
+                <img src="{% static 'images/brands/H&M logo.png' %}" alt="H&M">
+            </div>
+
+            <div class="brand-card">
+                <img src="{% static 'images/brands/gucci logo.png' %}" alt="Gucci">
+            </div>
+
+            <div class="brand-card">
+                <img src="{% static 'images/brands/lacoste logo.png' %}" alt="Lacoste">
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     NEWSLETTER
+========================================================= -->
+<section class="index-newsletter">
+
+    <div class="index-newsletter-content">
+
+        <div class="index-newsletter-icon">
+            <i class="fa-regular fa-envelope"></i>
+        </div>
+
+        <span>JOIN OUR COMMUNITY</span>
+
+        <h2>
+            Get 10% Off Your
+            <strong>First Order</strong>
+        </h2>
+
+        <p>
+            Subscribe to our newsletter and receive exclusive
+            offers, new arrivals and fashion updates.
+        </p>
+
+
+        <form class="index-newsletter-form">
+
+            <div class="index-email-box">
+
+                <i class="fa-regular fa-envelope"></i>
+
+                <input
+                    type="email"
+                    placeholder="Enter your email address"
+                    required
+                >
+
+            </div>
+
+            <button type="submit">
+                Subscribe
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+        </form>
+
+        <small>
+            We respect your privacy. Unsubscribe anytime.
+        </small>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     MOBILE SHOPPING
+========================================================= -->
+<section class="index-mobile-app">
+
+    <div class="index-mobile-content">
+
+        <span>SHOP ANYWHERE</span>
+
+        <h2>
+            Your Fashion Store
+            <strong>In Your Pocket.</strong>
+        </h2>
+
+        <p>
+            Browse collections, discover new arrivals,
+            track your orders and shop your favourite styles
+            from anywhere.
+        </p>
+
+
+        <div class="index-app-buttons">
+
+            <a href="#" class="index-app-btn">
+
+                <i class="fa-brands fa-google-play"></i>
+
+                <div>
+                    <small>GET IT ON</small>
+                    <strong>Google Play</strong>
+                </div>
+
+            </a>
+
+
+            <a href="#" class="index-app-btn">
+
+                <i class="fa-brands fa-apple"></i>
+
+                <div>
+                    <small>DOWNLOAD ON THE</small>
+                    <strong>App Store</strong>
+                </div>
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="index-phone">
+
+        <div class="index-phone-speaker"></div>
+
+        <div class="index-phone-screen">
+
+            <div class="index-phone-header">
+                <span>ShopNexus</span>
+                <i class="fa-regular fa-heart"></i>
+            </div>
+
+            <div class="index-phone-banner">
+
+                <small>NEW COLLECTION</small>
+
+                <h3>
+                    FIND YOUR
+                    STYLE
+                </h3>
+
+                <button>
+                    Shop Now
+                </button>
+
+            </div>
+
+
+            <div class="index-phone-title">
+                Trending Now
+            </div>
+
+
+            <div class="index-phone-products">
+
+                <div>
+                    <i class="fa-solid fa-shirt"></i>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-person-dress"></i>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-shoe-prints"></i>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FINAL CTA
+========================================================= -->
+<section class="index-final-cta">
+
+    <div>
+
+        <span>YOUR STYLE STARTS HERE</span>
+
+        <h2>
+            Ready To Upgrade
+            Your Wardrobe?
+        </h2>
+
+        <p>
+            Explore our latest fashion collections today.
+        </p>
+
+        <a href="{% url 'core:men' %}">
+            Start Shopping
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+</section>
+
+
+{% endblock content %}
+
+
+{% block js %}
+<script src="{% static 'js/brand.js' %}"></script>
+{% endblock js %}
+

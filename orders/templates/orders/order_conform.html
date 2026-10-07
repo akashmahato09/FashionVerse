@@ -1,0 +1,229 @@
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/order_conform.css' %}">
+{% endblock css %}
+
+
+{% block content %}
+
+<div class="order-confirm-page">
+
+    <!-- ================= TOP HEADER ================= -->
+
+    <div class="order-header">
+
+        <div class="payment-check">
+            <span>✓</span>
+        </div>
+
+        <h1>Payment Successful</h1>
+
+        <p>
+            Your payment has been received. Preparing your order for dispatch...
+        </p>
+
+    </div>
+
+
+    <!-- ================= DELIVERY AREA ================= -->
+
+    <div class="delivery-scene" id="deliveryScene">
+
+        <!-- Background -->
+        <div class="sky"></div>
+
+        <div class="cloud cloud-one"></div>
+        <div class="cloud cloud-two"></div>
+
+        <!-- Ground -->
+        <div class="ground"></div>
+
+        <!-- Road -->
+        <div class="road">
+
+            <div class="road-mark road-mark-one"></div>
+            <div class="road-mark road-mark-two"></div>
+            <div class="road-mark road-mark-three"></div>
+            <div class="road-mark road-mark-four"></div>
+
+        </div>
+
+
+        <!-- ================= PACKAGE ================= -->
+
+        <div class="package" id="package">
+
+            <div class="package-top"></div>
+
+            <div class="package-body">
+
+                <div class="package-tape"></div>
+
+                <div class="package-label">
+                    <span>SHOP</span>
+                    <strong>📦</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= TRUCK ================= -->
+
+        <div class="delivery-truck" id="deliveryTruck">
+
+            <!-- Truck container -->
+            <div class="truck-container">
+
+                <div class="truck-brand">
+                    SHOPNEXUS
+                </div>
+
+                <div class="truck-box-lines"></div>
+
+            </div>
+
+
+            <!-- Truck cabin -->
+            <div class="truck-cabin">
+
+                <div class="truck-window">
+
+                    <div class="window-shine"></div>
+
+                </div>
+
+                <div class="truck-handle"></div>
+
+                <div class="truck-headlight"></div>
+
+            </div>
+
+
+            <!-- Wheels -->
+
+            <div class="truck-wheel wheel-left">
+                <div class="wheel-center"></div>
+            </div>
+
+            <div class="truck-wheel wheel-right">
+                <div class="wheel-center"></div>
+            </div>
+
+
+            <!-- Door -->
+            <div class="truck-door" id="truckDoor"></div>
+
+        </div>
+
+
+        <!-- Loading text -->
+
+        <div class="loading-text" id="loadingText">
+            Loading your order...
+        </div>
+
+    </div>
+
+
+    <!-- ================= STATUS ================= -->
+
+    <div class="delivery-status">
+
+        <div class="status-item active" id="statusPreparing">
+
+            <div class="status-dot">
+                ✓
+            </div>
+
+            <div>
+                <strong>Order Prepared</strong>
+                <span>Your order has been packed successfully.</span>
+            </div>
+
+        </div>
+
+
+        <div class="status-connector" id="connectorOne"></div>
+
+
+        <div class="status-item" id="statusLoading">
+
+            <div class="status-dot">
+                2
+            </div>
+
+            <div>
+                <strong>Loading Order</strong>
+                <span>Your package is being loaded into the delivery vehicle.</span>
+            </div>
+
+        </div>
+
+
+        <div class="status-connector" id="connectorTwo"></div>
+
+
+        <div class="status-item" id="statusTransit">
+
+            <div class="status-dot">
+                3
+            </div>
+
+            <div>
+                <strong>Order in Transit</strong>
+                <span>Your package has left our facility.</span>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- ================= FINAL SUCCESS ================= -->
+
+    <div class="final-success" id="finalSuccess">
+
+        <div class="success-circle">
+            ✓
+        </div>
+
+        <h2>Your Order is Confirmed</h2>
+
+        <p>
+            Your order has been successfully confirmed and is now
+            on its way to you.
+        </p>
+
+        <div class="success-details">
+
+            <div>
+                <span>Status</span>
+                <strong>Confirmed</strong>
+            </div>
+
+            <div>
+                <span>Delivery</span>
+                <strong>In Transit</strong>
+            </div>
+
+        </div>
+
+        <a href="/" class="continue-shopping">
+            Continue Shopping
+        </a>
+
+    </div>
+
+</div>
+
+
+<script src="{% static 'js/order_conform.js' %}"></script>
+
+{% endblock content %}
+
