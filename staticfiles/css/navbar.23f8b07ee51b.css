@@ -1,0 +1,794 @@
+
+/* =========================================================
+   GOOGLE FONT
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+body {
+    background: #f5f5f5;
+}
+
+
+/* =========================================================
+   TOP NAVBAR
+========================================================= */
+
+.top-navbar {
+
+    width: 100%;
+    background: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 15px 40px;
+
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+
+    position: sticky;
+    top: 0;
+
+    z-index: 999;
+
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo a {
+
+    text-decoration: none;
+
+    font-size: 32px;
+    font-weight: 700;
+
+    color: #111827;
+
+}
+
+
+.logo span {
+
+    color: #ff3f6c;
+
+}
+
+
+/* =========================================================
+   NAVIGATION WRAPPER
+========================================================= */
+
+.nav-wrapper {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+
+}
+
+
+/* =========================================================
+   LOCATION
+========================================================= */
+
+.location {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+}
+
+
+.location i {
+
+    color: #ff3f6c;
+
+    font-size: 18px;
+
+}
+
+
+/* =========================================================
+   SEARCH BOX
+========================================================= */
+
+.search-box {
+
+    display: flex;
+
+    align-items: center;
+
+    background: #f1f1f1;
+
+    border-radius: 6px;
+
+    overflow: hidden;
+
+    width: 650px;
+
+}
+
+
+.search-box select {
+
+    border: none;
+
+    outline: none;
+
+    background: #e9e9e9;
+
+    padding: 12px;
+
+    cursor: pointer;
+
+}
+
+
+.search-box input {
+
+    flex: 1;
+
+    border: none;
+
+    outline: none;
+
+    padding: 12px;
+
+    background: transparent;
+
+}
+
+
+.search-box button {
+
+    border: none;
+
+    background: #ff3f6c;
+
+    color: #fff;
+
+    padding: 12px 18px;
+
+    cursor: pointer;
+
+}
+
+
+.search-box button:hover {
+
+    background: #e6305d;
+
+}
+
+
+/* =========================================================
+   NAVIGATION ICONS
+========================================================= */
+
+.nav-icons {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+}
+
+
+.icon-box {
+
+    text-decoration: none;
+
+    color: #222;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: 15px;
+
+    transition: 0.3s;
+
+}
+
+
+.icon-box i {
+
+    font-size: 20px;
+
+}
+
+
+.icon-box:hover {
+
+    color: #ff3f6c;
+
+}
+
+
+/* =========================================================
+   CART NUMBER
+========================================================= */
+
+.number_of_items {
+
+    width: 25px;
+
+    height: 25px;
+
+    border-radius: 50%;
+
+    background-color: #e9e9e9;
+
+    margin-top: -20px;
+
+    position: absolute;
+
+    color: black;
+
+    margin-left: 15.5rem;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+}
+
+
+/* =========================================================
+   PROFILE DROPDOWN
+========================================================= */
+
+.profile-dropdown {
+
+    width: 300px;
+
+    border-radius: 12px;
+
+    border: none;
+
+    padding: 12px 0;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+}
+
+
+.dropdown-header {
+
+    text-align: center;
+
+    padding: 10px 7px;
+
+    font-size: 18px;
+
+}
+
+
+.SignUpbtn {
+
+    width: 240px;
+
+    height: 30px;
+
+    border-radius: 10px;
+
+    background: #ff3f6c;
+
+    border: none;
+
+}
+
+
+.SignUpbtn:hover {
+
+    background: #e6305d;
+
+}
+
+
+.SignUp {
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    color: black;
+
+}
+
+
+.profile-dropdown .dropdown-item {
+
+    padding: 12px 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    font-size: 16px;
+
+}
+
+
+.profile-dropdown .dropdown-item i {
+
+    width: 20px;
+
+    text-align: center;
+
+}
+
+
+.profile-dropdown .dropdown-item:hover {
+
+    background: #f1f5ff;
+
+}
+
+
+/* =========================================================
+   LOGOUT BUTTON
+========================================================= */
+
+.logout-btn {
+
+    width: 120px;
+
+    background-color: rgb(198, 75, 22);
+
+    color: white;
+
+    margin-left: 20px;
+
+    border: 1px solid #c64b16;
+
+    border-radius: 5px;
+
+    padding: 5px 10px;
+
+    cursor: pointer;
+
+}
+
+
+.logout-btn:hover {
+
+    background-color: rgb(203, 129, 97);
+
+    color: black;
+
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
+.menu-btn {
+
+    display: none;
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================================================
+   BOTTOM NAVBAR
+========================================================= */
+
+.down-navbar {
+
+    background: #111827;
+
+    width: 100%;
+
+}
+
+
+/* =========================================================
+   NAV LINKS
+========================================================= */
+
+.nav-links {
+
+    display: flex;
+
+    justify-content: center;
+
+    list-style: none;
+
+    flex-wrap: wrap;
+
+    margin: 0;
+
+    padding: 0;
+
+}
+
+
+.nav-links li {
+
+    margin: 0;
+
+}
+
+
+.nav-links li a {
+
+    display: block;
+
+    color: #fff;
+
+    text-decoration: none;
+
+    padding: 16px 60px;
+
+    transition: 0.3s;
+
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.nav-links li a:hover {
+
+    background: #ff3f6c;
+
+    color: #ffffff;
+
+}
+
+
+/* =========================================================
+   ACTIVE LINK
+========================================================= */
+
+.nav-links li a.active {
+
+    background: #ff3f6c;
+
+    color: #ffffff;
+
+    font-weight: 600;
+
+}
+
+
+/* =========================================================
+   ACTIVE + HOVER
+========================================================= */
+
+.nav-links li a.active:hover {
+
+    background: #e6305d;
+
+    color: #ffffff;
+
+}
+
+
+/* =========================================================
+   LARGE SCREEN
+========================================================= */
+
+@media (max-width: 1400px) {
+
+    .search-box {
+
+        width: 420px;
+
+    }
+
+}
+
+
+/* =========================================================
+   LAPTOP
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .top-navbar {
+
+        padding: 15px 20px;
+
+    }
+
+
+    .search-box {
+
+        width: 350px;
+
+    }
+
+
+    .nav-wrapper {
+
+        gap: 20px;
+
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 992px) {
+
+    .location {
+
+        display: none;
+
+    }
+
+
+    .search-box {
+
+        width: 300px;
+
+    }
+
+
+    .icon-box span {
+
+        display: none;
+
+    }
+
+
+    .nav-links li {
+
+        font-size: small;
+
+    }
+
+
+    .nav-links li a {
+
+        padding: 15px 35px;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .top-navbar {
+
+        padding: 40px 18px;
+    }
+
+.logo a{
+
+    text-decoration: none;
+    font-size:80px;
+    color: #111827;
+
+}
+
+
+    /* Show menu */
+
+    .menu-btn {
+
+        display: block;
+      
+
+    }
+
+
+    /* Hidden navigation */
+
+    .nav-wrapper {
+
+        position: absolute;
+
+        top: 75px;
+
+        left: 0;
+
+        width: 100%;
+
+        background: #fff;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        padding: 20px;
+
+        gap: 18px;
+
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+
+        display: none;
+
+    }
+
+
+    /* Active mobile menu */
+
+    .nav-wrapper.active {
+
+        display: flex;
+
+    }
+
+
+    .location {
+
+        display: flex;
+
+    }
+
+
+    .search-box {
+
+        width: 100%;
+
+    }
+
+
+    .nav-icons {
+
+        justify-content: space-around;
+
+    }
+
+
+    .icon-box span {
+
+        display: block;
+
+    }
+
+
+    /* Bottom navbar */
+
+    .nav-links {
+
+        justify-content: flex-start;
+
+        overflow-x: auto;
+
+        white-space: nowrap;
+
+        flex-wrap: nowrap;
+
+    }
+
+
+    .nav-links::-webkit-scrollbar {
+
+        display: none;
+
+    }
+
+
+    .nav-links li a {
+
+        padding: 14px 25px;
+
+    }
+
+
+    .down-navbar{
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        font-size: 120px;
+        height:90px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .logo a {
+
+        font-size: 24px;
+
+    }
+
+
+    .search-box select {
+
+        display: none;
+
+    }
+
+
+    .search-box input {
+
+        font-size: 14px;
+
+    }
+
+
+    .nav-icons {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+
+    }
+
+
+    .icon-box {
+
+        width: 100%;
+
+    }
+
+
+    .nav-links li a {
+
+        padding: 13px 20px;
+
+        font-size: 13px;
+
+    }
+
+}
+

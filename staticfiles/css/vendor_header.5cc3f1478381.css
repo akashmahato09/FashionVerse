@@ -1,0 +1,168 @@
+/*=========================
+VENDOR HEADER
+==========================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+.vendor-header{
+    width:100%;
+    height:70px;
+    background:#fff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 25px;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.vendor-logo a{
+    text-decoration:none;
+    font-size:30px;
+    font-weight:700;
+    color:#222;
+}
+
+.vendor-logo span{
+    color:#ff3f6c;
+}
+
+.vendor-right{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.vendor-search{
+    display:flex;
+    align-items:center;
+    background:#f3f3f3;
+    border-radius:8px;
+    overflow:hidden;
+}
+
+.vendor-search input{
+    border:none;
+    outline:none;
+    padding:10px 15px;
+    width:260px;
+    background:transparent;
+}
+
+.vendor-search button{
+    border:none;
+    background:#ff3f6c;
+    color:#fff;
+    padding:10px 16px;
+    cursor:pointer;
+}
+
+.notification-box{
+    width:42px;
+    height:42px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#f5f5f5;
+    border-radius:50%;
+    text-decoration:none;
+    color:#333;
+    font-size:18px;
+    transition:.3s;
+}
+.notification-box:hover{
+    background:#ff3f6c;
+    color:#fff;
+}
+.message-box{
+    width:42px;
+    height:42px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#f5f5f5;
+    border-radius:50%;
+    text-decoration:none;
+    color:#333;
+    font-size:18px;
+    transition:.3s;
+}
+.message-box:hover{
+    background:#ff3f6c;
+    color:#fff;
+}
+
+
+
+
+
+.profile-btn{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+    color:#222;
+}
+
+.profile-btn img{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.menu-btn{
+    display:none;
+    font-size:24px;
+    cursor:pointer;
+}
+
+/*=========================
+Responsive
+==========================*/
+
+@media(max-width:992px){
+
+.vendor-search input{
+    width:180px;
+}
+
+}
+
+@media(max-width:768px){
+
+.menu-btn{
+    display:block;
+}
+
+.vendor-right{
+    position:absolute;
+    top:70px;
+    right:-100%;
+    width:100%;
+    background:#fff;
+    flex-direction:column;
+    padding:20px;
+    transition:.3s;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.vendor-right.active{
+    right:0;
+}
+
+.vendor-search{
+    width:100%;
+}
+
+.vendor-search input{
+    width:100%;
+}
+
+}
