@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-zbxduk%^s9(oop@jobrx-_go=n=%+h9ejgtiyqasj2=*tc*swk
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://fashionverse-1.onrender.com',]
 
 
 # Application definition
