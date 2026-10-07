@@ -138,15 +138,7 @@ STATICFILES_DIRS = [
 
 STATICFILES_DIRS = [
     BASE_DIR / "core" / "static",
-    BASE_DIR / "dashboard" / "static",
-    BASE_DIR / "vendors" / "static",
-    BASE_DIR / "orders" / "static",
-    BASE_DIR / "wishlist" / "static",
-    BASE_DIR / "cart" / "static",
-    BASE_DIR / "payments" / "static",
-    BASE_DIR / "accounts" / "static",
-    BASE_DIR / "templates" / "static",
-    BASE_DIR / "reviews" / "static",
+
 ]
 
 STORAGES = {
